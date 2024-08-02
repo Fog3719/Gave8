@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>  <!-- Declaration defining this document as an HTML5 document -->
+<html lang="en">  <!-- Opening tag for the HTML document; specifies the language as English -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-
-    <title>Document</title>
+    <meta charset="UTF-8">  <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Ensures proper rendering on mobile devices by controlling the viewport's size and scale -->
+    <title>动态渐变背景</title>  <!-- Title of the webpage displayed in the browser's title bar; translates to "Dynamic Gradient Background" -->
+    <link rel="stylesheet" href="style.css">  <!-- Links to an external CSS file for styling the page -->
+    <script type="module" src="dynamic-background.js" defer></script>  <!-- Links to an external JavaScript file that is loaded as a module and deferred until after the HTML is parsed -->
 </head>
 <body>
-    <ul>
-        <li>Project</li>
-        <li>insight</li>
-        <li>Sharing</li>
-        <li>Other</li>
-        <li>About Me</li>
-    </ul>
+    <div id="box" style="width: 100vw; height: 100vh;"></div>  <!-- Main container div that takes up the full width and height of the viewport -->
 </body>
 </html>
