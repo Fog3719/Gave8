@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>my_websidte</title>  
+    <title>Midmonkey</title>  
+    <!-- Add browser icon --> 
+    <link rel="icon" href="resourses/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +13,7 @@
     <script type="module" src="dynamic-background.js" defer></script> 
 </head>
 <body>
-    <div id="box" style="width: 100vw; height: 100vh;"></div>
+    <div id="box"></div>
     <nav id="navbar"> 
         <div id="weblogo">
             <div id="logoimg"></div>
@@ -25,8 +27,57 @@
             <li class="meun-item"><a href="projects.html">About me</a></li>
         </ul>
     </nav>
+    <div id="banner">
+        <div>
+            <h1 id="banner-text">“Finishing is better than being perfect for great design.”</h1>
+        </div>
+        <div id="aboutme">
+            <div class="avatar"></div>
+            <div class="job-title">UX/UI Design</div>
+            <div class="self-introduction">
+                Experienced product designer specializing in web and mobile applications. I create effective product documentation and prototypes, ensuring timely delivery. My skills in data analysis and user research help enhance features and improve user satisfaction. With strong communication and collaboration abilities, I drive teams toward shared goals while staying updated on design trends to foster innovation.
+            </div>
+        </div>
+    </div>
    
-    
+<section id="projects">
+    <h2 class="sub-title">Projects</h2>
+    <div class="projects-cards-list">
+        <article class="projects-card">
+            <img src="resourses/cad2.png" alt="Project 1">
+            <div class="card-content">
+                <span class="project-name">Schematic Hierarchy Design</span>
+                <span class="project-version">CAD2.0</span>
+                <span class="project-date">2024-07</span>
+            </div>
+        </article>
+        <article class="projects-card">
+            <img src="resourses/rpa.png" alt="Project 2">
+            <div class="card-content">
+                <span class="project-name">3D Layout Module Design</span>
+                <span class="project-version">CAD2.0</span>
+                <span class="project-date">2024-07</span>
+            </div>
+        </article>
+        <article class="projects-card">
+            <img src="resourses/designsys.png" alt="Project 3">
+            <div class="card-content">
+                <span class="project-name">2D Routing Module: Design Requirements for Trace Drawing</span>
+                <span class="project-version">CAD2.0</span>
+                <span class="project-date">2024-07</span>
+            </div>
+        </article>
+        <article class="projects-card">
+            <img src="resourses/designsys.png" alt="Project 3">
+            <div class="card-content">
+                <span class="project-name">2D Routing Module: Design Requirements for Trace Drawing</span>
+                <span class="project-version">CAD2.0</span>
+                <span class="project-date">2024-07</span>
+            </div>
+        </article>
+    </div>
+</section>
+
 
 </body>
 </html>

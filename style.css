@@ -1,6 +1,10 @@
+@font-face {
+    font-family: "Knewave";
+    src: url(resourses/fornts/Knewave-Regular.ttf)format('truetype');
+}
 body {
     margin: 0;
-    overflow: hidden; /* 防止滚动条 */
+    /*overflow: hidden;  防止滚动条 */
 }
 
 ul {
@@ -10,9 +14,13 @@ ul {
 }
 
 #box {
-    position: absolute;
-    z-index: 1;
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* 确保在其他元素之下 */
+    /*overflow: hidden;*/
 }
 
 .vampiro-one-regular {
@@ -25,7 +33,7 @@ ul {
 #navbar {
     position: relative;
     display: flex;
-    z-index: 2;
+    z-index: 1;
     padding: var(--grid-grid-3x, 12px) var(--grid-grid-6x, 24px);
     justify-content: space-between;
     align-items: center;
@@ -90,4 +98,138 @@ ul {
 .meun-item a:hover {
     background-color: rgba(33, 31, 31, 0.2); /* 悬停时改变背景色 */
     border-radius: 4px;
+}
+
+#banner {
+    display: flex;
+    width: auto;
+    padding: 0px 24px;
+    justify-content: space-between;
+    align-items: center;   
+    z-index: 1;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 40px;
+    
+}
+
+#banner-text {
+    color: #00FFD1;
+    font-family: Knewave;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+#aboutme{
+    display: flex;
+    width: 427px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.avatar{
+    width: 201px;
+    height: 201px;
+    border-radius: 272px;
+    background: url(resourses/avatar.png) lightgray 50% / cover no-repeat; 
+}
+.job-title{
+    color: #FFF;
+    font-family: "Noto Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.self-introduction{
+    align-self: stretch;
+    color: rgba(255, 255, 255, 0.60);
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal; 
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 100px;
+    padding-left: 56px;
+}
+
+.sub-title {
+    color: rgba(255, 255, 255, 0.23);
+    font-family: "Noto Sans";
+    font-size: 100px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.projects-cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    width: 1200px;
+    padding: 0 56px;
+    align-items: flex-start;
+}
+
+.projects-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 16px;
+    width: 528px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 0px -2px 0px 0px rgba(255, 255, 255, 0.15) inset;
+    backdrop-filter: blur(2px);
+}
+
+.projects-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-name,
+.project
+.project-name,
+.project-version,
+.project-date {
+    font-family: "Noto Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.project-name {
+    font-weight: 600;
+}
+
+.project-version {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.project-date {
+    color: rgba(255, 255, 255, 0.4);
 }
