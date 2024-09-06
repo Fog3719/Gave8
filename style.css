@@ -178,7 +178,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-    width: 1200px;
+    width: auto;
     padding: 0 56px;
     align-items: flex-start;
 }
@@ -232,4 +232,113 @@ ul {
 
 .project-date {
     color: rgba(255, 255, 255, 0.4);
+}
+
+
+.skills-content{
+    display: flex;
+    padding: 0px 67px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    gap: 140px;
+}
+
+.software-list{
+    display: flex;
+    width: 685px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 24px;
+    align-self: stretch;
+    flex-wrap: wrap;  
+
+}
+
+.software-list-item{
+    display: flex;
+    width: 128px;
+    height: 128px;
+    padding: 18px 33px 19px 34px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 16px;
+    border: 1px solid  rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.14);
+    box-sizing: border-box;
+    mix-blend-mode: luminosity;
+    /* card-styles */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 0px -2px 0px 0px rgba(255, 255, 255, 0.15) inset;
+    backdrop-filter: blur(2px);
+    transition: transform 0.5s ease-in-out;
+}
+
+.software-list-item:hover {
+    mix-blend-mode: normal; /* 悬停时恢复原色彩 */
+    background: rgba(255, 255, 255, 0.3);
+
+}
+.software-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* 确保图片按比例缩放，完全显示在容器内 */
+}
+
+.ux-image {
+    position: relative;
+    width: 800px; /* 设置一个合适的宽度 */
+    height: 800px; /* 设置一个合适的高度 */
+    margin: 0 auto; /* 水平居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.o-style {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(84, 64, 213, 0.60) 100%);
+    
+    /* card-styles */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%);
+    backdrop-filter: blur(2px);
+}
+
+#o1 {
+    top: -250px;
+    left: 0;
+}
+
+#o2 {
+    top: 100px;
+    left: -250px;
+}
+
+#o3 {
+    top: 100px;
+    left: 200px;
+}
+
+.o-style span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 227px;
+    height: 111px;
+    flex-shrink: 0;
+    color: #ffffffa0;
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
 }
