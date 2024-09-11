@@ -185,9 +185,9 @@ ul {
 
 .projects-card {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: row; /* 改为水平排列 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
     gap: 16px;
     width: 528px;
     padding: 16px;
@@ -198,6 +198,17 @@ ul {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15), 0px -2px 0px 0px rgba(255, 255, 255, 0.15) inset;
     backdrop-filter: blur(2px);
 }
+
+.card-link {
+    display: block; /* 使整个块级元素可点击 */
+    text-decoration: none; /* 去掉默认的下划线 */
+    color: inherit; /* 继承父元素的文本颜色 */
+}
+
+.card-link:hover {
+    opacity: 0.8; /* 鼠标悬停时稍微透明 */
+}
+
 
 .projects-card img {
     width: 100%;
@@ -308,6 +319,7 @@ ul {
     /* card-styles */
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%);
     backdrop-filter: blur(2px);
+    border: 1px,solid,#ffffff1e;
 }
 
 #o1 {
@@ -341,4 +353,54 @@ ul {
     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
+}
+
+
+
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 1200px;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.article-item {
+    border-radius: 16px;
+    border: 1px solid  rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.article-item img {
+    width: 150px; /* 设置图片宽度 */
+    height: auto;
+    display: block;
+}
+
+.article-content {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.article-content h2 {
+    color: #FFF;
+    margin: 0 0 10px;
+    font-size: 1.2em;
+}
+
+.article-summary {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8em;
+    margin: 0 0 10px;
+}
+
+.article-date {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.5em;
+    margin: 0;
 }
