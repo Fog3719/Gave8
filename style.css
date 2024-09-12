@@ -2,9 +2,15 @@
     font-family: "Knewave";
     src: url(resourses/fornts/Knewave-Regular.ttf)format('truetype');
 }
+html{
+    font-size: 16px;
+}
+
 body {
     margin: 0;
     /*overflow: hidden;  防止滚动条 */
+    font-family: "Satoshi", "Satoshi Placeholder", sans-serif;
+    font-weight: 400;
 }
 
 ul {
@@ -61,12 +67,14 @@ ul {
     justify-content: center;
     align-items: center;
     gap: var(--grid-grid-2x, 8px);
+
 }
 
 #logoimg {
     width: 40px;
     height: 40px;
     background: url(resourses/logo.png) lightgray 50% / cover no-repeat;
+    border-radius: 50%;
 }
 
 .menu {
@@ -81,7 +89,7 @@ ul {
     color: #FFF;
     /* en/Pane Header/regular */
     font-family: "Noto Sans";
-    font-size: 20px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -149,8 +157,7 @@ ul {
 .self-introduction{
     align-self: stretch;
     color: rgba(255, 255, 255, 0.60);
-    font-family: "Noto Sans";
-    font-size: 18px;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal; 
@@ -261,6 +268,8 @@ ul {
     font-size: 1.5rem;
     line-height: 2rem;
     color: rgba(255, 255, 255, 0.43);
+    width: 1200px;
+    text-align: center;
 }
 .skills-content{
     display: flex;
@@ -419,4 +428,19 @@ ul {
     color: rgba(255, 255, 255, 0.4);
     font-size: 0.5em;
     margin: 0;
+}
+
+
+
+footer{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #686868;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 2rem;
+    margin-bottom: 48px;
+    flex-direction: column;
 }
