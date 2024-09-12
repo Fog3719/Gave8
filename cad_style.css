@@ -17,6 +17,7 @@
 html, body {
     height: 100%;
     overflow: hidden; /* 隐藏默认滚动条 */
+    background-color: #000;
 }
 
 .bar{
@@ -409,6 +410,62 @@ h2 {
 }
 
 .p5-user-a-1 h3{
+    margin-top: 80px;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 300;
+}
+
+.p6-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+}
+
+.p6-head{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.p6-head p{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.p6-content{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-grow: 1;
+    justify-content:center;
+    width: 100%;
+    align-items: center;
+}
+
+
+.p6-content-card{
+    background-color: var(--card-background-color);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 2.5rem;
+    border-radius: var(--border-rider);
+    align-items: center;
+    width: 440px;
+}
+
+.p6-content-card p{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: lighter;
+}
+
+.p6-content-card h3{
     margin-top: 80px;
     font-size: 3rem;
     line-height: 4rem;
