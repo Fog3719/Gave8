@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function displayScrollElement(element) {
+        const index = Array.from(scrollElements).indexOf(element);
+        element.style.transitionDelay = `${index * 0.1}s`; // 每个元素增加 0.2 秒的延迟
         element.classList.add('active');
     }
 
