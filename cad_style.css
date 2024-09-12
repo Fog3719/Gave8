@@ -6,6 +6,7 @@
     --border-rider: 8px;
     --tag-color: rgba(35, 35, 35, 1);
     --default-bg-color: rgba(27, 26, 26, 0.959);
+    --text-p-size; 16px;
   }
 * {
     margin: 0;
@@ -13,7 +14,9 @@
     box-sizing: border-box;
 }
 
-
+p {
+    font-size: 1rem;
+}
 
 html, body {
     height: 100%;
@@ -21,23 +24,23 @@ html, body {
     background-color: var(--default-bg-color);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";  
     font-variant-numeric: tabular-nums;  
+    font-size: 16px;
 }
 
 .bar{
     width: 120px;
     height: 8px;
-    background-color: rgb(7, 236, 236);
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
     position: relative;
     z-index: 2;
     margin: 16px,16px;
-    box-shadow: 0px 3px 1.3px 0px rgba(7, 236, 236, 0.8);
 }
 
 
 .scroll-animation {
     opacity: 0;
     transform: translateY(-50px);
-    transition: opacity 0.8s ease, transform 0.5s ease;
+    transition: opacity 0.3s ease, transform 0.5s ease;
 }
 
 .scroll-animation.active {
@@ -108,10 +111,12 @@ html, body {
     pointer-events: none; /* 确保覆盖层不会影响鼠标事件 */
     backdrop-filter: blur(5px); /* 增加模糊效果 */
 }
-h1{
+h1 {
     font-size: 8rem;
+    background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
 
 
 
@@ -143,6 +148,7 @@ h2 {
     z-index: 2;
     line-height: 9rem;
     font-weight: normal;
+    
 
 }
 
@@ -470,4 +476,82 @@ h5 {
     font-size: 3rem;
     line-height: 4rem;
     font-weight: 300;
+}
+
+#p7{
+    background-color: #797572;
+    background-image: 
+        linear-gradient(-173deg, rgba(255,255,255,0.20) 0%, #000000 100%),
+        linear-gradient(72deg, rgba(255,255,255,0.25) 25%, rgba(0,0,0,0.25) 100%),
+        radial-gradient(47% 102%, rgba(255,255,255,0.50) 0%, rgba(21,24,32,0.60) 120%);
+    background-blend-mode: multiply;
+}
+
+.p7-body{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+}
+
+.p7-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns, each taking equal width */
+    gap: 2rem; /* Optional: adds some space between items */
+}
+
+.p7-Prototype{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--card-background-color);
+    border-radius: var(--border-rider);
+    align-items: center;
+    
+
+}
+
+.p7-Prototype .card-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.p7-Prototype .card-image {
+    transition: opacity 0.3s ease;
+}
+
+.p7-Prototype .card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1); /* Optional: Add a background color */
+}
+
+.p7-Prototype .intro-text {
+    display: none;
+}
+
+.p7-Prototype:hover .card-image {
+    opacity: 0;
+}
+
+.p7-Prototype:hover .card-text {
+    opacity: 1;
+}
+
+.p7-Prototype:hover .intro-text {
+    display: block;
 }
