@@ -1,7 +1,8 @@
 @font-face {
     font-family: "Knewave";
-    src: url(resourses/fornts/Knewave-Regular.ttf)format('truetype');
+    src: url(/resourses/Knewave-Regular.ttf) format('truetype');
 }
+
 html{
     font-size: 16px;
 }
@@ -73,7 +74,7 @@ ul {
 #logoimg {
     width: 40px;
     height: 40px;
-    background: url(resourses/logo.png) lightgray 50% / cover no-repeat;
+    background: url(/resourses/logo.png) lightgray 50% / cover no-repeat;
     border-radius: 50%;
 }
 
@@ -144,7 +145,7 @@ ul {
     width: 201px;
     height: 201px;
     border-radius: 272px;
-    background: url(resourses/avatar.png) lightgray 50% / cover no-repeat; 
+    background: url(/resourses/avatar.png) lightgray 50% / cover no-repeat; 
 }
 .job-title{
     color: #FFF;
