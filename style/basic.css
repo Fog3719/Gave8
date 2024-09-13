@@ -115,3 +115,16 @@ p {
     margin: var(--gap-2) 0; /* 上下间距 */
 }
 
+.flex-16-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-16-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

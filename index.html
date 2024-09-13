@@ -7,176 +7,39 @@
     <!-- Add browser icon --> 
     <link rel="icon" href="resourses/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="style/style.css">  
+    <!-- <link rel="stylesheet" href="/style/basic.css"> -->
+     <link rel="stylesheet" href="style/tailwind-output.css" type="text/css">
+    <link rel="stylesheet" href="style/index-style.css">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
     <script type="module" src="script/dynamic-background.js" defer></script> 
 </head>
-<body>
+<body class="font-sans text-white">
     <div id="box"></div>
-    <nav id="navbar"> 
-        <div id="weblogo">
-            <div id="logoimg"></div>
-            <div id="webtitle">Midmonkey</div>
+    <header>
+        <nav class="flex flex-row bg-opacity-15 bg-white p-4 gap-2 items-center w-full">
+            <img src="resourses/logo.png" alt="" class="size-8 md:size-6 rounded-full">
+            <span>Midmonkey</span>
+            <div></div>
+        </nav>
+    </header>
+    <section class="flex flex-col items-center gap-4 md:flex-row md:p-8">
+        <q class="opacity-0 md:opacity-100 md:w-1/2 md:justify-items-start md:text-5xl p-4 text-cyan-400 ">Finishing is better than being perfect for great design.</q>
+        <div class="flex flex-col gap-4 items-center p-4 md:w-3/6 lg:w-2/5">
+            <img src="resourses/avatar.png" alt="" class="size-32">
+            <h1 class="text-5xl font-bold pl-8">About Me 👋</h1>
+            <p class="font-normal opacity-70 text-base text-center">Experienced product designer specializing in web and mobile applications. <br>
+                I create effective product documentation and prototypes, ensuring timely delivery. <br>
+                My skills in data analysis and user research help enhance features and improve user satisfaction. <br>
+                With strong communication and collaboration abilities, I drive teams toward shared goals while staying updated on design trends to foster innovation.</p>
         </div>
-        <ul class="menu">
-            <li class="meun-item"><a href="projects.html">Projects</a></li>
-            <li class="meun-item"><a href="projects.html">Insghtls</a></li>
-            <li class="meun-item"><a href="projects.html">Sharing</a></li>
-            <li class="meun-item"><a href="projects.html">Other</a></li>
-            <li class="meun-item"><a href="projects.html">About me</a></li>
-        </ul>
-    </nav>
-    <div id="banner">
-        <div>
-            <h1 id="banner-text">“Finishing is better than being perfect for great design.”</h1>
-        </div>
-        <div id="aboutme">
-            <div class="avatar"></div>
-            <div class="job-title">About Me 👋</div>
-            <div class="self-introduction">
-                Experienced product designer specializing in web and mobile applications. I create effective product documentation and prototypes, ensuring timely delivery. My skills in data analysis and user research help enhance features and improve user satisfaction. With strong communication and collaboration abilities, I drive teams toward shared goals while staying updated on design trends to foster innovation.
-            </div>
-        </div>
-    </div>
-   
-<section id="projects">
-    <h2 class="sub-title">Projects</h2>
-    <div class="projects-cards-list">
-        <article class="projects-card">
-            <a href="Schematic_Hierarchy_Design.html" class="card-link">
-                <img src="resourses/cad2.png" alt="Project 1">
-                <div class="card-content">
-                    <span class="project-name">Schematic Hierarchy Design</span>
-                    <span class="project-version">CAD2.0</span>
-                    <span class="project-date">2024-07</span>
-                </div>
-            </a>
-        </article>
-        
-        <article class="projects-card">
-            <a href="3D_Layout_Module_Design.html" class="card-link">
-                <img src="resourses/rpa.png" alt="Project 2">
-                <div class="card-content">
-                    <span class="project-name">3D Layout Module Design</span>
-                    <span class="project-version">CAD2.0</span>
-                    <span class="project-date">2024-07</span>
-                </div>
-            </a>
-        </article>
-        <article class="projects-card">
-            <a href="3D_Layout_Module_Design.html" class="card-link">
-                <img src="resourses/designsys.png" alt="Project 3">
-                <div class="card-content">
-                    <span class="project-name">2D Routing Module: Design Requirements for Trace Drawing</span>
-                    <span class="project-version">CAD2.0</span>
-                    <span class="project-date">2024-07</span>
-                </div>
-            </a>
-        </article>
-        <article class="projects-card">
-            <a href="3D_Layout_Module_Design.html" class="card-link">
-                <img src="resourses/designsys.png" alt="Project 3">
-                <div class="card-content">
-                    <span class="project-name">2D Routing Module: Design Requirements for Trace Drawing</span>
-                    <span class="project-version">CAD2.0</span>
-                    <span class="project-date">2024-07</span>
-                </div>
-            </a>
-        </article>
-    </div>
-</section>
-
-<section class="skills">
-    <div class="skill-title">
-        <h2 class="sub-title">Skills</h2>
-    <p>Here are a bunch of design and productivity tools that help me design, stay organized and making my work smooth and collaborative.</p>
-    </div>
-    <div class="skills-content">
-        <div class="software-list">
-            <div class="software-list-item">
-                <img src="resourses/sf-logo/logos_figma.svg" alt="figma" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/devicon_sketch.svg" alt="sketch" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/simple-icons_rive.svg" alt="rive" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/logos_midjourney.svg" alt="logos_midjourney" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/logos_blender.svg" alt="rive" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/skill-icons_wordpress.svg" alt="rive" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-ai.svg" alt="rive" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-photoshop.svg" alt="rive" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-xd.svg" alt="vscode" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-ae.svg" alt="Lottie" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-Ob.svg" alt="Obsidian" srcset="">
-            </div>
-                
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-Ob.svg" alt="Framer" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-Ob.svg" alt="dify" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-Ob.svg" alt="chatGpt" srcset="">
-            </div>
-            <div class="software-list-item" >
-                <img src="resourses/sf-logo/vscode-icons_file-type-Ob.svg" alt="spline" srcset="">
-            </div>
-        </div>
-        <div class="ux-image">
-            <div class="o-style" id="o1"><span>user expenses-01</span></div>
-            <div class="o-style" id="o2"><span>user expenses-02</span></div>
-            <div class="o-style" id="o3"><span>user expenses-03</span></div>
-        </div>
-    </div>
-    
-</section>
-
-<section class="Insights">
-    <div class="skill-title">
-        <h2 class="sub-title">Insights</h2>
-        <p>My blogs cover a wide range of topics that give you knowledge on everything,
-        from Research, Visual Designs, Product Management, Design Systems and Interview Tips & Tricks.</p>
-    </div>
-    
-    <div class="article-list">
-        <div class="article-item">
-            <img src="image1.jpg" alt="文章图片1">
-            <div class="article-content">
-                <h2>文章标题1</h2>
-                <p class="article-summary">这是文章1的部分摘要内容...</p>
-                <p class="article-date">2023-10-01</p>
-            </div>
-        </div>
-        <div class="article-item">
-            <img src="image2.jpg" alt="文章图片2">
-            <div class="article-content">
-                <h2>文章标题2</h2>
-                <p class="article-summary">这是文章2的部分摘要内容...</p>
-                <p class="article-date">2023-10-02</p>
-            </div>
-        </div>
-</section>
-<footer >
+    </section>
+    <section class="flex-col"></section>
+    <section class="flex-col"></section>
+    <section class="flex-col"></section>
+    <section class="flex-col"></section>
+<footer class="flex flex-col gap-2 w-full flex-wrap mr-auto items-center opacity-45">
     <span>Design + Code by tangxinxu</span>
     <span>All Rights Reserved © 2024 .</span>
 </footer>
