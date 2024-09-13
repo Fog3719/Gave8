@@ -1,5 +1,5 @@
 
-import { AmbientLightBg } from "./jsm/AmbientLightBg.module.js"
+import { AmbientLightBg } from "../jsm/AmbientLightBg.module.js"
 
 let colorbg = new AmbientLightBg({
 	dom: "box",
