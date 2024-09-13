@@ -2,13 +2,26 @@
 :root {
     /* 字体 */
     --font-family: 'Arial', sans-serif;
-    --theme-factor: 0; 
+    --theme-factor: 1; /* 主题因子，1 为浅色，0 为深色 */
     --color-base: calc(255 * (1 - var(--theme-factor)));
     --text-primary: rgba(var(--color-base), var(--color-base), var(--color-base), 0.87);
     --text-secondary: rgba(var(--color-base), var(--color-base), var(--color-base), 0.65);
     --text-tertiary: rgba(var(--color-base), var(--color-base), var(--color-base), 0.45);
     --text-disabled: rgba(var(--color-base), var(--color-base), var(--color-base), 0.25);
     --text-on-color: #fff;
+
+    /* 中性色，根据主题因子进行调整 浅色主题下 中性色应该是从浅色到深色，深色主题下翻转。 */
+    --color-neutral-50: hsla(0, 0%, calc(13% + (87% * var(--theme-factor))), 1);
+    --color-neutral-100: hsla(0, 0%, calc(26% + (70% * var(--theme-factor))), 1);
+    --color-neutral-200: hsla(0, 0%, calc(38% + (55% * var(--theme-factor))), 1);
+    --color-neutral-300: hsla(0, 0%, calc(46% + (42% * var(--theme-factor))), 1);
+    --color-neutral-400: hsla(0, 0%, calc(62% + (12% * var(--theme-factor))), 1);
+    --color-neutral-500: hsla(0, 0%, calc(74% - (12% * var(--theme-factor))), 1);
+    --color-neutral-600: hsla(0, 0%, calc(88% - (42% * var(--theme-factor))), 1);
+    --color-neutral-700: hsla(0, 0%, calc(93% - (55% * var(--theme-factor))), 1);
+    --color-neutral-800: hsla(0, 0%, calc(96% - (70% * var(--theme-factor))), 1);
+    --color-neutral-900: hsla(0, 0%, calc(100% - (87% * var(--theme-factor))), 1);
+    --color-neutral-1000: hsla(0, 0%, calc(100% - (100% * var(--theme-factor))), 1);
     /* 主题色（以蓝色为例） */
     --color-primary-50: #E3F2FD;
     --color-primary-100: #BBDEFB;
@@ -58,11 +71,13 @@
     --gap-15: 3.75rem;
     --gap-16: 4rem;
 }
-
+html{
+    font-size: 16px;
+}
 
 /* 全局样式 */
 body {
-    background-color: var(--color-primary-700);
+    background-color: var(--color-neutral-50);
     color: var(--text-primary);
     font-family: var(--font-family); /* 使用统一的字体 */
     margin: 0;
