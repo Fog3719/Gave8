@@ -2,7 +2,13 @@
 :root {
     /* 字体 */
     --font-family: 'Arial', sans-serif;
-
+    --theme-factor: 0; 
+    --color-base: calc(255 * (1 - var(--theme-factor)));
+    --text-primary: rgba(var(--color-base), var(--color-base), var(--color-base), 0.87);
+    --text-secondary: rgba(var(--color-base), var(--color-base), var(--color-base), 0.65);
+    --text-tertiary: rgba(var(--color-base), var(--color-base), var(--color-base), 0.45);
+    --text-disabled: rgba(var(--color-base), var(--color-base), var(--color-base), 0.25);
+    --text-on-color: #fff;
     /* 主题色（以蓝色为例） */
     --color-primary-50: #E3F2FD;
     --color-primary-100: #BBDEFB;
@@ -53,63 +59,11 @@
     --gap-16: 4rem;
 }
 
-[data-theme="light"] {
-    /* 中性色 */
-    --color-neutral-50: #FFFFFF;
-    --color-neutral-100: #F5F5F5;
-    --color-neutral-200: #EEEEEE;
-    --color-neutral-300: #E0E0E0;
-    --color-neutral-400: #BDBDBD;
-    --color-neutral-500: #9E9E9E;
-    --color-neutral-600: #757575;
-    --color-neutral-700: #616161;
-    --color-neutral-800: #424242;
-    --color-neutral-900: #212121;
-    --color-neutral-1000: #000000;
-
-    /* 字体颜色 */
-    --text-color-50: #000000 ; /* 深色背景下的文本 */
-    --text-color-100: #212121; 
-    --text-color-200: #424242; 
-    --text-color-light-bg-300: #616161; 
-
-    --text-color-dark-bg-50: #FFFFFF; /* 浅色背景下的文本 */
-    --text-color-dark-bg-100: #E0E0E0; 
-    --text-color-dark-bg-200: #BDBDBD; 
-    --text-color-dark-bg-300: #9E9E9E; 
-}
-
-[data-theme="dark"] {
-    /* 中性色 */
-    --color-neutral-50: #212121;
-    --color-neutral-100: #424242;
-    --color-neutral-200: #616161;
-    --color-neutral-300: #757575;
-    --color-neutral-400: #9E9E9E;
-    --color-neutral-500: #BDBDBD;
-    --color-neutral-600: #E0E0E0;
-    --color-neutral-700: #EEEEEE;
-    --color-neutral-800: #F5F5F5;
-    --color-neutral-900: #FFFFFF;
-    --color-neutral-1000: #000000;
-
-    /* 字体颜色 */
-    --text-color-light-bg-50: #212121; /* 浅色背景下的文本 */
-    --text-color-light-bg-100: #424242; 
-    --text-color-light-bg-200: #616161; 
-    --text-color-light-bg-300: #757575; 
-
-    --text-color-dark-bg-50: #FFFFFF; /* 深色背景下的文本 */
-    --text-color-dark-bg-100: #F5F5F5; 
-    --text-color-dark-bg-200: #EEEEEE; 
-    --text-color-dark-bg-300: #E0E0E0; 
-}
-
 
 /* 全局样式 */
 body {
-    background-color: var(--color-neutral-50);
-    color: var(--text-color-dark-50);
+    background-color: var(--color-primary-700);
+    color: var(--text-primary);
     font-family: var(--font-family); /* 使用统一的字体 */
     margin: 0;
     padding: 0;
@@ -118,31 +72,31 @@ body {
 /* 基本元素的样式 */
 h1 {
     font-size: var(--font-size-6xl);
-    color: var(--text-color-dark-bg-50);
+    color: var(--text-primary);
     margin: var(--gap-4) 0; /* 上下间距 */
 }
 
 h2 {
     font-size: var(--font-size-5xl);
-    color: var(--text-color-dark-100);
+    color: var(--text-primary);
     margin: var(--gap-3) 0; /* 上下间距 */
 }
 
 h3 {
     font-size: var(--font-size-4xl);
-    color: var(--text-color-dark-200);
+    color: var(--text-primary);
     margin: var(--gap-2) 0; /* 上下间距 */
 }
 
 h4 {
     font-size: var(--font-size-3xl);
-    color: var(--text-color-dark-300);
+    color: var(--text-primary);
     margin: var(--gap-2) 0; /* 上下间距 */
 }
 
 p {
     font-size: var(--font-size-md);
-    color: var(--text-color-dark-50);
+    color: var(--text-primary);
     margin: var(--gap-2) 0; /* 上下间距 */
 }
 
