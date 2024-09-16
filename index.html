@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet">
     <script type="module" src="script/dynamic-background.js" defer></script> 
 </head>
-<body class="font-sans text-white ">
+<body class="font-sans text-white bg-black">
     <div id="box"></div>
     <header>
         <nav class="flex flex-row bg-opacity-15 bg-white p-4 gap-2 items-center w-full">
@@ -36,13 +36,13 @@
         </div>
         <hr>
     </section>
-    <section class="flex flex-col w-full gap-4 ">
+    <section class="flex flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10">
         <div class="flex items-center justify-center flex-col gap-4">
-            <h1 class="text-5xl font-bold pl-8 md:font-medium">My Work</h1>
+            <h1 class="text-5xl font-bold  md:font-medium">My Work</h1>
             <p class="font-normal opacity-70 text-base text-center">dadasdadsadadada</p>
             <span></span>
         </div>
-        <div class="flex flex-col m-4 gap-4 items-center lg:grid lg:grid-cols-4 lg:grid-rows-3 lg:gap-6 lg:mx-auto lg:max-w-custom-1200 ">
+        <div class="flex flex-col m-4 gap-4 items-center lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:gap-6  ">
             <div class="card scroll-animation">
                 <span class="tag">UX design</span>
                 <img src="/resourses/cad2.png" alt=""  class="object-cover object-center  rounded-lg w-full h-42" loading="lazy">
@@ -54,7 +54,7 @@
             </div>
             <div class="card scroll-animation">
                 <span class="tag">UX design</span>
-                <img src="/resourses/cad2.png" alt=""  class="object-cover object-center  rounded-lg w-full h-42" loading="lazy">
+                <img src="https://photo.237484.xyz/2024/midmonkey_technology_cube.png" alt=""  class="object-cover object-center  rounded-lg w-full h-42" loading="lazy">
                 <h2 class="text-xl">CAD 2.0 - Chipuller Integration Platform (CiP)</h2>
                 <p class="text-sm text-white text-opacity-50 overflow-clip">提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设 计流程，提高效率。 </p>
                 <button class="readmore"> Read More</button>
@@ -100,33 +100,198 @@
                 <h2 class="text-xl">CAD 2.0 - Chipuller Integration Platform (CiP)</h2>
                 <p class="text-sm text-white text-opacity-50 overflow-clip">提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设 计流程，提高效率。 </p>
                 <button class="readmore"> Read More</button>
-            </div>
-            <div class="grid-flow-row-dense">
-                <button> view more</button>
             </div>
         </div>
+        <button class="bg-blue-700 text-white p-4 text-lg rounded-lg  w-1/2 lg:w-60 hover:bg-blue-400"> View More </button>
     </section>
-
-
+<!-- 工作软件和技能展示 -->
     <section class="flex-col flex mt-4">
         <div class="flex items-center justify-center flex-col gap-4">
-            <h1 class="text-5xl font-bold pl-8 md:font-medium">My Skills</h1>
-            <p class="font-normal opacity-70 text-base text-center">dadasdadsadadada</p>
+            <h1 class="text-5xl font-bold  md:font-medium">My Skills</h1>
+            <p class="font-normal opacity-70 text-base text-center">Here are a bunch of design and productivity tools that help me design, stay organized and making my work smooth and collaborative.</p>
             <span></span>
         </div>
-        <div class="flex flex-col">
+        <div class="grid grid-cols-2 grid-rows-4 gap-2 m-4 lg:grid lg:grid-cols-6 lg:grid-rows-2 lg:gap-6 lg:mx-auto lg:max-w-custom-1200">
             <div class="software-list-item" >
-                <img src="resourses/sf-logo/logos_blender.svg" alt="blender" srcset="" class="w-8 h-8">
+                <img src="resourses/sf-logo/logos_blender.svg" alt="blender" srcset="" class="sw-logo-resize ">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">Blender</h3>
+                    <p class="text-white text-opacity-50">3D modeling</p>
+                </div>
+            </div>
+            <div class="software-list-item" >
+                <img src="resourses/sf-logo/devicon_sketch.svg" alt="Sketch" srcset="" class="sw-logo-resize">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">Sketch</h3>
+                    <p class="text-white text-opacity-50">Design tool</p>
+                </div>
+            </div>
+            <div class="software-list-item" >
+                <img src="resourses/sf-logo/logos_figma.svg" alt="Figma" srcset="" class="sw-logo-resize">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">Figma</h3>
+                    <p class="text-white text-opacity-50">Design tool</p>
+                </div>
+            </div>
+            <div class="software-list-item" >
+                <img src="resourses/sf-logo/logos_midjourney.svg" alt="Midjourney" srcset="" class="sw-logo-resize">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">Midjourney</h3>
+                    <p class="text-white text-opacity-50">AI tool</p>
+                </div>
+            </div>
+            <div class="software-list-item" >
+                <img src="resourses/sf-logo/simple-icons_rive.svg" alt="Rive" srcset="" class="sw-logo-resize">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">Rive</h3>
+                    <p class="text-white text-opacity-50">Animation tool</p>
+                </div>
+            </div>
+            <div class="software-list-item" >
+                <img src="resourses/sf-logo/skill-icons_wordpress.svg" alt="Wordpress" srcset="" class="sw-logo-resize">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">Wordpress</h3>
+                    <p class="text-white text-opacity-50">Web design</p>
+                </div>
+            </div>
+            <div class="software-list-item" >
+                <img src="resourses/sf-logo/vscode-icons_file-type-ai.svg" alt="illustrator" srcset="" class="sw-logo-resize">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">illustrator</h3>
+                    <p class="text-white text-opacity-50">Float design</p>
+                </div>
+            </div>
+            <div class="software-list-item" >
+                <img src="resourses/sf-logo/vscode-icons_file-type-photoshop.svg" alt="photoshop" srcset="" class="sw-logo-resize">
+                <div class="flex flex-col lg:hidden">
+                    <h3 class="text-white">Photoshop</h3>
+                    <p class="text-white text-opacity-50">Float design</p>
+                </div>
+            </div>
+    </section>
+        <div class="flex items-center justify-center flex-col gap-4">
+            <h1 class="text-5xl font-bold pl-8 md:font-medium">Areas of Expertise</h1>
+            <p class="font-normal opacity-70 text-base text-center"></p>
+        </div> 
+    <section>
+
+    </section>
+<!-- 工作经历 -->
+    <section>
+        <!-- 对话框 -->
+        <div id="dialog1" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30  backdrop-filter backdrop-blur-sm hidden  ">
+            <div class="bg-black bg-opacity-70  p-6 rounded-lg shadow-lg lg:w-1/2 w-full mx-4">
+                <h2 class="text-xl font-bold mb-4">上海奇普乐芯片科技有限公司</h2>
+                <p class="mb-4 text-white text-opacity-70">上海奇普乐芯片科技有限公司 交互设计师 <br>
+                    内容: <br>
+                    1、担任UX用户体验设计师，负责EDA软件产品的整体交互/产品设计。 <br>2、负责产品的需求沟通调研、竞品研究、需求方案落地及评审。 <br>3、主导并设计多个关键产品模块，涵盖3D布局、2D布线、原理图和网表等。 <br>4、负责产品需求的设计和制定，确保设计解决方案符合技术和商业要求。<br> 5、主导并完成产品design system的建立与维护 <br>6、编写详尽的测试用例，覆盖不同场景和功能点。
+                    用户需求 <br>
+                    业绩: <br>
+                    1. 成功完成EDA产品的信息架构分析，并提出围绕3D封装布局的交互产品方案，获得团队与管理层的认可。 <br>2. 向公司专利技术部门提交4份技术交底书，并参与相关产品的技术讨论，推动技术创新。</p>
+                <button id="closeDialogButton" class="bg-blue-500 text-white px-4 py-2 rounded">关闭</button>
+            </div>
+        </div>
+        <div class="flex items-center justify-center flex-col gap-4">
+            <h1 class="text-5xl font-bold pl-8 md:font-medium">Work Expenses</h1>
+            <p class="font-normal opacity-70 text-base text-center"></p>
+        </div>
+        <div>
+            <div class=" flex flex-col gap-4 m-4 lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:mx-auto lg:max-w-custom-1200">
+                <div class="software-list-item lg:justify-between" >
+                    <img src="resourses/sf-logo/skill-icons_wordpress.svg" alt="Wordpress" srcset="" class="sw-logo-resize">
+                    <div class="flex flex-col">
+                        <h3 class="text-white">上海奇普乐芯片科技有限公司</h3>
+                        <p class="text-white text-opacity-50">2023-05——2024-07</p>
+                    </div>
+                    <button class="readmore" data-dialog="dialog1">view</button>
+                </div>
+                <div class="software-list-item" >
+                    <img src="resourses/sf-logo/skill-icons_wordpress.svg" alt="Wordpress" srcset="" class="sw-logo-resize">
+                    <div class="flex flex-col">
+                        <h3 class="text-white">Ewaresoft</h3>
+                        <p class="text-white text-opacity-50">2019-01——2023-03</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+<!-- 项目经历 -->
+   <section>
+        <div class="flex items-center justify-center flex-col gap-4">
+            <h1 class="text-5xl font-bold pl-8 md:font-medium">Projects Expenses</h1>
+            <p class="font-normal opacity-70 text-base text-center"></p>
+        </div>
+        <div>
+            <div class=" flex flex-col gap-4 m-4 lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:mx-auto lg:max-w-custom-1200">
+                <div class="software-list-item" >
+                    <img src="resourses/sf-logo/skill-icons_wordpress.svg" alt="Wordpress" srcset="" class="sw-logo-resize">
+                    <div class="flex flex-col">
+                        <h3 class="text-white">奇普乐</h3>
+                        <p class="text-white text-opacity-50">2023-05——2024-07</p>
+                    </div>
+                </div>
+                <div class="software-list-item" >
+                    <img src="resourses/sf-logo/skill-icons_wordpress.svg" alt="Wordpress" srcset="" class="sw-logo-resize">
+                    <div class="flex flex-col">
+                        <h3 class="text-white">Ewaresoft</h3>
+                        <p class="text-white text-opacity-50">2019-01——2023-03</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="flex-col"></section>
+
+<!-- 博客文章 -->
+    <section class="flex flex-col">
+        <div class="flex items-center justify-center flex-col gap-4">
+            <h1 class="text-5xl font-bold pl-8 md:font-medium">My Insights</h1>
+            <p class="font-normal opacity-70 text-base text-center">My blogs cover a wide range of topics that give you knowledge on everything,
+
+                from Research, Visual Designs, Product Management, Design Systems and Interview Tips & Tricks.</p>
+            <span></span>
+        </div>
+        <div class="flex flex-col gap-2 m-4 lg:grid lg:grid-cols-2 lg:grid-rows-4 lg:gap-6 lg:mx-auto lg:max-w-custom-1200">
+            <div class="card scroll-animation">
+                <span class="tag">Figma</span>
+                <img src="/resourses/cad2.png" alt=""  class="object-cover object-center  rounded-lg w-full h-42" loading="lazy">
+                <h2 class="text-xl">在 figma 中实现多语言UI设计稿一键切换</h2>
+                <p class="text-sm text-white text-opacity-50 overflow-clip h-full">可以将Google sheet中的数据按照命名规则自动同步填充到对应的文本图层中。在一些需要填充数据的场景中（例如表格、卡片），能大幅提升工作效率。 </p>
+                <div class="flex flex-row items-center  justify-between w-full">
+                    <span>2023-09-04 </span>
+                    <button class="readmore"> Read More</button>
+                </div>
+            </div>
+            <div class="card scroll-animation">
+                <span class="tag">AIGC</span>
+                <img src="https://photo.237484.xyz/2024/md_102313123.png" alt=""  class="object-cover object-center  rounded-lg w-full h-42" loading="lazy">
+                <h2 class="text-xl">Stable Diffusion 与 Midjourney</h2>
+                <p class="text-sm text-white text-opacity-50 overflow-clip block">首先，让我们来谈一下 Midjourney。总的来说，V5 版本的效果还是不错的。但是，我不是很喜欢在 Discord 上使用它。总感觉它就像一个玩具，用来做生产力工具还是有些麻烦。</p>
+                <div class="flex flex-row items-center  justify-between w-full">
+                    <span class="text-white text-opacity-25">2023-09-04 </span>
+                    <button class="readmore"> Read More</button>
+                </div>
+            </div>
+            <div class="card scroll-animation">
+                <span class="tag">AIGC</span>
+                <img src="https://photo.237484.xyz/2024/md_102313123.png" alt=""  class="object-cover object-center  rounded-lg w-full h-42" loading="lazy">
+                <h2 class="text-xl">超好用的 Midjourney 提示词</h2>
+                <p class="text-sm text-white text-opacity-50 overflow-clip block">首先，让我们来谈一下 Midjourney。总的来说，V5 版本的效果还是不错的。但是，我不是很喜欢在 Discord 上使用它。总感觉它就像一个玩具，用来做生产力工具还是有些麻烦。</p>
+                <div class="flex flex-row items-center  justify-between w-full">
+                    <span class="text-white text-opacity-25">2023-09-04 </span>
+                    <button class="readmore"> Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="flex-col"></section>
 <footer class="flex flex-col gap-2 w-full flex-wrap mr-auto items-center opacity-45">
     <span>Design + Code by tangxinxu & ChatGpt 🤖</span>
     <span>All Rights Reserved © 2024 .</span>
 </footer>
+
+<!--弹窗 -->
 <script src="script/random.js"></script>
 <script src="/script/scroll-animation.js"></script>
+<script src="/script/dialog.js"></script>
 </body>
 </html>
