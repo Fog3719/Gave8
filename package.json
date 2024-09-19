@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass style/styles.scss styles.css"
+    "index_css": "tailwindcss -i style/tailwind.css -o style/tailwind-output.css --watch",
+    "pug":"pug --watch web_componet/*.pug web_componet/*.html",
+    "test_css": "tailwindcss -i web_componet/style.css -o web_componet/style_output.css --watch",
+    "start": "npm run pug & npm run test_css"
+
   },
   "keywords": [],
   "author": "",
@@ -15,6 +19,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.45",
+    "pug": "^3.0.3",
     "tailwindcss": "^3.4.11"
   }
 }
