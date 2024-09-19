@@ -1,3 +1,10 @@
+mixin card(title, content)
+    .bg-white.rounded-lg.shadow-md.overflow-hidden.p-4
+        .card-header
+            h2.text-lg.font-bold.text-red-900= title
+            img.w-full(src="", alt="")
+        .card-body
+            p.text-gray-700= content
 doctype html
 html
   head
@@ -6,12 +13,11 @@ html
   body
     h1.text-3xl.font-bold.text-gray-900 Hello, Tailwind!
     p.text-gray-700 This is a simple example using Pug and Tailwind CSS.
-    mixin card(title, content)
-        .bg-white.rounded-lg.shadow-md.overflow-hidden.p-4
-            .card-header
-            h2.text-lg.font-bold.text-red-900= title
-            .card-body
-            p.text-gray-700= content
 
-+card('Card Title 1', 'This is the content for Card 1.')
-+card('Card Title 2', 'This is the content for Card 2.')
+
+
+
+    div.flex.justify-center.items-center.h-screen.gap-4.bg-gray-400
+        +card('Card Title 1', 'This is the content for Card 1.')
+        +card('Card Title 2', 'This is the content for Card 2.')
+
