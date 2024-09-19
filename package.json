@@ -4,10 +4,8 @@
   "main": "index.js",
   "scripts": {
     "index_css": "tailwindcss -i style/tailwind.css -o style/tailwind-output.css --watch",
-    "pug":"pug --watch web_componet/*.pug web_componet/*.html",
-    "test_css": "tailwindcss -i web_componet/style.css -o web_componet/style_output.css --watch",
-    "start": "npm run pug & npm run test_css"
-
+    "pug": "pug --watch pug/*.pug --out ./",
+    "start": "npm run pug & npm run index_css"
   },
   "keywords": [],
   "author": "",
