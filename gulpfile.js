@@ -4,24 +4,25 @@ const postcss = require('gulp-postcss');
 const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
 const shell = require('gulp-shell');
-const plumber = require('gulp-plumber');
-const log = require('fancy-log');
-const imagemin = require('gulp-imagemin');
+const fs = require('fs');
+const path = require('path');
+const through = require('through2');
 // 复制素材文件任务
 
+
 function copyAssets() {
-  return gulp.src('./src/assets/**/*') 
-    .pipe(plumber({
-      errorHandler: function(err) {
-        log.error(err);
-        this.emit('end');
+  return gulp.src('./src/assets/**/*')
+    .pipe(through.obj(function(file, enc, cb) {
+      if (file.isBuffer()) {
+        const targetPath = path.join('./public/assets', file.relative);
+        fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+        fs.writeFileSync(targetPath, file.contents);
+        console.log('Copied:', file.path, '->', targetPath);
       }
-    }))
-    .pipe(gulp.dest('./public/assets'))
-    .on('end', function() {
-      log('Assets copied successfully');
-    });
+      cb(null, file);
+    }));
 }
+
 // 清理任务
 function cleanTask() {
   return gulp.src('./public', {read: false, allowEmpty: true})
@@ -88,7 +89,7 @@ function watchFiles() {
 }
 
 // 构建任务
-const build = gulp.series(cleanTask, gulp.parallel(compilePug, compileCSS, copyJS,copyAssets));
+const build = gulp.series(cleanTask, gulp.parallel(compilePug, compileCSS, copyJS, copyAssets));
 
 // 默认任务
 exports.default = gulp.series(
