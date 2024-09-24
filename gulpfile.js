@@ -2,6 +2,20 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const postcss = require('gulp-postcss');
 const browserSync = require('browser-sync').create();
+const clean = require('gulp-clean');
+
+// 复制素材文件任务
+function copyAssets() {
+    return gulp.src('./src/assets/**/*')
+      .pipe(gulp.dest('./public/assets'));
+  }  
+
+// 清理任务
+function cleanTask() {
+  return gulp.src('./public', {read: false, allowEmpty: true})
+    .pipe(clean());
+}
+
 
 // Pug 编译任务
 function compilePug() {
@@ -43,11 +57,18 @@ function watchFiles() {
   gulp.watch('./src/templates/**/*.pug', gulp.series(compilePug, browserSyncReload));
   gulp.watch('./src/styles/**/*.css', gulp.series(compileCSS, browserSyncReload));
   gulp.watch('./src/scripts/**/*.js', gulp.series(copyJS, browserSyncReload));
+  gulp.watch('./src/assets/**/*', gulp.series(copyAssets, browserSyncReload));
 }
+
+// 构建任务
+const build = gulp.series(cleanTask, gulp.parallel(compilePug, compileCSS, copyJS,copyAssets));
 
 // 默认任务
 exports.default = gulp.series(
-  gulp.parallel(compilePug, compileCSS, copyJS),
+  build,
   browserSyncServe,
   watchFiles
 );
+
+// 导出构建任务
+exports.build = build;
