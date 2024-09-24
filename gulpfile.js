@@ -3,6 +3,7 @@ const pug = require('gulp-pug');
 const postcss = require('gulp-postcss');
 const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
+const shell = require('gulp-shell');
 
 // 复制素材文件任务
 function copyAssets() {
@@ -52,6 +53,21 @@ function browserSyncReload(cb) {
   cb();
 }
 
+
+// 推送到 gh-pages 分支的任务
+function deployToGitHub() {
+  return gulp.src('public', {read: false})
+    .pipe(shell([
+      'git init',
+      'git add -A',
+      'git commit -m "Deploy to GitHub Pages"',
+      'git push -f git@github.com:Fog3719/Gave8.git main:gh-pages'
+    ], {
+      cwd: './public'
+    }));
+}
+
+
 // 监听文件变化
 function watchFiles() {
   gulp.watch('./src/templates/**/*.pug', gulp.series(compilePug, browserSyncReload));
@@ -69,6 +85,10 @@ exports.default = gulp.series(
   browserSyncServe,
   watchFiles
 );
+
+
+// 导出部署任务
+exports.deploy = gulp.series(build, deployToGitHub);
 
 // 导出构建任务
 exports.build = build;
