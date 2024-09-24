@@ -1,0 +1,6 @@
+mixin software-list-item(imageSrc, altText, title, description)
+  .software-list-item.scroll-animation
+    img(src=imageSrc, alt=altText, srcset="", class="sw-logo-resize")
+    div(class="flex flex-col lg:hidden")
+      h3.text-white= title
+      p.text-white.text-opacity-50= description

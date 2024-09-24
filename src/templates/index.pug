@@ -1,4 +1,87 @@
 extends layout
 
+include mixins/card
+
+block head
+  script(type="module",src="/scripts/dynamic-background.js")
+  
+
 block content
-  h1.text-3xl.font-bold.text-center Welcome to My Static Site
+  div(id="box" class="hidden lg:block")
+  header
+    nav.flex.flex-row.bg-opacity-15.bg-white.p-4.gap-2.items-center.w-full
+      img(src="/assets/logo.png" alt="" class="size-8 md:size-6 rounded-full")
+      span Midmonkey
+      div
+  section(class="flex flex-col items-center gap-4 lg:flex-row lg:p-4")
+    q(class=" lg:block md:font-black md:w-1/2 md:justify-items-start lg:text-4xl p-4 text-cyan-400 hidden") Finishing is better than being perfect for great design.
+    div(class="flex flex-col gap-4 items-center p-4 lg:w-3/6 ")
+      img(src="/assets/avatar.png", alt="", srcset="" class="size-32")
+      h1(class="text-4xl lg:text-5xl font-bold lg:font-medium") About Me 👋
+      p(class="font-normal opacity-70 text-lg text-left lg:w-96") Experienced product designer specializing in web and mobile applications.
+        br
+        | I create effective product documentation and prototypes, ensuring timely delivery.
+        br
+        | My skills in data analysis and user research help enhance features and improve user satisfaction.
+        br
+        | With strong communication and collaboration abilities, I drive teams toward shared goals while staying updated on design trends to foster innovation.
+  section(class="flex flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10")
+    div(class="flex items-center justify-center flex-col gap-4")
+      h1(class="text-4xl lg:text-5xl font-bold  md:font-medium px-4") My Work
+      p(class="font-normal opacity-70 text-base text-center") balabalabalabala
+    div(class="flex flex-col m-4 gap-4 items-center lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:gap-6 ")
+      +card('UX design',
+        '/resourses/cad2.png',
+        'CAD 2.0 - Chipuller Integration Platform (CiP)',
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+      +card('UX design',
+        '/resourses/cad2.png',
+        'CAD 2.0 - Chipuller Integration Platform (CiP)',
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+      +card('UX design',
+        '/resourses/cad2.png',
+        'CAD 2.0 - Chipuller Integration Platform (CiP)',
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+      +card('UX design',
+        '/resourses/cad2.png',
+        'CAD 2.0 - Chipuller Integration Platform (CiP)',
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+      +card('UX design',
+        '/resourses/cad2.png',
+        'CAD 2.0 - Chipuller Integration Platform (CiP)',
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+      +card('UX design',
+        '/resourses/cad2.png',
+        'CAD 2.0 - Chipuller Integration Platform (CiP)',
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+      +card('UX design',
+        '/resourses/cad2.png',
+        'CAD 2.0 - Chipuller Integration Platform (CiP)',
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+      +card('UX design',
+        '/resourses/cad2.png', 
+        'CAD 2.0 - Chipuller Integration Platform (CiP)', 
+        '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+        ''
+      )
+  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+    div( class="flex items-center justify-center flex-col gap-4")
+      h1(class="text-4xl lg:text-5xl font-bold  md:font-medium") My Skills
+      p(class="font-normal opacity-70 text-base text-center px-4") Here are a bunch of design and productivity tools
+              that help me design, stay organized and making my work smooth and collaborative.
+    div(class="grid grid-cols-2 grid-rows-4 gap-2 m-4 lg:grid lg:grid-cols-6 lg:grid-rows-2 lg:gap-6 lg:mx-auto lg:max-w-custom-1200")
+    

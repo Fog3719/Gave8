@@ -4,13 +4,24 @@ const postcss = require('gulp-postcss');
 const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
 const shell = require('gulp-shell');
-
+const plumber = require('gulp-plumber');
+const log = require('fancy-log');
+const imagemin = require('gulp-imagemin');
 // 复制素材文件任务
-function copyAssets() {
-    return gulp.src('./src/assets/**/*')
-      .pipe(gulp.dest('./public/assets'));
-  }  
 
+function copyAssets() {
+  return gulp.src('./src/assets/**/*') 
+    .pipe(plumber({
+      errorHandler: function(err) {
+        log.error(err);
+        this.emit('end');
+      }
+    }))
+    .pipe(gulp.dest('./public/assets'))
+    .on('end', function() {
+      log('Assets copied successfully');
+    });
+}
 // 清理任务
 function cleanTask() {
   return gulp.src('./public', {read: false, allowEmpty: true})

@@ -1,0 +1,8 @@
+mixin card(tag, imageSrc, title, description, link)
+  .card.scroll-animation.text-white
+    span.tag= tag
+    img(src=imageSrc, alt="", class="object-cover object-center rounded-lg w-full h-42", loading="lazy")
+    h2.text-xl= title
+    p(class="text-sm text-white text-opacity-50 overflow-clip")= description
+    a(href=link)
+      button.readmore Read More
