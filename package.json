@@ -3,21 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "index_css": "tailwindcss -i style/tailwind.css -o style/tailwind-output.css --watch",
-    "pug": "pug --watch pug/*.pug --out ./",
-    "start": "npm run pug & npm run index_css"
+    "start": "gulp",
+    "build": "gulp compilePug && gulp compileCSS && gulp copyJS"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "sass": "^1.78.0"
-  },
-  "dependencies": {
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.45",
+    "browser-sync": "^3.0.3",
+    "del": "^7.1.0",
+    "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-pug": "^5.0.0",
+    "postcss": "^8.4.47",
     "pug": "^3.0.3",
-    "tailwindcss": "^3.4.11"
+    "sass": "^1.78.0",
+    "tailwindcss": "^3.4.13"
   }
 }
