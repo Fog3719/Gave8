@@ -11,7 +11,7 @@ const through = require('through2');
 
 
 function copyAssets() {
-  return gulp.src('./src/assets/**/*')
+  return gulp.src('./src/assets/**/*',{ encoding: false })
     .pipe(through.obj(function(file, enc, cb) {
       if (file.isBuffer()) {
         const targetPath = path.join('./public/assets', file.relative);
