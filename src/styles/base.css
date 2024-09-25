@@ -3,97 +3,61 @@
 @tailwind utilities;
 
 html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    @apply m-0 p-0 overflow-hidden;
 }
 
-.page {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    color: white;
+
+.page { 
+    @apply h-screen flex justify-center items-center text-5xl text-white;
 }
+
 .projectoverview {
-    @apply text-white flex-col flex gap-4
+    @apply text-white flex-col flex gap-4 
 }
 
-.projectoverview h2 {
-    @apply text-3xl font-bold;
+
+.page h2 {
+    @apply text-6xl font-bold;
 }
 
-.projectoverview p {
+.page p {
     @apply text-xl font-light
 }
+
+
 .p4-content {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    padding: 32px;
+    @apply flex flex-col gap-10 items-center w-full h-full justify-center p-8;
 }
 
-#p4.section{
-    background-color: black;
+#p4.section {
+    @apply bg-black;
 }
 
-.p4-head{
-    display: flex;
-    flex-direction: column;
-    align-self: start;
-    margin-left: 24px;
+.p4-head {
+    @apply flex flex-col self-start ml-6;
 }
-
 .p4-body {
-    display: flex;
-    flex-direction: row;
-    align-self: start;
-    gap: 32px;
-    padding-left: 32px;
-    padding-right: 32px;
-    flex-grow: 1;
-    width: 100%;
+    @apply flex flex-row self-start gap-8 px-8 flex-grow w-full;
 }
 
-
-.user-pain-points {
-    display: flex;
-    flex-direction: column;
-    align-self: start;
-    gap: 24px;
-    height: 100%;
-    flex-grow: 1;
+.user-pain-points { 
+    @apply flex flex-col self-start gap-6 h-full flex-grow;
 }
-
 .user-info {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
+    @apply bg-white bg-opacity-10 p-5 rounded-lg;
 }
 
 .profile {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 18px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: start;
+    @apply flex flex-col items-start text-white text-lg;
 }
-
 
 .profile img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
+    @apply rounded-full w-24 h-24 mr-5;
 }
 
+.profile img {
+    @apply rounded-full w-24 h-24 mr-5;
+}
 .eda-process {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
