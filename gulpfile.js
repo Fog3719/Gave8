@@ -39,11 +39,10 @@ function compilePug() {
 
 // CSS 编译任务
 function compileCSS() {
-  return gulp.src('./src/styles/tailwind.css')
+  return gulp.src(['./src/styles/tailwind.css', './src/styles/base.css'])
     .pipe(postcss())
     .pipe(gulp.dest('./public/styles'));
 }
-
 // JavaScript 复制任务
 function copyJS() {
   return gulp.src('./src/scripts/*.js')

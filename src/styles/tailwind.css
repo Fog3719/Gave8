@@ -64,3 +64,52 @@
 .Areas-list-item-p{
     @apply text-sm text-white text-opacity-75 font-light;
 }
+
+
+.home-button {
+  @apply fixed top-2.5 left-2.5 bg-gray-800 text-gray-300 no-underline z-50 p-2 gap-2 rounded-lg opacity-100 transition-opacity duration-300 ease-in-out shadow-inner shadow-white/10 shadow-black/25;
+}
+
+.home-button:hover {
+  @apply opacity-80;
+}
+
+.scrolldown {
+  @apply w-11/12 max-w-[50px] mb-8 z-50 fixed left-1/2 bottom-5;
+}
+
+#p2 {
+  @apply bg-no-repeat bg-cover bg-center bg-blend-darken relative;
+  background-image: url(https://photo.237484.xyz/bg_chips_02.png);
+}
+
+#p2::before {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 pointer-events-none;
+  backdrop-filter: blur(7px);
+}
+
+#p3 {
+  @apply bg-black bg-opacity-80 relative;
+}
+
+#p3.page {
+  @apply h-screen flex flex-col justify-center items-center relative;
+}
+
+
+
+
+.tag-list {
+  @apply flex flex-wrap w-1/2 items-center gap-2 mb-5 z-10 relative;
+}
+
+
+.tag-user {
+  @apply inline-block px-5 py-2.5 m-1.5 rounded-full text-white text-base shadow-md transition-transform duration-200 ease-in-out;
+  background: linear-gradient(135deg, #6a5acd, #8a2be2);
+}
+
+.tag-user:hover {
+  @apply transform scale-105;
+}

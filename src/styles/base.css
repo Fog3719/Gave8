@@ -1,0 +1,378 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+}
+.projectoverview {
+    @apply text-white flex-col flex gap-4
+}
+
+.projectoverview h2 {
+    @apply text-3xl font-bold;
+}
+
+.projectoverview p {
+    @apply text-xl font-light
+}
+.p4-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding: 32px;
+}
+
+#p4.section{
+    background-color: black;
+}
+
+.p4-head{
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    margin-left: 24px;
+}
+
+.p4-body {
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+    gap: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+
+.user-pain-points {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    gap: 24px;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.user-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: start;
+}
+
+
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.eda-process {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-content: flex-start;
+    align-items: start;
+    align-self: auto
+}
+
+
+.process-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.process-steps span {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color:var(--tag-color);
+    border-radius: 5px;
+    font-size: 16px;
+    position: relative;
+    padding-right: 20px; /* 调整间距 */
+}
+
+
+.process-steps span::after {
+    content: '→'; /* 箭头符号 */
+    position: absolute;
+    right: -17px; /* 调整箭头位置 */
+}
+
+.process-steps span:last-child::after {
+    content: ''; /* 最后一个 span 后面不需要箭头 */
+}
+
+
+.companies {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: stretch
+}
+.companies h2 {
+    font-size: 18px;
+    line-height: 24px;
+}
+.company-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.company {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.company img {
+    width: 100px;
+    height: auto;
+}
+
+.company p {
+    font-size: 2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+}
+
+#p5.section{
+    background-color: black;
+
+}
+
+
+.p5-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    justify-content: center
+}
+
+.p5-title{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.p5-title p{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+.p5-user-a {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-grow: 1;
+    justify-content:center;
+    width: 100%;
+
+}
+
+.p5-user-a-1{
+    background-color: var(--card-background-color);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 2.5rem;
+    border-radius: var(--border-rider);
+    align-items: center;
+    width: 440px;
+}
+
+.p5-user-a-1 p{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: lighter;
+   
+}
+
+.p5-user-a-1 h3{
+    margin-top: 80px;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 300;
+}
+
+.p6-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+}
+
+.p6-head{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.p6-head p{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.p6-content{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-grow: 1;
+    justify-content:center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.p6-content-card{
+    background-color: var(--card-background-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 16px;
+    gap: 3rem;
+    border-radius: var(--border-rider);
+    align-items: center;
+    width: 440px;
+}
+
+.p6-content-card p{
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: lighter;
+}
+
+.p6-content-card h3{
+    margin-top: 80px;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 300;
+}
+
+#p7{
+    background-color: #797572;
+    background-image: 
+        linear-gradient(-173deg, rgba(255,255,255,0.20) 0%, #000000 100%),
+        linear-gradient(72deg, rgba(255,255,255,0.25) 25%, rgba(0,0,0,0.25) 100%),
+        radial-gradient(47% 102%, rgba(255,255,255,0.50) 0%, rgba(21,24,32,0.60) 120%);
+    background-blend-mode: multiply;
+}
+
+.p7-body{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+}
+
+.p7-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns, each taking equal width */
+    gap: 2rem; /* Optional: adds some space between items */
+}
+
+.p7-Prototype{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--card-background-color);
+    border-radius: var(--border-rider);
+    align-items: center;
+    
+
+}
+
+.p7-Prototype .card-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.p7-Prototype .card-image {
+    transition: opacity 0.3s ease;
+}
+
+.p7-Prototype .card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1); /* Optional: Add a background color */
+}
+
+.p7-Prototype .intro-text {
+    display: none;
+}
+
+.p7-Prototype:hover .card-image {
+    opacity: 0;
+}
+
+.p7-Prototype:hover .card-text {
+    opacity: 1;
+}
+
+.p7-Prototype:hover .intro-text {
+    display: block;
+}
