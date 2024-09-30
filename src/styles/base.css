@@ -7,38 +7,6 @@ html, body {
 }
 
 
-.page { 
-    @apply h-screen flex justify-center items-center text-5xl text-white;
-}
-
-.projectoverview {
-    @apply text-white flex-col flex gap-4 
-}
-
-
-.page h2 {
-    @apply text-6xl font-bold;
-}
-
-.page p {
-    @apply text-xl font-light
-}
-
-
-.p4-content {
-    @apply flex flex-col gap-10 items-center w-full h-full justify-center p-8;
-}
-
-#p4.section {
-    @apply bg-black;
-}
-
-.p4-head {
-    @apply flex flex-col self-start ml-6;
-}
-.p4-body {
-    @apply flex flex-row self-start gap-8 px-8 flex-grow w-full;
-}
 
 .user-pain-points { 
     @apply flex flex-col self-start gap-6 h-full flex-grow;

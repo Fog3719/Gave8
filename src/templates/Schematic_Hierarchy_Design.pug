@@ -1,5 +1,7 @@
 
-html(lang="en" class="scroll-behavior: smooth")
+include mixins/h1_p.pug
+
+html(lang="en" class="scroll-behavior: smooth m-0 p-0 overflow-hidden" )
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -8,26 +10,26 @@ html(lang="en" class="scroll-behavior: smooth")
         | Schematic_Hierarchy_Design
     link(rel="shortcut icon", href="assets/favicon.ico", type="image/x-icon")
     link(rel="stylesheet", href="/styles/tailwind.css")
-    link(rel="stylesheet", href="/styles/base.css")
+    //- link(rel="stylesheet", href="/styles/base.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js")
 
-  body(class="bg-slate-900 text-white")
+  body(class="bg-slate-900 text-white m-0 p-0 overflow-hidden")
     a(href="index.html" class="home-button") Return
     div(class="scrolldown")
 
-    div(class="page" id="p1")
-        h1(style="position: relative; z-index: 1;" class="scroll-animation text-white") CAD 2.0
+    div(class="page flex justify-center items-center " id="p1")
+         +title_P('CAD 2.0') 
 
-    div(class="page" id="p2")
-        div(class="projectoverview")
-            h2(class="scroll-animation") Project Overview
-            p(class="scroll-animation")
-                | 背景：随着芯片设计复杂度的增加，传统设计工具面临效率瓶颈。Chiplet 技术提供了模块化设计的新思路。<br>
-                | 目标：开发一个集成原理图、网表、3D 布局和 2D 布线的 EDA 设计平台，提高芯片设计的效率和灵活性。
+    div(class="page flex justify-center items-center p-4 " id="p2")
+        +title_P(
+            'Project Overview', 
+            '背景：随着芯片设计复杂度的增加，传统设计工具面临效率瓶颈。Chiplet 技术提供了模块化设计的新思路。',
+            '目标：开发一个集成原理图、网表、3D 布局和 2D 布线的 EDA 设计平台，提高芯片设计的效率和灵活性。')
    
-    div(class="page" id="p3")
-        h2(class="scroll-animation") User Research
-        p(class="scroll-animation text-2xl font-light mt-12 mb-12") 通过访谈芯片设计工程师，我们了解他们在使用现有工具时的痛点。
+    div(class="page flex-col flex justify-center items-center ")
+        +title_P(
+            'User Research', 
+            '通过访谈芯片设计工程师，我们了解他们在使用现有工具时的痛点。')
         div(class="tag-list scroll-animation")
             div(class="tag-user") 设计工具的兼容性问题
             div(class="tag-user") 仿真速度慢，尤其是在大规模时
@@ -37,50 +39,36 @@ html(lang="en" class="scroll-behavior: smooth")
             div(class="tag-user") 信息共享不畅，不同工具之间的接口问题
             div(class="tag-user") 对 Chiplet 技术的接口标准化和热管理的挑战
 
-    
-    div(class="page" id="p4")
-        div(class="p4-content")
-            div(class="p4-head")
-                h2(class="scroll-animation") User Research
-                div(class="bar")
-            div(class="p4-body")
-                div(class="user-info")
-                    div(class="profile")
-                        img(src="profile.jpg" alt="Profile Picture")
-                        h3 张老师
-                        p 年龄：35岁
-                        p 性别：男
-                        p 职业：芯片设计工程师
-                        p 工作经验：5年
-                        p 教育背景：电子工程相关专业硕士学位
-                        p 行业：半导体和电子工程
-                        p 专长：数字电路设计与验证
-                        p 主要项目：消费电子芯片（如手机处理器）
-                        p 通信模块（如无线通信设备）
-                        p 低功耗设计（物联网设备）
-                div(class="user-pain-points")
-                    div(class="eda-process")
-                    h5 EDA Design Process
-                    div(class="process-steps")
-                        span 需求分析
-                        span 架构设计
-                        span RTL设计
-                        span 仿真验证
-                        span 合成与布局布线
-                        span 后仿真与验证
-                        span 交付制造团队
-                    div(class="companies")
-                        h5 相关公司
-                        div(class="company-logos")
-                            div(class="company")
-                            img(src="cadence-logo.png" alt="Cadence")
-                            p 界面友好，但速度慢
-                            div(class="company")
-                            img(src="synopsys-logo.png" alt="Synopsys")
-                            p 功能强大，稳定，但学习曲线陡峭
-                            div(class="company")
-                            img(src="mentor-logo.png" alt="Mentor")
-                            p 仿真效果好，但文档不够详细
+    div(class="page flex-col flex gap-2 items-start p-4" )
+        +title_P(
+            'User Persona', 
+            '深入访谈芯片设计工程师，了解他们使用现有工具时的挑战。',
+            '',
+            'flex-col flex gap-2 items-start')
+        div(class="flex gap-2 flex-row")
+            div(class="flex-col flex gap-2 w-3/10 bg-slate-800 border-slate-400 border border-solid h-full p-4 rounded-lg text-base font-light relative")
+                div(class="flex-col flex gap-2 border-solid border-slate-300 gap-2 border-b py-4" ) 
+                    //- 伪元素的分割线可能因为flex布局的问题而无法显示。请检查父容器的布局设置。
+                    h3 张老师
+                    p 年龄:35岁
+                    p 性别:男
+                    p 职业:芯片设计工程师
+                    p 工作经验:5年
+                    p 教育背景:电气工程或相关专业硕士学位
+                div(class="flex-col flex gap-2")
+                    p 行业:半导体和电子工程
+                    p 专长:数字电路设计与验证
+                    p 主要项目：
+                    p 消费电子芯片(如手机处理器）
+                    p 通信模块(如无线通信设备）
+                    p 低功耗设计(物联网设备)
+
+            div(class="flex-col flex gap-2 w-7/10")
+        
+        
+
+
+        
     
    
     script(src="/scripts/scroll.js") 
