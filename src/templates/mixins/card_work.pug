@@ -1,6 +1,8 @@
-mixin card_work(imageSrc, title, description, think)
-  .work_card.scroll-animation.text-white
-    img(src=imageSrc, alt="", class="sw-logo-resize", loading="lazy")
-    h2.text-xl= title
-    p(class="text-sm text-white text-opacity-50 overflow-clip")= description
-    p(class="text-sm text-white text-opacity-50 overflow-clip")= think
+mixin card_work(companylogo, title, description)
+  .work_card.scroll-animation.text-white.flex.flex-col
+    div(class="flex flex-row gap-4 items-center flex-grow")
+      img(src=companylogo, alt="", class="sw-logo-resize", loading="lazy")
+      div(class="flex flex-col")
+        h2.text-xl= title
+        p(class="text-sm text-white text-opacity-50 overflow-clip")= description
+    button(class="text-xs py-2 px-2 border h-9 border-white border-opacity-40 text-white text-opacity-50 rounded-md hover:bg-black hover:text-white transition-all duration-300 ease-in-out") view

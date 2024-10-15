@@ -12,11 +12,38 @@ block head
 
 block content
   div(id="box" class="hidden lg:block")
-  header
-    nav.flex.flex-row.bg-opacity-15.bg-white.p-4.gap-2.items-center.w-full
-      img(src="/assets/logo.png" alt="" class="size-8 md:size-6 rounded-full")
-      span(class="font-knewave") Midmonkey
-      div
+  header(class="sticky top-0 z-20 backdrop-blur-sm")
+    nav(class="flex flex-col lg:flex-row bg-opacity-15 bg-white p-4 gap-2 items-center w-full justify-between")
+      div(class="flex flex-row items-center gap-2")
+        img(src="/assets/logo.png" alt="" class="size-8 md:size-6 rounded-full")
+        span(class="font-knewave") Midmonkey
+      button(id="menu-toggle" class="lg:hidden")
+        svg(xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor")
+          path(stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16")
+      div(id="side-panel" class="fixed top-0 right-0 h-full w-64 bg-black shadow-lg transform transition-transform duration-300 ease-in-out  hidden block  z-60")
+        ul(class="flex flex-col gap-4 ")
+          li
+            a(href="#my-work" data-offset="100")  My Work
+          li
+            a(href="#my-skills" data-offset="100") My Skills
+          li
+            a(href="#expertise" data-offset="100") Areas of Expertise
+          li
+            a(href="#expenses" data-offset="100") Work Expenses
+          li
+            a(href="#insights" data-offset="100") My Insights
+      ul(id="main-nav" class="lg:flex lg:flex-row lg:gap-4 hidden")
+        li
+          a(href="#my-work" data-offset="100")  My Work
+        li
+          a(href="#my-skills" data-offset="100") My Skills
+        li
+          a(href="#expertise" data-offset="100") Areas of Expertise
+        li
+          a(href="#expenses" data-offset="100") Work Expenses
+        li
+          a(href="#insights" data-offset="100") My Insights
+
   section(class="flex flex-col items-center gap-4 lg:flex-row lg:p-4")
     q(class=" lg:block md:font-black lg:w-3/5 md:justify-items-start lg:text-5xl p-4 text-cyan-300 hidden font-knewave") Finishing is better than being perfect for great design.
     div(class="flex flex-col gap-4 items-center p-4 lg:w-2/5 ")
@@ -29,7 +56,7 @@ block content
         | My skills in data analysis and user research help enhance features and improve user satisfaction.
         br
         | With strong communication and collaboration abilities, I drive teams toward shared goals while staying updated on design trends to foster innovation.
-  section(class="flex flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10")
+  section(id="my-work" class="flex flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1600 my-10")
     +title_P(
       'My Work', 
       'balabalabalabala')
@@ -82,7 +109,7 @@ block content
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
       )
-  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+  section(id="my-skills" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(
       'My Skills', 
       'Here are some tools that help me design, stay organized, and collaborate, making my work smoother.')
@@ -100,10 +127,10 @@ block content
       +software-list-item("/assets/icon/gpt.svg", "gpt", "GPT", "AI Assistant")
       +software-list-item("/assets/icon/pinterest.svg", "pinterest", "Pinterest", "Social Media")
 
-  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+  section(id="expertise" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(
       'Areas of Expertise','balabala')
-    div(class="grid grid-cols-3 grid-rows-2 gap-4 ")
+    div(class="lg:grid lg:grid-cols-3 lg:grid-rows-2 gap-4 flex flex-col m-4 ")
       +card_2(
       "/assets/icon/figma.svg",
       "User Research",
@@ -139,15 +166,34 @@ block content
       )
     
 
-  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+  section(id="expenses" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(
       'Work Expenses','balabala')
-    +card_work("")
+    div(class="lg:grid lg:grid-cols-2 lg:grid-rows-2 flex flex-col gap-4 m-4 ")
+      +card_work("/assets/icon/chipule.svg","Shanghai Chipuller Chip Technology Co., Ltd.","2023.05-2024.07")
+      +card_work("/assets/icon/chipule.svg","Shanghai Ewaresoft Co., Ltd.","2019.01-2023.03")
+      +card_work("/assets/icon/chipule.svg","Shanghai Zhanwan Co., Ltd.","2018.04-2019.01")
+      +card_work("/assets/icon/chipule.svg","Beijing Yiqihi Co., Ltd.","2016.02-2018.03")
     
 
-  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+  section(id="insights" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(
       'My Insights',"My blogs cover a wide range of topics that give you knowledge on everything,from Research, Visual Designs, Product Management, Design Systems and Interview Tips & Tricks.")
+    div(class="lg:grid-cols-3 lg:grid-rows-2 lg:grid  flex flex-col gap-4 m-4")
+      +card('UX design',
+        '/assets/image/cover_01.png',
+        '在 figma 中实现多语言UI设计稿一键切换',
+        '可以将Google sheet中的数据按照命名规则自动同步填充到对应的文本图层中。在一些需要填充数据的场景中（例如表格、卡片），能大幅提升工作效率。',
+        '',
+        '2023-09-04'
+      )
+      +card('UX design',
+        'https://photo.237484.xyz/2024/md_102313123.png',
+        'Stable Diffusion 与 Midjourney',
+        '首先，让我们来谈一下 Midjourney。总的来说，V5 版本的效果还是不错的。但是，我不是很喜欢在 Discord 上使用它。总感觉它就像一个玩具，用来做生产力工具还是有些麻烦。',
+        '',
+        '2023-07-16'
+      )
 
 
 

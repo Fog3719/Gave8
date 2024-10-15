@@ -10,7 +10,8 @@ module.exports = {
         'knewave': ['knewave', 'sans-serif']
       },
       maxWidth: {
-        'custom-1200': '1200px', // 定义自定义宽度
+        'custom-1200': '1200px', 
+        'custom-1600': '1600px',// 定义自定义宽度
       },
     },
   },
