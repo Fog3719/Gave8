@@ -1,0 +1,6 @@
+mixin card_work(imageSrc, title, description, think)
+  .work_card.scroll-animation.text-white
+    img(src=imageSrc, alt="", class="sw-logo-resize", loading="lazy")
+    h2.text-xl= title
+    p(class="text-sm text-white text-opacity-50 overflow-clip")= description
+    p(class="text-sm text-white text-opacity-50 overflow-clip")= think

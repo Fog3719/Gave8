@@ -3,6 +3,8 @@ extends layout
 include mixins/card
 include mixins/h1_p.pug
 include mixins/software_item.pug
+include mixins/card_2.pug
+include mixins/card_work.pug
 
 block head
   script(type="module",src="/scripts/dynamic-background.js")
@@ -16,8 +18,8 @@ block content
       span(class="font-knewave") Midmonkey
       div
   section(class="flex flex-col items-center gap-4 lg:flex-row lg:p-4")
-    q(class=" lg:block md:font-black md:w-1/2 md:justify-items-start lg:text-5xl p-4 text-cyan-300 hidden font-knewave") Finishing is better than being perfect for great design.
-    div(class="flex flex-col gap-4 items-center p-4 lg:w-3/6 ")
+    q(class=" lg:block md:font-black lg:w-3/5 md:justify-items-start lg:text-5xl p-4 text-cyan-300 hidden font-knewave") Finishing is better than being perfect for great design.
+    div(class="flex flex-col gap-4 items-center p-4 lg:w-2/5 ")
       img(src="/assets/avatar.png", alt="", srcset="" class="size-32")
       h1(class="text-4xl lg:text-5xl font-bold lg:font-medium text-white") About Me 👋
       p(class="font-normal opacity-70 text-lg text-left lg:w-96") Experienced product designer specializing in web and mobile applications.
@@ -101,10 +103,47 @@ block content
   section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(
       'Areas of Expertise','balabala')
+    div(class="grid grid-cols-3 grid-rows-2 gap-4 ")
+      +card_2(
+      "/assets/icon/figma.svg",
+      "User Research",
+      "Familiarity with qualitative and quantitative research methods, such as user interviews, surveys, and usability testing.",
+      "Ability to analyze user needs and behaviors to extract design insights.")
+      +card_2(
+      "/assets/icon/figma.svg",
+      "Information Architecture",
+      "Designing clear navigation structures to ensure logical organization and accessibility of information.",
+      "Ability to create site maps and user flow diagrams.")
+      +card_2(
+      "/assets/icon/figma.svg",
+      "Interaction Design(UI)",
+      "Understanding how users interact with products and designing intuitive interfaces.",
+      "Knowledge of design patterns and interaction principles.")
+      +card_2(
+      "/assets/icon/figma.svg",
+      "Prototyping",
+      "Ability to create low-fidelity and high-fidelity prototypes for rapid iteration and testing.",
+      "Familiarity with prototyping tools such as Figma and Axure."
+      )
+      +card_2(
+      "/assets/icon/figma.svg",
+      "Cross-Team Collaboration",
+      "Working closely with product managers, developers, and marketing teams to ensure design feasibility.",
+      "Strong communication skills to articulate design ideas and decisions clearly."
+      )
+      +card_2(
+      "/assets/icon/figma.svg",
+      "Design Thinking",
+      "WProblem-solving skills with a user-centered approach to innovative design.",
+      "Understanding the design thinking process, including empathizing, defining problems, ideating, prototyping, and testing."
+      )
+    
 
   section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(
       'Work Expenses','balabala')
+    +card_work("")
+    
 
   section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(

@@ -120,3 +120,8 @@
 .tag-user:hover {
   @apply transform scale-105;
 }
+
+.work_card{
+  @apply
+  flex flex-col justify-center gap-2
+}
