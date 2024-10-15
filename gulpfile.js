@@ -43,7 +43,8 @@ function compileCSS() {
     .pipe(postcss([
       tailwindcss()
     ]))
-    .pipe(gulp.dest('./public/styles'));
+    .pipe(gulp.dest('./public/styles'))
+    .pipe(browserSync.stream());  // 添加这一行
 }
 
 // JavaScript 复制任务

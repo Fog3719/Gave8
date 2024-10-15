@@ -5,7 +5,14 @@ module.exports = {
     
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'knewave': ['knewave', 'sans-serif']
+      },
+      maxWidth: {
+        'custom-1200': '1200px', // 定义自定义宽度
+      },
+    },
   },
   plugins: [],
 }

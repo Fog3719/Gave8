@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* tailwind.css */
+@font-face {
+  font-family: 'knewave';
+  src: url('/assets/fonts/Knewave-Regular.ttf') format('truetype'); /* 替换 "MyFont.ttf" 为你的字体文件 */
+}
+
+
+
 #box {
     position: fixed;
     top: 0;
@@ -100,7 +108,7 @@
 
 
 .tag-list {
-  @apply flex flex-wrap lg:w-1/2 items-center gap-2 mb-5 z-10 relative w-fit justify-content;
+  @apply flex flex-wrap lg:w-1/2 items-center gap-2 mb-5 z-10 relative w-fit ;
 }
 
 

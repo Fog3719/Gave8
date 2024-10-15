@@ -2,6 +2,7 @@ extends layout
 
 include mixins/card
 include mixins/h1_p.pug
+include mixins/software_item.pug
 
 block head
   script(type="module",src="/scripts/dynamic-background.js")
@@ -12,13 +13,13 @@ block content
   header
     nav.flex.flex-row.bg-opacity-15.bg-white.p-4.gap-2.items-center.w-full
       img(src="/assets/logo.png" alt="" class="size-8 md:size-6 rounded-full")
-      span Midmonkey
+      span(class="font-knewave") Midmonkey
       div
   section(class="flex flex-col items-center gap-4 lg:flex-row lg:p-4")
-    q(class=" lg:block md:font-black md:w-1/2 md:justify-items-start lg:text-4xl p-4 text-cyan-700 hidden") Finishing is better than being perfect for great design.
+    q(class=" lg:block md:font-black md:w-1/2 md:justify-items-start lg:text-5xl p-4 text-cyan-300 hidden font-knewave") Finishing is better than being perfect for great design.
     div(class="flex flex-col gap-4 items-center p-4 lg:w-3/6 ")
       img(src="/assets/avatar.png", alt="", srcset="" class="size-32")
-      h1(class="text-4xl lg:text-5xl font-bold lg:font-medium text-yellow-200") About Me 👋
+      h1(class="text-4xl lg:text-5xl font-bold lg:font-medium text-white") About Me 👋
       p(class="font-normal opacity-70 text-lg text-left lg:w-96") Experienced product designer specializing in web and mobile applications.
         br
         | I create effective product documentation and prototypes, ensuring timely delivery.
@@ -32,49 +33,49 @@ block content
       'balabalabalabala')
     div(class="flex flex-col m-4 gap-4 items-center lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:gap-6 ")
       +card('UX design',
-        '/resourses/cad2.png',
+        '/assets/image/cover_01.png',
         'CAD 2.0 - Chipuller Integration Platform (CiP)',
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         'Schematic_Hierarchy_Design.html'
       )
       +card('UX design',
-        '/resourses/cad2.png',
+        '/assets/image/cover_01.png',
         'CAD 2.0 - Schematic_Hierarchy_Design',
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
       )
       +card('UX design',
-        '/resourses/cad2.png',
+        '/assets/image/cover_01.png',
         'CAD 2.0 - Chipuller Integration Platform (CiP)',
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
       )
       +card('UX design',
-        '/resourses/cad2.png',
+        '/assets/image/cover_01.png',
         'CAD 2.0 - Chipuller Integration Platform (CiP)',
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
       )
       +card('UX design',
-        '/resourses/cad2.png',
+        '/assets/image/cover_01.png',
         'CAD 2.0 - Chipuller Integration Platform (CiP)',
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
       )
       +card('UX design',
-        '/resourses/cad2.png',
+        '/assets/image/cover_01.png',
         'CAD 2.0 - Chipuller Integration Platform (CiP)',
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
       )
       +card('UX design',
-        '/resourses/cad2.png',
+        '/assets/image/cover_01.png',
         'CAD 2.0 - Chipuller Integration Platform (CiP)',
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
       )
       +card('UX design',
-        '/resourses/cad2.png', 
+        '/assets/image/cover_01.png', 
         'CAD 2.0 - Chipuller Integration Platform (CiP)', 
         '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
         ''
@@ -82,6 +83,36 @@ block content
   section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(
       'My Skills', 
-      'Here are a bunch of design and productivity tools that help me design, stay organized and making my work smooth and collaborative.')
+      'Here are some tools that help me design, stay organized, and collaborate, making my work smoother.')
     div(class="grid grid-cols-2 grid-rows-4 gap-2 m-4 lg:grid lg:grid-cols-6 lg:grid-rows-2 lg:gap-6 lg:mx-auto lg:max-w-custom-1200")
+      +software-list-item("/assets/icon/figma.svg", "figma", "Figma", "UI Design")
+      +software-list-item("/assets/icon/ps.svg", "ps", "Photoshop", "Graphic Design")
+      +software-list-item("/assets/icon/rive.svg", "rive", "Rive", "Animation")
+      +software-list-item("/assets/icon/sketch.svg", "sketch", "Sketch", "UI Design")
+      +software-list-item("/assets/icon/wordpress.svg", "wordpress", "WordPress", "CMS")
+      +software-list-item("/assets/icon/midjourney.svg", "midjourney", "MidJourney", "AI Art")
+      +software-list-item("/assets/icon/blender.svg", "blender", "Blender", "3D Modeling")
+      +software-list-item("/assets/icon/vs.svg", "vs", "Visual Studio", "IDE")
+      +software-list-item("/assets/icon/ob.svg", "ob", "Obsidian", "Note-taking")
+      +software-list-item("/assets/icon/ai.svg", "ai", "Adobe Illustrator", "Vector Graphics")
+      +software-list-item("/assets/icon/gpt.svg", "gpt", "GPT", "AI Assistant")
+      +software-list-item("/assets/icon/pinterest.svg", "pinterest", "Pinterest", "Social Media")
+
+  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+    +title_P(
+      'Areas of Expertise','balabala')
+
+  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+    +title_P(
+      'Work Expenses','balabala')
+
+  section(class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
+    +title_P(
+      'My Insights',"My blogs cover a wide range of topics that give you knowledge on everything,from Research, Visual Designs, Product Management, Design Systems and Interview Tips & Tricks.")
+
+
+
+
+
+      
     
