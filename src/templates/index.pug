@@ -5,6 +5,7 @@ include mixins/h1_p.pug
 include mixins/software_item.pug
 include mixins/card_2.pug
 include mixins/card_work.pug
+include mixins/workdialog.pug
 
 block head
   script(type="module",src="/scripts/dynamic-background.js")
@@ -113,7 +114,7 @@ block content
     +title_P(
       'My Skills', 
       'Here are some tools that help me design, stay organized, and collaborate, making my work smoother.')
-    div(class="grid grid-cols-2 grid-rows-4 gap-2 m-4 lg:grid lg:grid-cols-6 lg:grid-rows-2 lg:gap-6 lg:mx-auto lg:max-w-custom-1200")
+    div(class="flex flex-col gap-2 m-4 lg:grid lg:grid-cols-6 lg:grid-rows-2 lg:gap-6 lg:mx-auto lg:max-w-custom-1200")
       +software-list-item("/assets/icon/figma.svg", "figma", "Figma", "UI Design")
       +software-list-item("/assets/icon/ps.svg", "ps", "Photoshop", "Graphic Design")
       +software-list-item("/assets/icon/rive.svg", "rive", "Rive", "Animation")
@@ -170,10 +171,11 @@ block content
     +title_P(
       'Work Expenses','balabala')
     div(class="lg:grid lg:grid-cols-2 lg:grid-rows-2 flex flex-col gap-4 m-4 ")
-      +card_work("/assets/icon/chipule.svg","Shanghai Chipuller Chip Technology Co., Ltd.","2023.05-2024.07")
-      +card_work("/assets/icon/chipule.svg","Shanghai Ewaresoft Co., Ltd.","2019.01-2023.03")
-      +card_work("/assets/icon/chipule.svg","Shanghai Zhanwan Co., Ltd.","2018.04-2019.01")
-      +card_work("/assets/icon/chipule.svg","Beijing Yiqihi Co., Ltd.","2016.02-2018.03")
+      +card_work("chipu","/assets/icon/chipule.svg","Shanghai Chipuller Chip Technology Co., Ltd.","2023.05-2024.07")
+      +card_work("ew","/assets/icon/chipule.svg","Shanghai Ewaresoft Co., Ltd.","2019.01-2023.03")
+      +card_work("zw","/assets/icon/chipule.svg","Shanghai Zhanwan Co., Ltd.","2018.04-2019.01")
+      +card_work("yqh","/assets/icon/chipule.svg","Beijing Yiqihi Co., Ltd.","2016.02-2018.03")
+    +dialog("", "")
     
 
   section(id="insights" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
