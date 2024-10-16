@@ -129,3 +129,23 @@ html {
   flex flex-row justify-between gap-2 items-center min-h-32
   bg-black bg-opacity-30 border border-white border-opacity-20 rounded-lg p-3 shadow-md
 }
+
+.step {
+  @apply p-3 font-mono text-base text-white text-opacity-75 font-normal bg-slate-700 rounded-md relative ;
+}
+
+.step:not(:last-child)::after {
+  @apply content-['\2192'] absolute -right-4 top-1/2 -translate-y-1/2 text-white text-opacity-75;
+}
+
+
+.needs{
+  @apply rounded-full w-80 h-80 flex flex-row items-center justify-center text-xl;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(103, 58, 183, 0.2) 100%);
+
+}
+
+.design-goals{
+  @apply  w-72 h-72 flex flex-row items-center justify-center text-xl;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(103, 58, 183, 0.2) 100%);
+}
