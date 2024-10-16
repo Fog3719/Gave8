@@ -1,6 +1,7 @@
 mixin card_2(imageSrc, title, description, think)
   .card.scroll-animation.text-white
-    img(src=imageSrc, alt="", class="sw-logo-resize", loading="lazy")
-    h2.text-xl= title
+    div(class="flex flex-row items-center gap-2")
+      img(src=imageSrc, alt="", class="w-8 h-auto", loading="lazy")
+      h2.text-xl= title
     p(class="text-sm text-white text-opacity-50 overflow-clip")= description
     p(class="text-sm text-white text-opacity-50 overflow-clip")= think
