@@ -17,7 +17,7 @@ html(lang="en" class="scroll-behavior: smooth m-0 p-0 overflow-hidden" )
     a(href="index.html" class="home-button") Return
     div(class="scrolldown")
 
-    div(class="page flex justify-center items-center " id="p1")
+    div(class="page flex justify-center items-center bg-cover " id="p1" )
          +title_P('CAD 2.0') 
 
     div(class="page flex justify-center items-center p-4 " id="p2")
@@ -120,18 +120,26 @@ html(lang="en" class="scroll-behavior: smooth m-0 p-0 overflow-hidden" )
                 "Interface Presentation",
                 ""
             )
-        div(class="carousel-container")
-            div(class="carousel-slide")
-                img(src="", alt="", srcset="")
-                img(src="", alt="", srcset="")
-                img(src="", alt="", srcset="")
-                img(src="", alt="", srcset="")
-            button(class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 cursor-pointer" id="prev-btn") lef1
-            
-
+        div(id="carousel-container" class="relative w-[1000px] overflow-hidden  my-auto")
+            div(id="carousel-slide" class="flex w-[500%] transition-transform duration-500 ease-in-out")
+                div(class="w-[1000px]")
+                    img(src="/assets/image/sc_02.png", alt="", srcset="" class="object-cover rounded-md")
+                    p(class="text-center mt-2") 3D 布局页面设计
+                div(class="w-[1000px]")
+                    img(src="/assets/image/sc_01.png", alt="", srcset="" class=" object-cover rounded-md")
+                    p(class="text-center mt-2") 器件库
+                div(class="w-[1000px]")
+                    img(src="/assets/image/sc_03.png", alt="", srcset="" class="w-[1000px] object-cover rounded-md")
+                    p(class="text-center mt-2") 2D 布线
+                div(class="w-[1000px]")
+                    img(src="/assets/image/sc_04.png", alt="", srcset="" class="w-[1000px] object-cover rounded-md")
+                    p(class="text-center mt-2") 3D 页面显示布线结果
+            button(class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 cursor-pointer" id="prev-btn") <
+            button(class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 cursor-pointer" id="next-btn") >
 
 
 
     script(src="/scripts/scroll.js") 
     script(src="/scripts/scrolldown.js") 
     script(src="/scripts/scroll_animation_v0.1.js")
+    script(src="/scripts/carousel.js") 

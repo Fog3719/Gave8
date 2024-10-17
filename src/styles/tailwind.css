@@ -151,9 +151,6 @@ html {
 }
 
 .carousel-container{
-  @apply relative w-[800px] mx-auto overflow-hidden ;
+  @apply relative w-[1200px] overflow-hidden mx-auto ;
 }
 
-.carousel-slide{
-  @apply flex w-[300%] transition-transform duration-500 ease-in-out ;
-}
