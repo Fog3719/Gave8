@@ -56,14 +56,16 @@ class SmoothScroll {
      * Add wheel event listener for mouse scroll
      */
     addWheelListener() {
-        window.addEventListener('wheel', (event) => {
+        const debouncedScroll = debounce((event) => {
             event.preventDefault();
             if (event.deltaY > 0) {
                 this.scrollToNextPage();
             } else {
                 this.scrollToPreviousPage();
             }
-        }, { passive: false });
+        }, 500); // Adjust the delay (500ms) as needed
+
+        window.addEventListener('wheel', debouncedScroll, { passive: false });
     }
 
     /**
@@ -87,6 +89,20 @@ class SmoothScroll {
     }
 }
 
+/**
+ * Debounce function to limit the rate at which a function can fire
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - The number of milliseconds to delay
+ * @returns {Function} - The debounced function
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
 
 // 自动初始化SmoothScroll
 document.addEventListener('DOMContentLoaded', () => {
