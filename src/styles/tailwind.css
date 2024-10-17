@@ -149,3 +149,11 @@ html {
   @apply  w-72 h-72 flex flex-row items-center justify-center text-xl;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(103, 58, 183, 0.2) 100%);
 }
+
+.carousel-container{
+  @apply relative w-[800px] mx-auto overflow-hidden ;
+}
+
+.carousel-slide{
+  @apply flex w-[300%] transition-transform duration-500 ease-in-out ;
+}
