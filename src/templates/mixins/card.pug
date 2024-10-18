@@ -1,9 +1,10 @@
 mixin card(tag, imageSrc, title, description, link,realesedate)
-  .card.scroll-animation.text-white
-    span.tag= tag
-    img(src=imageSrc, alt="", class="object-cover object-center rounded-lg w-full h-40 ", loading="lazy")
-    h2(class="text-xl min-h-14")= title
-    p(class="text-sm text-white text-opacity-50 overflow-clip")= description
+  div(class="card scroll-animation text-white")
+    div(class="flex flex-col gap-2")
+      span.tag= tag
+      img(src=imageSrc, alt="", class="object-cover object-center rounded-lg w-full h-40 ", loading="lazy")
+      h2(class="text-xl min-h-14")= title
+      p(class="text-sm text-white text-opacity-50 overflow-clip")= description
     div(class="flex flex-row justify-between items-center w-full")
       p(class="text-sm text-white text-opacity-50 overflow-clip block")= realesedate
       a(href=link)

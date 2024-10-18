@@ -26,7 +26,7 @@ html {
 .card {
     @apply
      bg-black bg-opacity-40 rounded-2xl shadow-lg p-4 transition-all duration-300 ease-in-out  border border-solid hover:shadow-xl hover:bg-opacity-80 hover:text-white
-     flex flex-col gap-4 justify-start items-start w-full h-full;
+     flex flex-col gap-4 justify-between items-start w-full h-full;
      border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -154,3 +154,16 @@ html {
   @apply relative w-[1200px] overflow-hidden mx-auto ;
 }
 
+.pseudo-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/image/sibrider.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(50%) contrast(150%) grayscale(20%);
+}

@@ -1,3 +1,31 @@
 extends layout
 
+include mixins/h1_p.pug
+
 block content
+    a(href="index.html" class="home-button") Return
+    header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
+        div(class="absolute inset-0 pseudo-element")
+        +title_P(
+                "Si bridge - 3D 布局",
+                "目前在3D布局中实现 Si bridge 时 需要嵌入到 对应的 Substrate 中，形成凹形布局。")   
+    
+    div(class="flex lg:flex-row flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+        a(href="index.html") home 
+        div(class="flex-col flex gap-4  flex-grow scroll-animation")
+            h2(class="text-3xl font-bold") 什么是Si bridge？
+            p(class="opacity-75") 想象一下一座桥，它连接着两岸，让车辆或行人可以从一岸到达另一岸。在芯片的世界里，Si bridge就相当于一座微小的“桥”，它连接着芯片内部的不同层，让电子信号能够在这些层之间自由流动。
+        img(src="/assets/image/Generated 3D Image.png", alt="", srcset="" class="w-[240px] lg:w-3/5 scroll-animation")
+    div(class="flex flex-row gap-4 lg:mx-auto lg:max-w-custom-1200 h-[400px]")
+        section(class="flex flex-col w-full gap-4 my-10 p-4 card  flex-grow")
+            div(class="flex-col flex gap-4 flex-grow scroll-animation")
+                h2(class="text-3xl font-bold") 需求描述
+                p 目前在 3D 布局中，在执行对应的操作时，下嵌的器件与Substrate只是简单的重叠在一起，移开后在基板上并没有实际产生凹槽。
+                p 同时在下嵌器件时，也并未在下方 Substrate 的布线设计中体现出来下嵌器件产生的阴影。
+            img(src="/assets/image/Frame 9.png", alt="", srcset="" class="w-[240px] lg:w-2/5 scroll-animation mt-6")
+        section(class="flex flex-col w-full gap-4 card my-10 p-4  flex-grow")
+            div(class="flex-col flex gap-4 flex-grow scroll-animation h-full")
+                h2(class="text-3xl font-bold") 设计目标
+                p 用户在 3D 布局中可以使用任意器件在 Substrate 的交集区域内很便捷的生成/恢复凹槽 Si bridge，生成的凹槽从而会影响到系统中各个模块。
+            img(src="/assets/image/Group 28.png", alt="", srcset="" class="w-[240px] lg:w-2/5 scroll-animation mt-6")
+
