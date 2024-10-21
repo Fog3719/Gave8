@@ -28,4 +28,32 @@ block content
                 h2(class="text-3xl font-bold") 设计目标
                 p 用户在 3D 布局中可以使用任意器件在 Substrate 的交集区域内很便捷的生成/恢复凹槽 Si bridge，生成的凹槽从而会影响到系统中各个模块。
             img(src="/assets/image/Group 28.png", alt="", srcset="" class="w-[240px] lg:w-2/5 scroll-animation mt-6")
+    div(class="flex flex-col gap-4 lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+        +title_P(
+            "问题与挑战",
+            "需求细节确认之后，面临的问题与挑战")
+        div(class="flex flex-col gap-4 ")
+            div(class="flex flex-col gap-4 flex-grow scroll-animation")
+                h2(class="text-3xl font-bold") 如何有效的控制下嵌深度？
+                p 在将Si Bridge下嵌到Substrate表面上时，需要考虑下嵌的深度。这个深度不仅影响Si Bridge的功能，还可能影响整个芯片的性能。因此，如何精确控制下嵌深度是一个关键问题。
+                div(class="flex flex-row items-center") 
+                    img(src="/assets/image/Generated 3D Image_si.png", alt="", srcset="" class="w-1/2")
+                    img(src="/assets/image/Screenshot_01.png", alt="", srcset="" class="w-1/2")
+            div(class="flex flex-col gap-4 flex-grow scroll-animation")
+                h2(class="text-3xl font-bold") 如何恢复凹槽？
+                p 用户可能需要恢复已经下嵌的Si Bridge，使其回到原来的位置。这需要一个有效的机制来识别和操作已经下嵌的Si Bridge，并确保恢复过程不会引入新的错误。
+                div(class="flex flex-row items-center") 
+                    img(src="/assets/image/waco01.png", alt="", srcset="" class="w-1/2")
+                    img(src="/assets/image/waco02.png", alt="", srcset="" class="w-1/2")
+    div(class="flex flex-col gap-4 lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+        +title_P("解决方法","针对主要的问题和挑战给出合理的设计方案。")
+        div(class="flex flex-col gap-4 ")
+            h3(class="text-2xl font-bold") 实时显示
+            p 在3D布局中，实时显示Si Bridge的下嵌深度，用户可以通过界面直观地看到当前的下嵌状态，从而进行精确的控制。
+            img(src="/assets/image/Group 15.png", alt="", srcset="")
+            h3(class="text-2xl font-bold") 分层自动吸附
+            p 在下嵌过程中，Si Bridge会自动吸附到Substrate的特定层，确保下嵌深度的精确控制。
+            img(src="/assets/image/Group 30.png", alt="", srcset="",class="h-full")
+
+
 
