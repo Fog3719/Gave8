@@ -167,3 +167,10 @@ html {
   background-repeat: no-repeat;
   filter: brightness(50%) contrast(150%) grayscale(20%);
 }
+
+.grid-bg {
+  height: 200px;
+  background-image: radial-gradient(circle, rgba(203, 213, 225, 0.402) 2px, rgba(203, 213, 225, 0.029) 2px);
+  background-size: 20px 20px;
+  background-position: center center;
+}

@@ -8,27 +8,26 @@ block content
         div(class="absolute inset-0 pseudo-element")
         +title_P(
                 "Si bridge - 3D 布局",
-                "目前在3D布局中实现 Si bridge 时 需要嵌入到 对应的 Substrate 中，形成凹形布局。")   
-        
+                "目前在3D布局中实现 Si bridge 时 需要嵌入到 对应的 Substrate 中，形成凹形布局。")        
     a(href="index.html") home 
-    div(class="flex lg:flex-row flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+    div(class="flex lg:flex-row flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10 p-4 ")
         div(class="flex-col flex gap-4  flex-grow scroll-animation")
             h2(class="text-3xl font-bold") 什么是Si bridge？
             p(class="opacity-75") 想象一下一座桥，它连接着两岸，让车辆或行人可以从一岸到达另一岸。在芯片的世界里，Si bridge就相当于一座微小的“桥”，它连接着芯片内部的不同层，让电子信号能够在这些层之间自由流动。
         img(src="/assets/image/Generated 3D Image.png", alt="", srcset="" class="w-[240px] lg:w-3/5 scroll-animation")
-    div(class="flex flex-row gap-4 lg:mx-auto lg:max-w-custom-1200 h-[400px]")
-        section(class="flex flex-col w-full gap-4 my-10 p-4 card  flex-grow")
+    div(class="flex flex-col lg:flex-row gap-4 m-4 lg:mx-auto lg:max-w-custom-1200 lg:h-[400px] h-full ")
+        section(class="flex flex-col w-full gap-4  p-4 card  flex-grow")
             div(class="flex-col flex gap-4 flex-grow scroll-animation")
                 h2(class="text-3xl font-bold") 需求描述
                 p 目前在 3D 布局中，在执行对应的操作时，下嵌的器件与Substrate只是简单的重叠在一起，移开后在基板上并没有实际产生凹槽。
                 p 同时在下嵌器件时，也并未在下方 Substrate 的布线设计中体现出来下嵌器件产生的阴影。
             img(src="/assets/image/Frame 9.png", alt="", srcset="" class="w-[240px] lg:w-2/5 scroll-animation mt-6")
-        section(class="flex flex-col w-full gap-4 card my-10 p-4  flex-grow")
+        section(class="flex flex-col w-full gap-4 card p-4  flex-grow")
             div(class="flex-col flex gap-4 flex-grow scroll-animation h-full")
                 h2(class="text-3xl font-bold") 设计目标
                 p 用户在 3D 布局中可以使用任意器件在 Substrate 的交集区域内很便捷的生成/恢复凹槽 Si bridge，生成的凹槽从而会影响到系统中各个模块。
             img(src="/assets/image/Group 28.png", alt="", srcset="" class="w-[240px] lg:w-2/5 scroll-animation mt-6")
-    div(class="flex flex-col gap-4 lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+    div(class="flex flex-col gap-4 lg:mx-auto lg:max-w-custom-1200  p-4 ")
         +title_P(
             "问题与挑战",
             "需求细节确认之后，面临的问题与挑战")
@@ -53,7 +52,36 @@ block content
             img(src="/assets/image/Group 15.png", alt="", srcset="")
             h3(class="text-2xl font-bold") 分层自动吸附
             p 在下嵌过程中，Si Bridge会自动吸附到Substrate的特定层，确保下嵌深度的精确控制。
-            img(src="/assets/image/Group 30.png", alt="", srcset="",class="h-full")
-
+            div(class="flex flex-row items-center justify-center")
+                img(src="/assets/image/Group 30.png", alt="", srcset="",class="w-[560px] ")
+            h3(class="text-2xl font-bold") 恢复机制
+            p 在下嵌完成后，用户可以通过界面选择恢复Si Bridge，系统会自动识别并操作，确保恢复过程的准确性。
+            div(class="flex flex-row items-center justify-center mt-4")
+                img(src="/assets/image/show-wacao.png", alt="", srcset="")
+      
+    div(class="flex flex-col gap-4 lg:mx-auto lg:max-w-custom-1200 my-10 p-4")  
+        +title_P("交互流程","")
+        div(class="flex flex-col gap-4 scroll-animation")
+            img(src="/assets/image/page-UI01.png", alt="", srcset="")
+            div(class="flex flex-col lg:flex-row gap-4 items-center")
+                div(class="flex flex-col gap-6")
+                    h3(class="text-2xl font-bold") Build Si bridge
+                    p 当器件下嵌时，需要用户手动向下移动器件至 Substrate 上表面的下方合适处，再点击 工具面板的下嵌挖空的操作，在对应的基板上产生一个移动后也不可恢复的凹槽。
+                    p 用户在操作器件下嵌或上嵌时，可根据可变器件叠层高度自动吸附。生成凹槽后，用户把 Si bridge 移走后，则会在 substrate 上留下一个不可恢复的凹槽。
+                img(src="/assets/image/ux-02_wacao.png", alt="", srcset="" class="w-2/3")
+        div(class="flex flex-col gap-4 scroll-animation")
+            div(class="flex flex-col gap-4 items-start")
+                h3(class="text-2xl font-bold") Rebuild Substrate
+                p 用户可以在 Substrate 的属性面板点击[恢复凹槽] ，面板跳转到 2 级面板，界面进入恢复凹槽模式，在恢复模式下，用户仅可见当前操作的器件，其他器件需要隐藏处理。
+                p 在二级面板中用户可以看到在当前器件的尺寸下，存在的凹槽列表。用户可以点击多选，确认是否恢复此凹槽。
+                p 当用户确认恢复凹槽后，点击确认返回之前的 3D 布局窗口状态，完成恢复凹槽操作。
+            div(class="flex flex-col lg:flex-row gap-4 items-center")
+                img(src="/assets/image/ux_waco.png", alt="", srcset="" class="lg:w-1/2 w-full")
+                img(src="/assets/image/recover_wa.png", alt="", srcset="" class="lg:w-1/2 w-full")
+    
+    div(class="flex flex-col gap-4 lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+        +title_P("总结","")
+        div(class="flex flex-col gap-4 scroll-animation")
+            p 通过以上交互流程的设计，我们确保了用户在操作器件下嵌和恢复凹槽时的便捷性和准确性。用户可以根据器件的叠层高度自动吸附，同时在恢复凹槽时能够清晰地看到可恢复的凹槽列表，从而做出明智的选择。
 
 
