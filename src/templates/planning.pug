@@ -1,0 +1,18 @@
+extends layout_1
+
+include mixins/h1_p.pug
+include mixins/card
+
+block content
+    a(href="index.html" class="home-button") Return
+    
+    header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
+        +title_P("Planning 5.5 UI Redesign","")
+        div(class="absolute inset-0 pseudo-element")
+    div(class="flex lg:flex-row flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10 p-4 ")
+        +title_P("项目背景",
+        "FONE 是国内 EPM|业财一体规划分析平台产品及服务提供商。能够实时聚合多个系统的业务数据。拥有强大计算能力和敏捷的业务规则配置，支持高达上亿业务数据，并具备预测算法和 AI 模型等创新技术，帮助企业加速业财一体化。在经过几个版本的迭代后，在5.5版本产品在页面UI上需要与产品能力的升级进行一个统一调整，力图给用户呈现出新版的产品变化。",
+        "",
+        "flex flex-col items-start justify-center")
+    div(class="gradient-border")
+
