@@ -2,6 +2,8 @@ extends layout_1
 
 include mixins/h1_p.pug
 include mixins/card
+include mixins/card_2.pug
+include mixins/card_image_H1+p.pug
 
 block content
     a(href="index.html" class="home-button") Return
@@ -9,10 +11,54 @@ block content
     header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
         +title_P("Planning 5.5 UI Redesign","")
         div(class="absolute inset-0 pseudo-element")
-    div(class="flex lg:flex-row flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10 p-4 ")
+    div(class="flex  flex-col w-full gap-4  items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4 ")
         +title_P("项目背景",
-        "FONE 是国内 EPM|业财一体规划分析平台产品及服务提供商。能够实时聚合多个系统的业务数据。拥有强大计算能力和敏捷的业务规则配置，支持高达上亿业务数据，并具备预测算法和 AI 模型等创新技术，帮助企业加速业财一体化。在经过几个版本的迭代后，在5.5版本产品在页面UI上需要与产品能力的升级进行一个统一调整，力图给用户呈现出新版的产品变化。",
+        "XXXX 是国内领先的 EPM 业财一体规划分析平台，经过几个版本的迭代，原有的UI系统渐渐过时，为了更好的产品发展，故在5.5 版本将对 UI 进行优化，以更好地展现产品能力的升级。",
+        "",
+        "flex flex-col items-start justify-center ")
+        div(class="flex flex-row items-center justify-center w-full  ")
+            img(src="/assets/image/planning/planning_cover.png", alt="", srcset="")
+        +title_P("设计目标",
+        "提升技术架构，提高开发效率，优化用户体验，确保产品一致性和灵活性。",
         "",
         "flex flex-col items-start justify-center")
-    div(class="gradient-border")
-
+        +title_P(
+            "重构方案","","",
+            "flex flex-col items-start justify-center"
+        )
+        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full")
+            +card_2(
+                "/assets/icon/ic-Prototyping.svg",
+                "建立Design System",
+                "统一各条业务线中的设计规范，建立一套覆盖全面的design system。",
+                ""
+                )
+            +card_2("/assets/icon/ic-Prototyping.svg","建立素材库","建立统一的素材库、根据现有的业务素材，调整视觉元素。","")
+            +card_2("/assets/icon/ic-Prototyping.svg","建立业务组件库","在基础组件之上，根据业务需求，抽象出符合公用的业务组件。","")
+        div(class="flex  flex-col gap-4 justify-center w-full")
+            +title_P(
+            "Design System ","","",
+            "flex flex-col items-start justify-center"
+        )
+    div(class="flex  flex-col w-full gap-4  items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4 " style="background-image: url('/assets/image/planning/09.png');")
+        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
+            +card_image_H1_p("/assets/image/planning/design-system01.png", "figma", "基础色板", "包含主要色、次要色、中性色、强调色，分别用于品牌主色调、辅助色、背景和文字、吸引注意力。")
+            +card_image_H1_p("/assets/image/planning/design-system02.png", "figma", "功能色板", "包含功能色、图表色，分别用于状态信息展示和图表标记。")
+            +card_image_H1_p("/assets/image/planning/design-system03.png", "figma", "风格样式", "包含、阴影、模糊等样式。")
+        div(class="flex  flex-col gap-4 justify-center w-full")
+            +title_P(
+                    "建立素材库 ","","",
+                    "flex flex-col items-start justify-center"
+                )
+        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
+             +card_image_H1_p("/assets/image/planning/iconimge01.png", "figma", "设定模板", "设定基础的icon绘制元素尺寸，比如线宽、圆角、样式等。")
+             +card_image_H1_p("/assets/image/planning/iconimge02.png", "figma", "修改现有素材", "在不影响用户理解的情况下，调整现有界面元素。")
+        div(class="flex  flex-col gap-4 justify-center w-full")
+                    +title_P(
+                            "建立业务组件库 ","","",
+                            "flex flex-col items-start justify-center"
+                        )
+        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
+             +card_image_H1_p("/assets/image/planning/image 16.png", "figma", "设定模板", "设定基础的icon绘制元素尺寸，比如线宽、圆角、样式等。")
+             +card_image_H1_p("/assets/image/planning/image 17.png", "figma", "修改现有素材", "在不影响用户理解的情况下，调整现有界面元素。")
+        
