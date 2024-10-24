@@ -1,7 +1,7 @@
-extends layout
+extends layout_1
 
 include mixins/h1_p.pug
-
+include mixins/card
 block content
     a(href="index.html" class="home-button") Return
     header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
@@ -9,7 +9,6 @@ block content
         +title_P(
                 "Si bridge - 3D 布局",
                 "目前在3D布局中实现 Si bridge 时 需要嵌入到 对应的 Substrate 中，形成凹形布局。")        
-    a(href="index.html") home 
     div(class="flex lg:flex-row flex-col w-full gap-4  items-center lg:mx-auto lg:max-w-custom-1200 my-10 p-4 ")
         div(class="flex-col flex gap-4  flex-grow scroll-animation")
             h2(class="text-3xl font-bold") 什么是Si bridge？
@@ -83,5 +82,23 @@ block content
         +title_P("总结","")
         div(class="flex flex-col gap-4 scroll-animation")
             p 通过以上交互流程的设计，我们确保了用户在操作器件下嵌和恢复凹槽时的便捷性和准确性。用户可以根据器件的叠层高度自动吸附，同时在恢复凹槽时能够清晰地看到可恢复的凹槽列表，从而做出明智的选择。
+    hr(class="lg:max-w-custom-1200 lg:mx-auto m-4 opacity-30")
+    div(class="flex flex-col gap-4 lg:mx-auto lg:max-w-custom-1200 ")
+        h3(class="text-2xl font-bold") 其他项目
+        div(class="flex flex-col lg:flex-row gap-4")
+            +card('CAD',
+                '/assets/image/cad.png',
+                'Chipuller Integration Platform (CiP)',
+                '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+                'Schematic_Hierarchy_Design.html',
+                '2024-07-01'
+            )
+            +card('CAD',
+                '/assets/image/cad.png',
+                'Chipuller Integration Platform (CiP)',
+                '提供从网表生成、原理图设计到3D布局和布线数据的chipuller一站式解决方案。芯片电路设计流程复杂，需要多个工具和平台。一个集成平台，简化整个设计流程，提高效率。',
+                'Schematic_Hierarchy_Design.html',
+                '2024-07-01'
+            )
 
 

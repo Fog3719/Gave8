@@ -78,7 +78,7 @@ html {
 
 
 .home-button {
-  @apply fixed top-2.5 left-2.5 bg-gray-800 text-gray-300 no-underline z-50 p-2 gap-2 rounded-lg opacity-100 transition-opacity duration-300 ease-in-out shadow-inner shadow-white/10 shadow-black/25;
+  @apply fixed top-2.5 left-2.5 bg-gray-800 text-gray-300 no-underline z-50 p-2 gap-2 rounded-lg opacity-100 transition-opacity duration-300 ease-in-out shadow-inner;
 }
 
 .home-button:hover {
@@ -169,8 +169,59 @@ html {
 }
 
 .grid-bg {
-  height: 200px;
-  background-image: radial-gradient(circle, rgba(203, 213, 225, 0.402) 2px, rgba(203, 213, 225, 0.029) 2px);
   background-size: 20px 20px;
   background-position: center center;
+  background-image: radial-gradient(circle, #969696 1px, #181818 1px);
+  /* -webkit-mask-image: linear-gradient(to bottom, transparent, #fff 95px calc(100% - 95px), transparent), linear-gradient(to right, transparent, #fff 95px calc(100% - 95px), transparent); */
+  /* mask-image: linear-gradient(to bottom, transparent, #fff 45px calc(100% - 45px), transparent), linear-gradient(to right, transparent, #fff 45px calc(100% - 45px), transparent); */
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in, xor;
+}
+
+@layer components {
+  .gradient-border-after {
+    @apply before:absolute before:content-[''] before:inset-0 before:border-2 before:border-neutral-600 before:rounded before:z-0;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      z-index: -1;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+      );
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      border-radius: 0.625rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      animation: moveGradient 4s alternate infinite;
+    }
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
 }
