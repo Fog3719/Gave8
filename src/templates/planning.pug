@@ -4,6 +4,7 @@ include mixins/h1_p.pug
 include mixins/card
 include mixins/card_2.pug
 include mixins/card_image_H1+p.pug
+include mixins/iconcomparison.pug
 
 block content
     a(href="index.html" class="home-button") Return
@@ -40,7 +41,7 @@ block content
             "Design System ","","",
             "flex flex-col items-start justify-center"
         )
-    div(class="flex  flex-col w-full gap-4  items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4 " style="background-image: url('/assets/image/planning/09.png');")
+    div(class="flex  flex-col w-full gap-4  items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4 " )
         div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
             +card_image_H1_p("/assets/image/planning/design-system01.png", "figma", "基础色板", "包含主要色、次要色、中性色、强调色，分别用于品牌主色调、辅助色、背景和文字、吸引注意力。")
             +card_image_H1_p("/assets/image/planning/design-system02.png", "figma", "功能色板", "包含功能色、图表色，分别用于状态信息展示和图表标记。")
@@ -50,15 +51,59 @@ block content
                     "建立素材库 ","","",
                     "flex flex-col items-start justify-center"
                 )
-        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
-             +card_image_H1_p("/assets/image/planning/iconimge01.png", "figma", "设定模板", "设定基础的icon绘制元素尺寸，比如线宽、圆角、样式等。")
-             +card_image_H1_p("/assets/image/planning/iconimge02.png", "figma", "修改现有素材", "在不影响用户理解的情况下，调整现有界面元素。")
+        
+        h3(class="text-xl font-bold") 设定基础的icon绘制元素规范
+        div(class="flex  flex-col gap-4 justify-center w-full h-full items-center")
+             div(id="carousel-container" class="relative w-[1168px] overflow-hidden items-center ")
+                div(id="carousel-slide" class="flex w-[900%] transition-transform duration-500 ease-in-out")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride01.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride02.png", alt="", srcset="" class=" object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride03.png", alt="", srcset="" class=" object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride04.png", alt="", srcset="" class=" object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride05.png", alt="", srcset="" class=" object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride06.png", alt="", srcset="" class=" object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride07.png", alt="", srcset="" class=" object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride08.png", alt="", srcset="" class=" object-cover rounded-md")
+                    div(class="w-[1168px]")
+                        img(src="/assets/image/planning/icon-gride09.png", alt="", srcset="" class=" object-cover rounded-md")
+                button(class="absolute top-1/2 left-2 rounded-md transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 cursor-pointer" id="prev-btn") <
+                button(class="absolute top-1/2 right-2 rounded-md transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 cursor-pointer" id="next-btn") >
+
+        h3(class="text-xl font-bold") 修改现有素材
+        //- img(src="/assets/image/planning/modification_icon.png", alt="", srcset="" class=" object-cover rounded-md")
+        div(class="grid lg:grid-cols-4 grid-cols-2  grid-rows-4 w-full justify-items-center gap-8 p-6 bg-zinc-900 rounded-2xl ")
+            +iconComparison('/assets/icon/planning/rename-fill.svg', '/assets/icon/planning/rename-line.svg')
+            +iconComparison('/assets/icon/planning/delete-fill.svg', '/assets/icon/planning/delete-line.svg')
+            +iconComparison('/assets/icon/planning/filiter-fill.svg', '/assets/icon/planning/filiter-line.svg')
+            +iconComparison('/assets/icon/planning/chart-fill.svg', '/assets/icon/planning/chart-line.svg')
+            +iconComparison('/assets/icon/planning/file-model-polychrome.svg', '/assets/icon/planning/file-model.svg')
+            +iconComparison('/assets/icon/planning/fixed-fill.svg', '/assets/icon/planning/fixed-line.svg')
+            +iconComparison('/assets/icon/planning/company-fill.svg', '/assets/icon/planning/company-line.svg')
+            +iconComparison('/assets/icon/planning/Database-fill.svg', '/assets/icon/planning/Database-line.svg')
+            +iconComparison('/assets/icon/planning/mysend-fill.svg', '/assets/icon/planning/mysend-line.svg')
+            +iconComparison('/assets/icon/planning/report-fill.svg', '/assets/icon/planning/report-line.svg')
+            +iconComparison('/assets/icon/planning/setting-fill.svg', '/assets/icon/planning/setting-line.svg')
+            +iconComparison('/assets/icon/planning/task-fill.svg', '/assets/icon/planning/task-line.svg')
+            +iconComparison('/assets/icon/planning/exchange-cycle-fill.svg', '/assets/icon/planning/exchange-cycle-line.svg')
+            +iconComparison('/assets/icon/planning/save-fill.svg', '/assets/icon/planning/save-line.svg')
+
         div(class="flex  flex-col gap-4 justify-center w-full")
-                    +title_P(
-                            "建立业务组件库 ","","",
+            +title_P(
+                            "建立业务组件库 ","业务组件库里主要是包含了3个产品线中共有的一些业务场景，按照业务类型可以分为6大类，模型、数据流、报表、页面表格、成员选择、可视化。","",
                             "flex flex-col items-start justify-center"
                         )
         div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
              +card_image_H1_p("/assets/image/planning/image 16.png", "figma", "设定模板", "设定基础的icon绘制元素尺寸，比如线宽、圆角、样式等。")
              +card_image_H1_p("/assets/image/planning/image 17.png", "figma", "修改现有素材", "在不影响用户理解的情况下，调整现有界面元素。")
         
+
+    script(src="node_modules/swiper/swiper-bundle.min.js")
+    script(src="/scripts/carousel.js") 
