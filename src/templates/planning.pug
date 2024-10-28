@@ -53,29 +53,31 @@ block content
                 )
         
         h3(class="text-xl font-bold") 设定基础的icon绘制元素规范
-        div(class="flex  flex-col gap-4 justify-center w-full h-full items-center")
-             div(id="carousel-container" class="relative w-[1168px] overflow-hidden items-center ")
-                div(id="carousel-slide" class="flex w-[900%] transition-transform duration-500 ease-in-out")
-                    div(class="w-[1168px]")
+        div(class="flex flex-col gap-4 justify-center w-full h-full items-center")
+             div(class="swiper mySwiper w-full")
+                div(class="swiper-wrapper")
+                    div(class="swiper-slide")
                         img(src="/assets/image/planning/icon-gride01.png", alt="", srcset="" class="object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride02.png", alt="", srcset="" class=" object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride03.png", alt="", srcset="" class=" object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride04.png", alt="", srcset="" class=" object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride05.png", alt="", srcset="" class=" object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride06.png", alt="", srcset="" class=" object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride07.png", alt="", srcset="" class=" object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride08.png", alt="", srcset="" class=" object-cover rounded-md")
-                    div(class="w-[1168px]")
-                        img(src="/assets/image/planning/icon-gride09.png", alt="", srcset="" class=" object-cover rounded-md")
-                button(class="absolute top-1/2 left-2 rounded-md transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 cursor-pointer" id="prev-btn") <
-                button(class="absolute top-1/2 right-2 rounded-md transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 cursor-pointer" id="next-btn") >
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride02.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride03.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride04.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride05.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride06.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride07.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride08.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride09.png", alt="", srcset="" class="object-cover rounded-md")
+                div(class="swiper-button-next !text-white")
+                div(class="swiper-button-prev !text-white")
+                div(class="swiper-pagination !bottom-0")
+
 
         h3(class="text-xl font-bold") 修改现有素材
         //- img(src="/assets/image/planning/modification_icon.png", alt="", srcset="" class=" object-cover rounded-md")
@@ -105,5 +107,5 @@ block content
              +card_image_H1_p("/assets/image/planning/image 17.png", "figma", "修改现有素材", "在不影响用户理解的情况下，调整现有界面元素。")
         
 
-    script(src="node_modules/swiper/swiper-bundle.min.js")
-    script(src="/scripts/carousel.js") 
+    
+    script(src="/scripts/swiper_01.js") 

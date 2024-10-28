@@ -53,6 +53,16 @@ function copyJS() {
     .pipe(gulp.dest('./public/scripts'));
 }
 
+// 复制 Swiper.js 任务
+function copySwiper() {
+  return gulp.src([
+    './node_modules/swiper/swiper-bundle.min.css', 
+    './node_modules/swiper/swiper-bundle.min.js' 
+  ])
+  .pipe(gulp.dest('./public/scripts'));
+}
+
+
 // 浏览器同步任务
 function browserSyncServe(cb) {
   browserSync.init({
@@ -90,7 +100,7 @@ function watchFiles() {
 }
 
 // 构建任务
-const build = gulp.series(cleanTask, gulp.parallel(compilePug, compileCSS, copyJS, copyAssets));
+const build = gulp.series(cleanTask, gulp.parallel(compilePug, compileCSS, copyJS, copyAssets, copySwiper));
 
 // 默认任务
 exports.default = gulp.series(
