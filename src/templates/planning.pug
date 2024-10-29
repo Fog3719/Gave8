@@ -11,7 +11,7 @@ block content
     
     header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
         +title_P("Planning 5.5 UI Redesign","")
-        div(class="absolute inset-0 pseudo-element")
+        div(class="absolute inset-0 pseudo-element" style="background-image: url('/assets/image/planning/planning_cover.png')")
     div(class="flex  flex-col w-full gap-4  items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4 ")
         +title_P("项目背景",
         "XXXX 是国内领先的 EPM 业财一体规划分析平台，经过几个版本的迭代，原有的UI系统渐渐过时，为了更好的产品发展，故在5.5 版本将对 UI 进行优化，以更好地展现产品能力的升级。",
@@ -82,20 +82,22 @@ block content
         h3(class="text-3xl font-bold my-4 scroll-animation") 修改现有素材
         //- img(src="/assets/image/planning/modification_icon.png", alt="", srcset="" class=" object-cover rounded-md")
         div(class="grid lg:grid-cols-4 grid-cols-2  grid-rows-4 w-full justify-items-center gap-8 p-6 bg-zinc-900 rounded-2xl scroll-animation")
-            +iconComparison('/assets/icon/planning/rename-fill.svg', '/assets/icon/planning/rename-line.svg')
-            +iconComparison('/assets/icon/planning/delete-fill.svg', '/assets/icon/planning/delete-line.svg')
-            +iconComparison('/assets/icon/planning/filiter-fill.svg', '/assets/icon/planning/filiter-line.svg')
-            +iconComparison('/assets/icon/planning/chart-fill.svg', '/assets/icon/planning/chart-line.svg')
-            +iconComparison('/assets/icon/planning/file-model-polychrome.svg', '/assets/icon/planning/file-model.svg')
-            +iconComparison('/assets/icon/planning/fixed-fill.svg', '/assets/icon/planning/fixed-line.svg')
-            +iconComparison('/assets/icon/planning/company-fill.svg', '/assets/icon/planning/company-line.svg')
-            +iconComparison('/assets/icon/planning/Database-fill.svg', '/assets/icon/planning/Database-line.svg')
-            +iconComparison('/assets/icon/planning/mysend-fill.svg', '/assets/icon/planning/mysend-line.svg')
-            +iconComparison('/assets/icon/planning/report-fill.svg', '/assets/icon/planning/report-line.svg')
-            +iconComparison('/assets/icon/planning/setting-fill.svg', '/assets/icon/planning/setting-line.svg')
-            +iconComparison('/assets/icon/planning/task-fill.svg', '/assets/icon/planning/task-line.svg')
-            +iconComparison('/assets/icon/planning/exchange-cycle-fill.svg', '/assets/icon/planning/exchange-cycle-line.svg')
-            +iconComparison('/assets/icon/planning/save-fill.svg', '/assets/icon/planning/save-line.svg')
+         
+            +iconComparison('rename-fill', 'rename-line')
+            +iconComparison('delete-fill', 'delete-line')
+            +iconComparison('filiter-fill', 'filiter-line')
+            +iconComparison('chart-fill', 'chart-line')
+            +iconComparison('file-model-polychrome', 'file-model')
+            +iconComparison('fixed-fill', 'fixed-line')
+            +iconComparison('company-fill', 'company-line')
+            +iconComparison('Database-fill', 'Database-line')
+            +iconComparison('mysend-fill', 'mysend-line')
+            +iconComparison('report-fill', 'report-line')
+            +iconComparison('setting-fill', 'setting-line')
+            +iconComparison('task-fill', 'task-line')
+            +iconComparison('exchange-cycle-fill', 'exchange-cycle-line')
+            +iconComparison('save-fill', 'save-line')
+
 
         div(class="flex  flex-col gap-4 justify-center w-full")
             +title_P(

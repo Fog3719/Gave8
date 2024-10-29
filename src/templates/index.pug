@@ -7,11 +7,14 @@ include mixins/card_2.pug
 include mixins/card_work.pug
 include mixins/workdialog.pug
 
+
 block head
   script(type="module",src="/scripts/dynamic-background.js")
-  
+  svg(style="display:none;")
+    include /assets/icon/sprite.svg
 
 block content
+
   div(id="box" class="hidden lg:block")
   header(class="sticky top-0 z-20 backdrop-blur-sm")
     nav(class="flex flex-col lg:flex-row bg-opacity-15 bg-white p-4 gap-2 items-center w-full justify-between")
@@ -89,18 +92,19 @@ block content
       'My Skills', 
       'Here are some tools that help me design, stay organized, and collaborate, making my work smoother.')
     div(class="flex flex-col gap-2 m-4 lg:grid lg:grid-cols-6 lg:grid-rows-2 lg:gap-6 lg:mx-auto lg:max-w-custom-1200")
-      +software-list-item("/assets/icon/figma.svg", "figma", "Figma", "UI Design")
-      +software-list-item("/assets/icon/ps.svg", "ps", "Photoshop", "Graphic Design")
-      +software-list-item("/assets/icon/rive.svg", "rive", "Rive", "Animation")
-      +software-list-item("/assets/icon/sketch.svg", "sketch", "Sketch", "UI Design")
-      +software-list-item("/assets/icon/wordpress.svg", "wordpress", "WordPress", "CMS")
-      +software-list-item("/assets/icon/midjourney.svg", "midjourney", "MidJourney", "AI Art")
-      +software-list-item("/assets/icon/blender.svg", "blender", "Blender", "3D Modeling")
-      +software-list-item("/assets/icon/vs.svg", "vs", "Visual Studio", "IDE")
-      +software-list-item("/assets/icon/ob.svg", "ob", "Obsidian", "Note-taking")
-      +software-list-item("/assets/icon/ai.svg", "ai", "Adobe Illustrator", "Vector Graphics")
-      +software-list-item("/assets/icon/gpt.svg", "gpt", "GPT", "AI Assistant")
-      +software-list-item("/assets/icon/pinterest.svg", "pinterest", "Pinterest", "Social Media")
+      +software-list-item('figma', 'figma', 'Figma', 'UI Design')
+      +software-list-item('ps', 'ps', 'Photoshop', 'Graphic Design')
+      +software-list-item('rive', 'rive', 'Rive', 'Animation')
+      +software-list-item('sketch', 'sketch', 'Sketch', 'UI Design')
+      +software-list-item('wordpress', 'wordpress', 'WordPress', 'CMS')
+      +software-list-item('midjourney', 'midjourney', 'MidJourney', 'AI Art')
+      +software-list-item('blender', 'blender', 'Blender', '3D Modeling')
+      +software-list-item('vs', 'vs', 'Visual Studio', 'IDE')
+      +software-list-item('ob', 'ob', 'Obsidian', 'Note-taking')
+      +software-list-item('ai', 'ai', 'Adobe Illustrator', 'Vector Graphics')
+      +software-list-item('gpt', 'gpt', 'GPT', 'AI Assistant')
+      +software-list-item('pinterest', 'pinterest', 'Pinterest', 'Social Media')
+
 
   section(id="expertise" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
     +title_P(

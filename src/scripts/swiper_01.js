@@ -47,8 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     grabCursor: true,
     
     // 提升性能
-    preloadImages: false,
-    lazy: true,
+    preloadImages: false, // 禁用预加载
+    lazy: {
+      loadOnTransitionStart: true, // 在过渡开始时加载
+      loadPrevNext: true // 预加载前后两张幻灯片
+    },
     
     // 无障碍支持
     a11y: {

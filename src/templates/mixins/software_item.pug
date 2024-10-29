@@ -1,6 +1,7 @@
 mixin software-list-item(imageSrc, altText, title, description)
   .software-list-item.scroll-animation
-    img(src=imageSrc, alt=altText, srcset="", class="sw-logo-resize")
+    svg(class="sw-logo-resize", viewBox="0 0 24 24", fill="currentColor", alt=altText)
+      use(xlink:href=`#${imageSrc}`)
     div(class="flex flex-col lg:hidden")
       h3.text-white= title
       p.text-white.text-opacity-50= description

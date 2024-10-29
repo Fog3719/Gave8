@@ -33,7 +33,9 @@ function cleanTask() {
 // Pug 编译任务
 function compilePug() {
   return gulp.src('./src/templates/*.pug')
-    .pipe(pug())
+    .pipe(pug({
+      basedir: path.resolve('./src') // 设置 basedir 选项
+    }))
     .pipe(gulp.dest('./public'));
 }
 
