@@ -8,6 +8,7 @@ var swiperOptions = {
   watchSlidesProgress: true,
   mousewheelControl: true,
   keyboardControl: true,
+  slideClass: 'swiper-slide-2',
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
