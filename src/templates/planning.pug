@@ -17,7 +17,7 @@ block content
         "XXXX 是国内领先的 EPM 业财一体规划分析平台，经过几个版本的迭代，原有的UI系统渐渐过时，为了更好的产品发展，故在5.5 版本将对 UI 进行优化，以更好地展现产品能力的升级。",
         "",
         "flex flex-col items-start justify-center ")
-        div(class="flex flex-row items-center justify-center w-full  ")
+        div(class="flex flex-row items-center justify-center w-full scroll-animation ")
             img(src="/assets/image/planning/planning_cover.png", alt="", srcset="")
         +title_P("设计目标",
         "提升技术架构，提高开发效率，优化用户体验，确保产品一致性和灵活性。",
@@ -52,8 +52,8 @@ block content
                     "flex flex-col items-start justify-center"
                 )
         
-        h3(class="text-xl font-bold") 设定基础的icon绘制元素规范
-        div(class="flex flex-col gap-4 justify-center w-full h-full items-center")
+        h3(class="text-3xl font-bold my-4") 设定基础的icon绘制元素规范
+        div(class="flex flex-col gap-4 justify-center w-full h-full items-center scroll-animation")
              div(class="swiper mySwiper w-full")
                 div(class="swiper-wrapper")
                     div(class="swiper-slide")
@@ -79,9 +79,9 @@ block content
                 div(class="swiper-pagination !bottom-0")
 
 
-        h3(class="text-xl font-bold") 修改现有素材
+        h3(class="text-3xl font-bold my-4 scroll-animation") 修改现有素材
         //- img(src="/assets/image/planning/modification_icon.png", alt="", srcset="" class=" object-cover rounded-md")
-        div(class="grid lg:grid-cols-4 grid-cols-2  grid-rows-4 w-full justify-items-center gap-8 p-6 bg-zinc-900 rounded-2xl ")
+        div(class="grid lg:grid-cols-4 grid-cols-2  grid-rows-4 w-full justify-items-center gap-8 p-6 bg-zinc-900 rounded-2xl scroll-animation")
             +iconComparison('/assets/icon/planning/rename-fill.svg', '/assets/icon/planning/rename-line.svg')
             +iconComparison('/assets/icon/planning/delete-fill.svg', '/assets/icon/planning/delete-line.svg')
             +iconComparison('/assets/icon/planning/filiter-fill.svg', '/assets/icon/planning/filiter-line.svg')
