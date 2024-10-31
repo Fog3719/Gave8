@@ -1,0 +1,142 @@
+extends layout_1
+
+include mixins/h1_p.pug
+include mixins/card
+include mixins/card_2.pug
+include mixins/card_image_H1+p.pug
+include mixins/iconcomparison.pug
+
+block content
+    a(href="index.html" class="home-button") Return
+    
+    header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
+        +title_P("Planning 5.5 UI Redesign","")
+        div(class="absolute inset-0 pseudo-element" style="background-image: url('/assets/image/planning/planning_cover.png')")
+    div(class="flex  flex-col w-full gap-4  items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4 ")
+        +title_P("项目背景",
+        "XXXX 是国内领先的 EPM 业财一体规划分析平台，经过几个版本的迭代，原有的UI系统渐渐过时，为了更好的产品发展，故在5.5 版本将对 UI 进行优化，以更好地展现产品能力的升级。",
+        "",
+        "flex flex-col items-start justify-center ")
+        div(class="flex flex-row items-center justify-center w-full scroll-animation ")
+            img(src="/assets/image/planning/planning_cover.png", alt="", srcset="")
+        +title_P("设计目标",
+        "提升技术架构，提高开发效率，优化用户体验，确保产品一致性和灵活性。",
+        "",
+        "flex flex-col items-start justify-center")
+        +title_P(
+            "重构方案","","",
+            "flex flex-col items-start justify-center"
+        )
+        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full")
+            +card_2(
+                "/assets/icon/ic-Prototyping.svg",
+                "建立Design System",
+                "统一各条业务线中的设计规范，建立一套覆盖全面的design system。",
+                ""
+                )
+            +card_2("/assets/icon/ic-Prototyping.svg","建立素材库","建立统一的素材库、根据现有的业务素材，调整视觉元素。","")
+            +card_2("/assets/icon/ic-Prototyping.svg","建立业务组件库","在基础组件之上，根据业务需求，抽象出符合公用的业务组件。","")
+        div(class="flex  flex-col gap-4 justify-center w-full")
+            +title_P(
+            "Design System ","","",
+            "flex flex-col items-start justify-center"
+        )
+    div(class="flex  flex-col w-full gap-4  items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4 " )
+        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
+            +card_image_H1_p("/assets/image/planning/design-system01.png", "figma", "基础色板", "包含主要色、次要色、中性色、强调色，分别用于品牌主色调、辅助色、背景和文字、吸引注意力。")
+            +card_image_H1_p("/assets/image/planning/design-system02.png", "figma", "功能色板", "包含功能色、图表色，分别用于状态信息展示和图表标记。")
+            +card_image_H1_p("/assets/image/planning/design-system03.png", "figma", "风格样式", "包含、阴影、模糊等样式。")
+        div(class="flex  flex-col gap-4 justify-center w-full")
+            +title_P(
+                    "建立素材库 ","","",
+                    "flex flex-col items-start justify-center"
+                )
+        
+        h3(class="text-3xl font-bold my-4") 设定基础的icon绘制元素规范
+        div(class="flex flex-col gap-4 justify-center w-full h-full items-center scroll-animation")
+             div(class="swiper mySwiper w-full")
+                div(class="swiper-wrapper")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride01.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride02.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride03.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride04.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride05.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride06.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride07.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride08.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/icon-gride09.png", alt="", srcset="" class="object-cover rounded-md")
+                div(class="swiper-button-next !text-white")
+                div(class="swiper-button-prev !text-white")
+                div(class="swiper-pagination !bottom-0")
+
+
+        h3(class="text-3xl font-bold my-4 scroll-animation") 修改现有素材
+        //- img(src="/assets/image/planning/modification_icon.png", alt="", srcset="" class=" object-cover rounded-md")
+        div(class="grid lg:grid-cols-4 grid-cols-2  grid-rows-4 w-full justify-items-center gap-8 p-6 bg-zinc-900 rounded-2xl scroll-animation")
+         
+            +iconComparison('rename-fill', 'rename-line')
+            +iconComparison('delete-fill', 'delete-line')
+            +iconComparison('filiter-fill', 'filiter-line')
+            +iconComparison('chart-fill', 'chart-line')
+            +iconComparison('file-model-polychrome', 'file-model')
+            +iconComparison('fixed-fill', 'fixed-line')
+            +iconComparison('company-fill', 'company-line')
+            +iconComparison('Database-fill', 'Database-line')
+            +iconComparison('mysend-fill', 'mysend-line')
+            +iconComparison('report-fill', 'report-line')
+            +iconComparison('setting-fill', 'setting-line')
+            +iconComparison('task-fill', 'task-line')
+            +iconComparison('exchange-cycle-fill', 'exchange-cycle-line')
+            +iconComparison('save-fill', 'save-line')
+
+
+        div(class="flex  flex-col gap-4 justify-center w-full")
+            +title_P(
+                            "建立业务组件库 ","业务组件库里主要是包含了3个产品线中共有的一些业务场景，按照业务类型可以分为6大类，模型、数据流、报表、页面表格、成员选择、可视化。","",
+                            "flex flex-col items-start justify-center"
+                        )
+        div(class="flex lg:flex-row flex-col gap-4 justify-center w-full h-full")
+             +card_image_H1_p("/assets/image/planning/image 16.png", "figma", "设定模板", "设定基础的icon绘制元素尺寸，比如线宽、圆角、样式等。")
+             +card_image_H1_p("/assets/image/planning/image 17.png", "figma", "修改现有素材", "在不影响用户理解的情况下，调整现有界面元素。")
+        
+        +title_P(
+            "示例页面","","",""
+        )
+        div(class="flex flex-col gap-4 justify-center w-full h-full items-center scroll-animation")
+            div(class="swiper mySwiper w-full rounded-lg")
+                div(class="swiper-wrapper ")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A01.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A02.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A03.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A04.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A05.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A06.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A07.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A08.png", alt="", srcset="" class="object-cover rounded-md")
+                    div(class="swiper-slide")
+                        img(src="/assets/image/planning/f1A09.png", alt="", srcset="" class="object-cover rounded-md")
+                div(class="swiper-button-next !text-white")
+                div(class="swiper-button-prev !text-white")
+                div(class="swiper-pagination !bottom-0")
+
+        
+
+    
+    script(src="/scripts/swiper_01.js") 

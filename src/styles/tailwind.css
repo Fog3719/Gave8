@@ -224,3 +224,22 @@ html {
     background-position: 100% 50%;
   }
 }
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: fit-content;
+  font-size: 24px;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  background: conic-gradient(#000 0 0) 0/1ch 100% no-repeat text;
+  animation: l14 1.5s steps(7) infinite alternate;
+}
+.loader:before {
+  content: "";
+}
+@keyframes l14 {
+  to {background-position: calc(100% + 1ch)}
+}
