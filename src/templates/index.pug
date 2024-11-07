@@ -7,7 +7,6 @@ include mixins/card_2.pug
 include mixins/card_work.pug
 include mixins/workdialog.pug
 
-
 block head
   script(type="module",src="/scripts/dynamic-background.js")
   svg(style="display:none;")
@@ -27,26 +26,26 @@ block content
       div(id="side-panel" class="fixed top-0 right-0 h-full w-64 bg-black shadow-lg transform transition-transform duration-300 ease-in-out  hidden block  z-60")
         ul(class="flex flex-col gap-4 ")
           li
-            a(href="#my-work" data-offset="100")  My Work 🛠️
+            a(href="#my-work" data-offset="100")  My Work 
           li
-            a(href="#my-skills" data-offset="100") My Skills 🎓
+            a(href="#my-skills" data-offset="100") My Skills 
           li
-            a(href="#expertise" data-offset="100") Areas of Expertise 🌟
+            a(href="#expertise" data-offset="100") Areas of Expertise 
           li
-            a(href="#expenses" data-offset="100") Work Experience 💰
+            a(href="#expenses" data-offset="100") Work Experience 
           li
-            a(href="#insights" data-offset="100") My Insights 💡
+            a(href="#insights" data-offset="100") My Insights 
       ul(id="main-nav" class="lg:flex lg:flex-row lg:gap-6 hidden pr-4")
         li
-          a(href="#my-work" data-offset="100")  My Work 🛠️
+          a(href="#my-work" data-offset="100")  My Work 
         li
-          a(href="#my-skills" data-offset="100") My Skills 🎓
+          a(href="#my-skills" data-offset="100") My Skills 
         li
-          a(href="#expertise" data-offset="100") Areas of Expertise 🌟
+          a(href="#expertise" data-offset="100") Areas of Expertise 
         li
-          a(href="#expenses" data-offset="100") Work Experience 💰
+          a(href="#expenses" data-offset="100") Work Experience 
         li
-          a(href="#insights" data-offset="100") My Insights 💡
+          a(href="#insights" data-offset="100") My Insights 
 
   section(class="flex flex-col items-center gap-4 lg:flex-row lg:p-4")
     div(class=" lg:block md:font-black lg:w-3/5 md:justify-items-start lg:text-5xl p-4 text-cyan-300 hidden font-knewave ") Finishing is better than being perfect for great design.
@@ -86,13 +85,13 @@ block content
         'planning.html',
         '2024-07-01'
       )
-      +card('Planning',
-        '/assets/image/Homepage UI Redesign-cover.png',
-        'Homepage UI Redesign',
-        "根据部分项目客户反馈，首页功能定位模糊，较为鸡肋。希望产品能提升首页功能定位，提高产品易用性。为此我与3位UI设计师一起配合完成此项目，在此项目中，我负责与关键客户访谈，了解他们的业务流程与工作方式，并根据访谈内容设计出对应的页面交互原型",
-        'HomepageUIRedesign.html',
-        '2024-07-01'
-      )
+      //- +card('Planning',
+      //-   '/assets/image/Homepage UI Redesign-cover.png',
+      //-   'Homepage UI Redesign',
+      //-   "根据部分项目客户反馈，首页功能定位模糊，较为鸡肋。希望产品能提升首页功能定位，提高产品易用性。为此我与3位UI设计师一起配合完成此项目，在此项目中，我负责与关键客户访谈，了解他们的业务流程与工作方式，并根据访谈内容设计出对应的页面交互原型",
+      //-   'HomepageUIRedesign.html',
+      //-   '2024-07-01'
+      //- )
 
 
   section(id="my-skills" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10") 
@@ -158,10 +157,10 @@ block content
     +title_P(
       'Work Experience','Proven Track Record in Designing Scalable and Maintainable B2B Products',"","flex flex-col items-center justify-center px-4")
     div(class="lg:grid lg:grid-cols-2 lg:grid-rows-2 flex flex-col gap-4 m-4 ")
-      +card_work("chipu","/assets/icon/chipule.svg","Shanghai Chipuller Chip Technology Co., Ltd.","2023.05-2024.07")
-      +card_work("ew","/assets/icon/chipule.svg","Shanghai Ewaresoft Co., Ltd.","2019.01-2023.03")
-      +card_work("zw","/assets/icon/chipule.svg","Shanghai Zhanwan Co., Ltd.","2018.04-2019.01")
-      +card_work("yqh","/assets/icon/chipule.svg","Beijing Yiqihi Co., Ltd.","2016.02-2018.03")
+      +card_work("chipu","chipule","Shanghai Chipuller Chip Technology Co., Ltd.","2023.05-2024.07")
+      +card_work("ew","eware","Shanghai Ewaresoft Co., Ltd.","2019.01-2023.03")
+      +card_work("zw","zw","Shanghai Zhanwan Co., Ltd.","2018.04-2019.01")
+      +card_work("yqh","hi","Beijing Yiqihi Co., Ltd.","2016.02-2018.03")
     +dialog("", "")
     
 
@@ -183,7 +182,6 @@ block content
         '',
         '2023-07-16'
       )
-
 
 
 

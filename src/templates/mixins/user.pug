@@ -1,0 +1,55 @@
+//- user-journey.pug
+extends layout_1
+
+block content
+  //- 表头数据
+  - var headers = ['用户流程', '登录注册', '项目创建', '原理图设计', '网表生成', '3D 布局设计', '2D 布线', '仿真模拟', '生产制造', '器件管理']
+  - var subHeaders = ['目标', '注册新账户并成功登录', '创建新项目且选择模块', '绘制并验证原理图', '生成并查看网表', '导入网表并调整布局', '使用工具进行布线', '运行模拟并查看结果', '导出设计文件', '管理自定义器件']
+
+  //- 情绪数据
+  - var emotions = [{ level: 1, items: ['兴奋', '期待'] }, { level: 2, items: ['自信', '好奇'] }, { level: 2, items: ['满意', '紧张'] }, { level: 2, items: ['期待', '焦虑'] }, { level: 2, items: ['满意', '困惑'] }, { level: 1, items: ['焦虑', '挫败'] }, { level: 3, items: ['紧张', '关注'] }, { level: 3, items: ['满意'] }, { level: 4, items: ['期待', '满意', '安心'] }, { level: 4, items: ['满意'] }]
+
+  //- 详细信息数据
+  - var details = { touchpoints: ['登录页面、验证码服务、邮箱服务', '主界面、项目管理', '原理图、器件库', '原理图、网表', '3D 布局、网表', '2D 布线', '2D 布线、3D布局、仿真模拟', '2D 布线', '器件库'], actions: ['填写注册信息，提交，登录系统', '输入项目名称，选择模块', '拖放组件，连接电路，实时验证设计', '点击生成网表，查看并编辑网表', '导入网表，调整芯片布局', '使用自动/手动工具进行布线，查看优化建议', '运行电路模拟，查看波形图和性能指标', '选择导出格式，分享项目', '查看历史版本，恢复版本，进行团队协作'], painpoints: ['注册流程复杂，信息填写较繁琐', '模块选择不明确，界面不直观', '连接错误提示不够清晰，界面布局不合理', '布局调整不够直观，缺乏可视化指导', '布局调整不够直观，缺乏可视化指导', '布线工具不够灵活，优化建议不够实用', '模拟结果不够直观，分析过程复杂', '导出格式选项不够丰富，分享功能不够便利', '版本控制不够直观，协作功能不够完善'], opportunities: ['简化注册流程，提供一键注册服务', '提供模块建议，优化界面', '提升实时反馈的准确性和及时性', '优化生成速度，提升编辑体验', '提供更好的布局建议和可视化工具', '提供布线工具的灵活性，优化建议的实用性', '提供更直观的结果展示和分析工具', '增加导出格式选项，优化分享流程', '优化版本控制界面，增强协作功能'] }
+
+  div(class="bg-gray-900 min-h-screen p-8")
+    //- 顶部标题和子标题
+    div(class="grid grid-cols-10 gap-4 text-white border-b border-gray-700")
+      each header, index in headers
+        div(class="text-center px-2 py-4")
+          div(class="text-sm font-medium")= header
+          div(class="text-xs text-gray-400 mt-2")= subHeaders[index]
+
+    //- 情绪曲线图
+    div(class="relative py-16 my-8")
+      //- 连接线
+      div(class="absolute top-1/2 w-full h-0.5 bg-emerald-500 transform -translate-y-1/2")
+
+      //- 情绪点
+      div(class="grid grid-cols-10 gap-4 relative")
+        each emotion, index in emotions
+          div(class="flex flex-col items-center relative")
+            div(class="w-4 h-4 bg-emerald-500 rounded-full z-10")
+            div(class="mt-4")
+              each item in emotion.items
+                div(class="flex items-center gap-1 mb-1")
+                  span(class="text-yellow-500") 😊
+                  span(class="text-sm text-gray-300")= item
+
+    //- 详细信息表格
+    each section, index in ['接触点', '行动', '痛点', '机会', '关键指标', '备注']
+      div(class="grid grid-cols-10 gap-4 py-4 border-t border-gray-700 text-white")
+        div(class="col-span-1 text-sm font-medium")= section
+        div(class="col-span-9 grid grid-cols-9 gap-4")
+          if section === '接触点'
+            each point in details.touchpoints
+              div(class="text-xs text-gray-300")= point
+          else if section === '行动'
+            each action in details.actions
+              div(class="text-xs text-gray-300")= action
+          else if section === '痛点'
+            each pain in details.painpoints
+              div(class="text-xs text-gray-300")= pain
+          else if section === '机会'
+            each opportunity in details.opportunities
+              div(class="text-xs text-gray-300")= opportunity

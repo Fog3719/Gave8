@@ -2,7 +2,8 @@
 mixin card_work(id, companylogo, title, description)
   .work_card.scroll-animation.text-white.flex.flex-col(onclick="showDialog('" + id + "')")
     div(class="flex flex-row gap-4 items-center flex-grow")
-      img(src=companylogo, alt="", class="sw-logo-resize", loading="lazy")
+      svg(class="w-8 h-8 object-contain object-center sw-logo-resize", viewBox="0 0 24 24", fill="currentColor", alt='Old Icon')
+          use(xlink:href=`#${companylogo}`)
       div(class="flex flex-col")
         h2.text-xl= title
         p(class="text-sm text-white text-opacity-50 overflow-clip")= description
