@@ -1,5 +1,5 @@
 mixin title_P(title, description_1,description_2,layout_class="flex flex-col items-center justify-center")
   div(class=(layout_class + ' py-8 z-10 gap-4 scroll-animation'))
     h1(style="position: relative; z-index: 1;" class="lg:text-4xl text-3xl font-bold scroll-animation text-white")= title
-    p(class="lg:text-xl text-lg font-light opacity-70 ")= description_1
+    p(class="lg:text-xl text-lg font-medium opacity-70 ")= description_1
     p(class="lg:text-xl text-lg  opacity-70")= description_2

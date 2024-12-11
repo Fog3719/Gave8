@@ -170,7 +170,7 @@ html {
 .grid-bg {
   background-size: 20px 20px;
   background-position: center center;
-  background-image: radial-gradient(circle, #969696 1px, #181818 1px);
+  background-image: radial-gradient(circle, #96969674 1px, #181818a0 1px);
   /* -webkit-mask-image: linear-gradient(to bottom, transparent, #fff 95px calc(100% - 95px), transparent), linear-gradient(to right, transparent, #fff 95px calc(100% - 95px), transparent); */
   /* mask-image: linear-gradient(to bottom, transparent, #fff 45px calc(100% - 45px), transparent), linear-gradient(to right, transparent, #fff 45px calc(100% - 45px), transparent); */
   mask-composite: intersect;
