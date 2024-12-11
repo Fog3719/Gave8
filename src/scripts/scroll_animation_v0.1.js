@@ -1,27 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const scrollAnimations = document.querySelectorAll('.scroll-animation');
+(() => {
+    function initScrollAnimation() {
+        const scrollAnimations = document.querySelectorAll('.scroll-animation');
+        
+        if (scrollAnimations.length === 0) {
+            return;
+        }
 
-    const options = {
-        root: null, // 使用视口作为根元素
-        rootMargin: '0px',
-        threshold: 0.3 // 当元素进入视口 30% 时触发
-    };
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
 
-    const baseDelay = 300; // 基础延迟时间（以毫秒为单位）
+        const baseDelay = 300;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                const delay = baseDelay * index; // 每个元素的延迟为基础延迟乘以其索引
-                setTimeout(() => {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // 停止观察已触发动画的元素
-                }, delay);
-            }
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const delay = baseDelay * index;
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }, delay);
+                }
+            });
+        }, options);
+
+        scrollAnimations.forEach(animation => {
+            observer.observe(animation);
         });
-    }, options);
+    }
 
-    scrollAnimations.forEach(animation => {
-        observer.observe(animation);
-    });
-});
+    // Try to initialize immediately if document is already loaded
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        initScrollAnimation();
+    } else {
+        // Otherwise wait for DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', initScrollAnimation);
+    }
+
+    // Fallback initialization after a short delay
+    setTimeout(initScrollAnimation, 1000);
+})();

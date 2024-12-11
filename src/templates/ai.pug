@@ -1,0 +1,164 @@
+extends layout_1
+
+include mixins/h1_p.pug
+include mixins/card
+include mixins/card_2.pug
+include mixins/card_image_H1+p.pug
+include mixins/iconcomparison.pug
+
+block title
+    | AI 图像生成工具对比
+
+block content
+    a(href="index.html" class="home-button") Return
+    
+    header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
+        +title_P("AI 图像生成工具对比","")
+        div(class="absolute inset-0 pseudo-element" style="background-image: url('/assets/icon/ai.svg')")
+    
+    main(class="flex flex-col w-full gap-8 items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+        // Midjourney Section
+        div(class="scroll-animation w-full")
+            +title_P("Midjourney",
+            "V5 版本的效果还是不错的。但是，我不是很喜欢在 Discord 上使用它。总感觉它就像一个玩具，用来做生产力工具还是有些麻烦。",
+            "",
+            "flex flex-col items-start justify-center")
+            
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-6 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/1f711d10b511e9126abe8bd98b53a862.webp", alt="Midjourney网站示例图", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") Midjourney网站示例图
+            
+            div(class="flex lg:flex-row flex-col gap-4 justify-center w-full mt-6")
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "Niji 模型",
+                    "最近常用来生成插图，配合最新推出的 describes image 功能，非常方便。",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "矢量转换",
+                    "将生成的插图放到 illustrator 里转换为矢量图像，可以任意修改。",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "局限性",
+                    "对生成结果无法继续精细调整，Discord 的交互体验也很糟糕。",
+                    ""
+                )
+
+            div(class="mt-4")
+                p(class="text-gray-300") 这里强烈推荐一个推友的 
+                    a(href="https://github.com/jesselau76/GPT-Prompts/tree/main/midjourney-prompt-generator" class="text-blue-400 hover:text-blue-300") prompt
+                    span , 配合 GPT 可以非常轻松的生成各种真实图片，此外这个 prompt 也可以仔细学习一下，如何使用自然语言编程。😄
+
+        // Stable Diffusion Section
+        div(class="scroll-animation w-full")
+            +title_P("Stable Diffusion",
+            "比 Midjourney 更像是一个真正的生产力工具。它有多个 webUI 界面，功能强大且灵活。",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-6 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/136b78e55f3afb5e4dc9bacac1857479.webp", alt="comfyUI的UI页面示例", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") ComfyUI 界面示例
+
+            p(class="text-gray-300 mt-4") 其中 
+                a(href="https://github.com/comfyanonymous/ComfyUI" class="text-blue-400 hover:text-blue-300") ComfyUI
+                span  非常酷，可以实现很多在 
+                a(href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" class="text-blue-400 hover:text-blue-300") AUTOMATIC1111
+                span  中搞不定的效果，绝对值得研究一下。
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-8 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/af7f78f73f67285b354d1cc2c1f17257.webp", alt="automatic1111的UI页面示例", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") AUTOMATIC1111 界面示例
+
+            div(class="flex lg:flex-row flex-col gap-4 justify-center w-full mt-8")
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "灵活部署",
+                    "支持本地部署和云端部署，可以根据需求选择合适的方式。",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "丰富插件",
+                    "社区开源模型众多，ControlNet 等插件大幅降低生成图片的随机性。",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "训练特性",
+                    "使用 lora 模型训练只需要20多张图片，训练时间快，生成效果接近原始素材。",
+                    ""
+                )
+
+        // Model Training Section
+        div(class="scroll-animation w-full")
+            +title_P("模型训练与使用",
+            "Stable Diffusion 在模型训练和使用方面有其独特优势。",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-6 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/75d6df6872a8c40c3e4343b25ea4061a.webp", alt="Stable Diffusion模型社区页面示例图", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") Stable Diffusion 模型社区页面
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-8 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/a4423c3bcf586d8cbde0f03d19095885.webp", alt="Stable Diffusion批量训练图片的示例图", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") Stable Diffusion 批量训练效果示例
+
+        // Workflow Section
+        div(class="scroll-animation w-full")
+            +title_P("工作流程",
+            "文本生成图片的方式并不是最优选择。一个更高效的工作流程是：",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex lg:flex-row flex-col gap-4 justify-center w-full")
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "参考搜索",
+                    "先在 Pinterest 上搜索合适的参考图片",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "生成测试",
+                    "放到 Midjourney 中生成 prompt，选择合适的进行测试",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "调整优化",
+                    "根据需要调整 prompt，增加或强调特定元素，直到满意为止",
+                    ""
+                )
+
+        // Summary Section
+        div(class="scroll-animation w-full")
+            +title_P("总结建议",
+            "选择合适的工具取决于你的具体需求：",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex lg:flex-row flex-col gap-4 justify-center w-full")
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "Midjourney",
+                    "适合预算有限且追求便捷的用户，无需复杂设置即可使用。",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "Stable Diffusion",
+                    "适合专业设计师，需要更高稳定性和可控性的用户。",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "本地部署建议",
+                    "推荐支持本地部署的方案，可以更好地保护隐私和数据安全。",
+                    ""
+                )
