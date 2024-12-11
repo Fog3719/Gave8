@@ -1,0 +1,118 @@
+extends layout_1
+
+include mixins/h1_p.pug
+include mixins/card
+include mixins/card_2.pug
+include mixins/card_image_H1+p.pug
+
+block title
+    | Google Sheets Sync - Figma Plugin
+
+block content
+    a(href="index.html" class="home-button") Return
+    
+    header(class="h-[240px] flex flex-col justify-center bg-cover bg-center bg-no-repeat relative w-full")
+        +title_P("Google Sheets Sync", "Figma插件：轻松同步Google表格数据")
+        div(class="absolute inset-0 pseudo-element" style="background-image: url('/assets/icon/figma.svg')")
+    
+    main(class="flex flex-col w-full gap-8 items-start lg:mx-auto lg:max-w-custom-1200 my-10 p-4")
+        // Plugin Introduction Section
+        div(class="scroll-animation w-full")
+            +title_P("插件介绍",
+            "可以将 Google sheet 中的数据按照命名规则自动同步填充到对应的文本图层中。在一些需要填充数据的场景中（例如表格、卡片），能大幅提升工作效率。",
+            "",
+            "flex flex-col items-start justify-center")
+            
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-6 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/b810dea53a2003bd3593dc92a80cab32.webp", alt="Google Sheets Sync插件界面", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") Google Sheets Sync插件界面
+
+        // Usage Preparation Section
+        div(class="scroll-animation w-full")
+            +title_P("使用准备",
+            "使用此插件需要准备以下内容：",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex lg:flex-row flex-col gap-4 justify-center w-full mt-6")
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "数据表准备",
+                    "准备一张Google sheet数据表，可以从示例数据开始尝试",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "Figma设置",
+                    "按照数据表结构设置对应的文本图层",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "权限设置",
+                    "确保Google sheet的分享链接设置为任何人可访问",
+                    ""
+                )
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-8 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/1b0e710671cba0cff9159187791df9e5.webp", alt="示例数据表", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") 示例数据表
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-8 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/7ec7fbddfea5f0dcf7b65dd82b30e1ed.webp", alt="Figma文本图层设置", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") Figma文本图层设置示例
+
+        // Sync Process Section
+        div(class="scroll-animation w-full")
+            +title_P("同步过程",
+            "完成准备工作后，按照以下步骤进行同步：",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-6 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/7173c2d2d9d6ae5ac4617c0390c9c2e2.webp", alt="获取Google sheet同步链接", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") 获取Google sheet同步链接
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-8 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/bee02e7e9daa3856b79714432b28d0dc.webp", alt="插件同步设置", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") 插件同步设置界面
+
+        // Before After Section
+        div(class="scroll-animation w-full")
+            +title_P("同步效果",
+            "查看同步前后的对比：",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-6 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/7bbe789f8777aa9f949f1b0f72ed02a0.webp", alt="同步前的设计", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") 同步前的设计
+
+            div(class="flex flex-col items-center justify-center w-full gap-4 mt-8 bg-zinc-900 p-6 rounded-lg")
+                img(src="https://photo.237484.xyz/2024/12/5f64a8564957b2dafc4a8447cf8f4173.webp", alt="同步后的效果", class="w-full max-w-[600px] rounded-lg")
+                p(class="text-sm text-gray-400") 同步后的效果
+
+        // Additional Features Section
+        div(class="scroll-animation w-full")
+            +title_P("其它功能",
+            "除了文本同步外，该插件还支持更多功能：",
+            "",
+            "flex flex-col items-start justify-center mt-12")
+
+            div(class="flex lg:flex-row flex-col gap-4 justify-center w-full")
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "图片同步",
+                    "支持通过链接自动填充图片到指定图层",
+                    ""
+                )
+                +card_2(
+                    "/assets/icon/ic-Prototyping.svg",
+                    "更多功能",
+                    "查看官方示例文档了解完整功能列表",
+                    ""
+                )
+
+            p(class="text-gray-300 mt-4") 更详细的使用说明，请参考他们的
+                a(href="https://www.figma.com/proto/VtXf9HikcehWB7FJrJmApl/Google-Sheets-Sync-%E2%80%93-Documentation" class="text-blue-400 hover:text-blue-300")  官方示例文档
+                span 。
