@@ -1,20 +1,22 @@
 {
-  "name": "mywebsite",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "sass": "sass style/styles.scss styles.css"
+  "name": "gave8",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "sass": "^1.78.0"
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.45",
-    "tailwindcss": "^3.4.11"
+    "@astrojs/cloudflare": "^13.1.2",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.0.6",
+    "tailwindcss": "^4.2.2",
+    "wrangler": "^4.75.0"
   }
 }

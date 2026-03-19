@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+const project = {
+  title: "EDA 设计平台 (Chiplet 技术)",
+  category: "3D 布局 / 交互系统 / 工业软件",
+  description: "为半导体行业设计的集成电路 EDA 平台，专注于 Chiplet 技术的原理图、网表、3D 布局及 2D 布线全流程设计。",
+  role: "资深产品设计师 / UX Lead",
+  period: "2024.08 - 至今",
+  highlights: [
+    "成功完成 EDA 产品的信息架构分析，提出围绕 3D 封装布局的交互方案",
+    "提交 4 份技术交底书（专利预研），推动 EDA 软件国产化技术创新",
+    "主导并建立 EDA 产品专属 Design System"
+  ]
+};
+---
+
+<Layout title={`${project.title} | 作品集`}>
+	<Navigation />
+	
+	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
+		<!-- Project Header -->
+		<header class="max-w-3xl mb-24">
+			<div class="text-xs uppercase tracking-widest font-bold mb-6 text-black/30">{project.category}</div>
+			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8">
+				{project.title}
+			</h1>
+			<p class="text-xl md:text-2xl text-black/50 leading-relaxed">
+				{project.description}
+			</p>
+		</header>
+
+		<!-- Project Meta -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 border-y border-black/5 mb-24">
+			<div>
+				<h3 class="text-xs uppercase tracking-widest font-bold mb-4 text-black/30">我的角色</h3>
+				<p class="font-medium text-lg">{project.role}</p>
+			</div>
+			<div>
+				<h3 class="text-xs uppercase tracking-widest font-bold mb-4 text-black/30">项目周期</h3>
+				<p class="font-medium text-lg">{project.period}</p>
+			</div>
+			<div>
+				<h3 class="text-xs uppercase tracking-widest font-bold mb-4 text-black/30">核心成就</h3>
+				<ul class="space-y-2 font-medium text-black/60">
+					{project.highlights.map(item => <li>• {item}</li>)}
+				</ul>
+			</div>
+		</div>
+
+		<!-- Project Content -->
+		<div class="max-w-4xl mx-auto space-y-32">
+			<!-- Section: Background -->
+			<section>
+				<h2 class="text-3xl font-bold mb-8 text-black">项目背景与挑战</h2>
+				<div class="text-xl text-black/60 leading-relaxed space-y-6">
+					<p>
+						在传统的芯片设计流程中，工程师经常需要在原理图（逻辑视图）和网表（物理视图）之间来回切换。手动对照、查找、修改和同步的过程极其耗时、枯燥，且极易引入人为错误。
+					</p>
+					<p>
+						<strong class="text-black font-bold">核心挑战：</strong> 如何革新这一工作流程，提供一个智能、高效的工具，自动化处理多层级转换和同步，确保设计数据在不同视图之间始终准确一致？
+					</p>
+				</div>
+			</section>
+
+			<!-- Section: User Research -->
+			<section>
+				<h2 class="text-3xl font-bold mb-8 text-black">用户研究与洞察</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+					<div class="bg-black/5 p-8 rounded-2xl">
+						<h3 class="text-xl font-bold mb-4 text-black">原理图核心需求</h3>
+						<ul class="space-y-4 text-black/60 font-medium">
+							<li>• <span class="text-black font-bold">多层级设计：</span> 复杂系统必备，提升可读性与管理效率。</li>
+							<li>• <span class="text-black font-bold">布局联动：</span> 强烈需求原理图层级映射到物理布局。</li>
+						</ul>
+					</div>
+					<div class="bg-black/5 p-8 rounded-2xl">
+						<h3 class="text-xl font-bold mb-4 text-black">网表核心痛点</h3>
+						<ul class="space-y-4 text-black/60 font-medium">
+							<li>• <span class="text-black font-bold">低效的编辑：</span> 依赖文本编辑器，效率低且易出错。</li>
+							<li>• <span class="text-black font-bold">缺乏可视化：</span> 无法直观验证网表修改后的连接变化。</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Solutions -->
+			<section>
+				<h2 class="text-3xl font-bold mb-12 text-black">设计方案：创新的双向同步</h2>
+				<div class="space-y-16">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+						<div>
+							<h3 class="text-2xl font-bold mb-4 text-black">智能网络识别</h3>
+							<p class="text-lg text-black/60 leading-relaxed font-medium">
+								无论在原理图还是网表中进行修改，系统都能智能识别并匹配对应的网络结构，自动完成另一侧的更新，大幅减少手动对照工作量。
+							</p>
+						</div>
+						<div class="aspect-video bg-black/5 rounded-2xl flex items-center justify-center text-black/20 italic font-medium">
+							[可视化同步界面插图]
+						</div>
+					</div>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+						<div class="md:order-2">
+							<h3 class="text-2xl font-bold mb-4 text-black">3D 布局与 2D 布线</h3>
+							<p class="text-lg text-black/60 leading-relaxed font-medium">
+								引入基于 Chiplet 技术的 3D 封装布局方案，支持 3D 布局数据导入网表，并提供自动/手动 2D 布线工具及实时优化建议。
+							</p>
+						</div>
+						<div class="md:order-1 aspect-video bg-black/5 rounded-2xl flex items-center justify-center text-black/20 italic font-medium">
+							[3D 布局演示插图]
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Results -->
+			<section class="bg-black text-white p-12 md:p-24 rounded-[3rem]">
+				<h2 class="text-3xl font-bold mb-12 text-center">项目成效</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+					<div>
+						<div class="text-5xl font-bold mb-4">4 份</div>
+						<div class="text-white/40 uppercase tracking-widest text-sm font-bold">技术专利交底</div>
+					</div>
+					<div>
+						<div class="text-5xl font-bold mb-4">100%</div>
+						<div class="text-white/40 uppercase tracking-widest text-sm font-bold">数据一致性同步</div>
+					</div>
+					<div>
+						<div class="text-5xl font-bold mb-4">60%</div>
+						<div class="text-white/40 uppercase tracking-widest text-sm font-bold">操作效率提升</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Reflection -->
+			<section class="pb-24">
+				<h2 class="text-3xl font-bold mb-8 text-black">反思与总结</h2>
+				<div class="text-xl text-black/60 leading-relaxed font-medium">
+					<p>
+						在 To B 领域，理解用户核心工作流程和背后的技术逻辑至关重要。复杂的功能并不意味着复杂的设计，关键在于如何将复杂性转化为易用性。通过与技术团队的深度协作，我学会了如何在有限的技术约束下找到最优的设计平衡点。
+					</p>
+				</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer class="mt-40 border-t border-black/5 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-black/40 text-sm">
+			<p>© 2026 TANG XINXU</p>
+			<div class="flex gap-8">
+				<a href="/" class="hover:text-black transition-colors font-bold">返回首页</a>
+				<a href="/about" class="hover:text-black transition-colors">关于我</a>
+			</div>
+		</footer>
+	</main>
+</Layout>

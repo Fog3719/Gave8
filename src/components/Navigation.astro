@@ -1,0 +1,49 @@
+---
+const links = [
+	{ name: 'WORKS', href: '/' },
+	{ name: 'ARCHIVE', href: '/projects' },
+	{ name: 'INFO', href: '/about' },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 p-6 md:p-10 pointer-events-none">
+	<div class="max-w-7xl mx-auto flex justify-between items-center w-full">
+		<!-- Logo Section with Status -->
+		<div class="flex items-center gap-4 pointer-events-auto group">
+			<a href="/" class="text-lg font-mono font-medium tracking-tight hover:opacity-70 transition-opacity">
+				TANG_X_STUDIO <span class="text-black/20 font-light">/</span> 
+			</a>
+			<!-- 实时状态装饰 -->
+			<div class="hidden lg:flex flex-col text-[8px] font-mono leading-tight text-black/40 translate-y-[-1px]">
+				<span id="nav-time">10:45:23 PM</span>
+				<span>STATUS: DESIGN_MODE</span>
+			</div>
+		</div>
+		
+		<!-- Nav Links -->
+		<div class="flex items-center gap-1 bg-white/40 backdrop-blur-xl px-1 py-1 border border-black/5 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] pointer-events-auto">
+			{links.map((link) => (
+				<a 
+					href={link.href} 
+					class="px-4 py-2 text-[10px] font-mono font-medium text-black/50 hover:text-black hover:bg-black/5 transition-all relative group"
+				>
+					{link.name}
+					<span class="absolute bottom-0 left-0 w-full h-[1px] bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+				</a>
+			))}
+		</div>
+	</div>
+</nav>
+
+<script>
+	// 简单的实时时间更新，增加“活着”的感觉
+	const updateTime = () => {
+		const timeEl = document.getElementById('nav-time');
+		if (timeEl) {
+			const now = new Date();
+			timeEl.innerText = now.toLocaleTimeString('en-US', { hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+		}
+	};
+	setInterval(updateTime, 1000);
+	updateTime();
+</script>
