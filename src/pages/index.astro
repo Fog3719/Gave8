@@ -6,7 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 const projects = [
 	{
 		title: "EDA 设计平台",
-		category: "3D 布局 / 交互系统",
+		category: "3D 布局 / 交互系统 / 半导体",
 		image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
 		href: "/projects/eda"
 	},
@@ -31,35 +31,79 @@ const projects = [
 ];
 ---
 
-<Layout title="作品集 | 资深产品设计师">
+<Layout title="TANG XINXU | 设计与逻辑的构建者">
 	<Navigation />
 	
 	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
 		<!-- Hero Section -->
-		<section class="max-w-3xl mb-24 md:mb-40">
-			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8">
-				创造兼具<span class="text-black/40 italic font-serif">美学</span>与<span class="text-black/40 italic font-serif">功能</span>的数字体验
+		<section class="max-w-4xl mb-32 md:mb-56 relative">
+			<!-- 装饰性的技术标注 -->
+			<div class="absolute -top-12 left-0 tech-label opacity-40 flex items-center gap-2">
+				<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+				CURR_ENV: PORTFOLIO_V2.0.26
+			</div>
+			
+			<h1 class="text-6xl md:text-[5.5rem] font-bold leading-[0.95] tracking-tight mb-12">
+				构建<span class="text-black/30 italic font-serif relative">极度精密<span class="absolute -top-4 -right-2 text-[10px] font-mono not-italic opacity-40">[01]</span></span>的<br/>数字<span class="text-black inline-block transform -skew-x-6">操作系统</span>
 			</h1>
-			<p class="text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
-				我是作品集主人，一名专注于 EDA 软件、企业级 SaaS 和复杂系统设计的资深产品设计师。我致力于将复杂逻辑转化为直观的交互体验。
-			</p>
+			
+			<div class="flex flex-col md:flex-row gap-12 md:items-end">
+				<p class="text-xl md:text-2xl text-black/60 leading-relaxed max-w-xl font-medium">
+					我是唐新旭，专注于 EDA 软件与复杂 SaaS 系统。我不仅设计界面，更在构建能够支撑复杂业务逻辑的<span class="text-black underline decoration-black/10 underline-offset-4">视觉基建</span>。
+				</p>
+				
+				<!-- 补充的小字块 -->
+				<div class="md:pb-1 text-[10px] font-mono text-black/30 space-y-1">
+					<p>// LOCATION: SHANGHAI, CN</p>
+					<p>// FOCUS: SYSTEM_ARCHITECTURE</p>
+					<p>// CURRENT: EDA_UX_LEAD</p>
+				</div>
+			</div>
 		</section>
 
+		<!-- Projects Section Header -->
+		<div class="mb-12 flex justify-between items-end border-b border-black/5 pb-4">
+			<h2 class="tech-label">SELECTED_WORKS [04]</h2>
+			<div class="hidden md:block font-mono text-[9px] text-black/20">SCROLL_TO_EXPLORE_PROJECTS</div>
+		</div>
+
 		<!-- Projects Grid -->
-		<section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+		<section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
 			{projects.map(project => (
 				<ProjectCard {...project} />
 			))}
 		</section>
 
 		<!-- Footer -->
-		<footer class="mt-40 border-t border-black/5 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-black/40 text-sm">
-			<p>© 2026 DESIGNER PORTFOLIO</p>
-			<div class="flex gap-8">
-				<a href="#" class="hover:text-black transition-colors">Dribbble</a>
-				<a href="#" class="hover:text-black transition-colors">Behance</a>
-				<a href="#" class="hover:text-black transition-colors">Instagram</a>
+		<footer class="mt-64 border-t border-black/5 pt-16 pb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+			<div class="space-y-4">
+				<div class="text-lg font-mono font-medium">LET'S_COLLABORATE.</div>
+				<p class="text-black/40 max-w-sm text-sm">正在寻找能够挑战复杂性、追求极致精密的设计机会。</p>
+			</div>
+			
+			<div class="flex flex-wrap gap-x-12 gap-y-6">
+				<div class="space-y-3">
+					<span class="tech-label">CONTACT</span>
+					<div class="flex gap-6 text-sm font-medium">
+						<a href="mailto:hello@tangxinxu.me" class="hover:text-black/50 transition-colors underline underline-offset-4">Email</a>
+						<a href="#" class="hover:text-black/50 transition-colors underline underline-offset-4">WeChat</a>
+					</div>
+				</div>
+				<div class="space-y-3">
+					<span class="tech-label">SOCIAL</span>
+					<div class="flex gap-6 text-sm font-medium text-black/40">
+						<a href="#" class="hover:text-black transition-colors">Dribbble</a>
+						<a href="#" class="hover:text-black transition-colors">Behance</a>
+						<a href="#" class="hover:text-black transition-colors">Readme</a>
+					</div>
+				</div>
 			</div>
 		</footer>
+		
+		<!-- 底部备案/版权 -->
+		<div class="mt-24 font-mono text-[9px] text-black/20 flex justify-between">
+			<span>© 2026 TANG XINXU. ALL RIGHTS RESERVED.</span>
+			<span>BUILT_WITH_ASTRO_AND_LOGIC</span>
+		</div>
 	</main>
 </Layout>
