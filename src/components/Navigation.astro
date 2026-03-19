@@ -1,0 +1,24 @@
+---
+const links = [
+	{ name: '作品', href: '/' },
+	{ name: '关于', href: '/about' },
+	{ name: '联系', href: 'mailto:your@email.com' },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-8 md:px-12 pointer-events-none">
+	<div class="max-w-7xl mx-auto flex justify-between items-center w-full">
+		<a href="/" class="text-xl font-bold tracking-tight pointer-events-auto">DESIGNER.</a>
+		
+		<div class="flex gap-8 bg-white/80 backdrop-blur-md px-6 py-3 rounded-full border border-black/5 shadow-sm pointer-events-auto">
+			{links.map((link) => (
+				<a 
+					href={link.href} 
+					class="text-sm font-medium text-black/60 hover:text-black transition-colors"
+				>
+					{link.name}
+				</a>
+			))}
+		</div>
+	</div>
+</nav>

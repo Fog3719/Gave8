@@ -1,187 +1,65 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import SkillIcon from '../components/SkillIcon.astro';
-import ExpertiseCard from '../components/ExpertiseCard.astro';
-import ExperienceItem from '../components/ExperienceItem.astro';
-import BlogCard from '../components/BlogCard.astro';
-import Dialog from '../components/Dialog.astro';
+import Navigation from '../components/Navigation.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
-// Import data
-import profile from '../content/profile.json';
-import works from '../content/works.json';
-import skills from '../content/skills.json';
-import expertise from '../content/expertise.json';
-import experience from '../content/experience.json';
-import blogs from '../content/blogs.json';
-
-const descriptionLines = profile.description.split('\n');
+const projects = [
+	{
+		title: "数字体验重构",
+		category: "UI/UX 设计",
+		image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
+		href: "#"
+	},
+	{
+		title: "品牌视觉系统",
+		category: "品牌设计",
+		image: "https://images.unsplash.com/photo-1561070791-26c11d204a3d?q=80&w=1000&auto=format&fit=crop",
+		href: "#"
+	},
+	{
+		title: "极简移动应用",
+		category: "App 设计",
+		image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop",
+		href: "#"
+	},
+	{
+		title: "电商平台设计",
+		category: "Web 设计",
+		image: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1000&auto=format&fit=crop",
+		href: "#"
+	}
+];
 ---
 
-<Layout title={profile.name} description={profile.description}>
-  <!-- Navigation -->
-  <nav class="flex flex-row bg-opacity-15 bg-white p-4 gap-2 items-center w-full">
-    <img src={profile.logo} alt="Logo" class="size-8 md:size-6 rounded-full">
-    <span class="text-white font-medium">{profile.name}</span>
-    <div class="flex-1"></div>
-  </nav>
+<Layout title="作品集 | 独立设计师">
+	<Navigation />
+	
+	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
+		<!-- Hero Section -->
+		<section class="max-w-3xl mb-24 md:mb-40">
+			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8">
+				创造兼具<span class="text-black/40 italic font-serif">美学</span>与<span class="text-black/40 italic font-serif">功能</span>的数字体验
+			</h1>
+			<p class="text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
+				我是 [你的名字]，一名专注于极简主义和用户体验的独立设计师。我帮助品牌打造触动人心的视觉方案。
+			</p>
+		</section>
 
-  <!-- Hero / About Section -->
-  <section class="flex flex-col items-center gap-4 md:flex-row md:p-8 mb-8">
-    <q class="opacity-0 md:opacity-100 md:font-black md:w-1/2 md:justify-items-start lg:text-4xl p-4 text-cyan-400">
-      {profile.quote}
-    </q>
-    <div class="flex flex-col gap-4 items-center p-4 md:w-3/6 lg:w-2/5">
-      <img src={profile.avatar} alt="Avatar" class="size-32 rounded-full">
-      <h1 class="text-4xl lg:text-5xl font-bold pl-8 md:font-medium">{profile.title}</h1>
-      <div class="font-normal opacity-70 text-lg text-left lg:w-96 space-y-2">
-        {descriptionLines.map(line => (
-          <p>{line}</p>
-        ))}
-      </div>
-    </div>
-    <hr class="w-full border-white/10 md:hidden">
-  </section>
+		<!-- Projects Grid -->
+		<section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+			{projects.map(project => (
+				<ProjectCard {...project} />
+			))}
+		</section>
 
-  <!-- My Work Section -->
-  <section id="work" class="flex flex-col w-full gap-4 items-center lg:mx-auto lg:max-w-custom-1200 my-10 px-4">
-    <div class="flex items-center justify-center flex-col gap-4">
-      <h1 class="text-4xl lg:text-5xl font-bold md:font-medium px-4">My Work</h1>
-      <p class="font-normal opacity-70 text-base text-center">Selected projects showcasing my design expertise</p>
-    </div>
-    <div class="flex flex-col m-4 gap-4 items-center lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:gap-6 w-full">
-      {works.map(work => (
-        <Card
-          title={work.title}
-          category={work.category}
-          description={work.description}
-          image={work.image}
-          link={work.link}
-        />
-      ))}
-    </div>
-    <button class="scroll-animation bg-blue-700 text-white p-4 text-lg rounded-lg w-1/2 lg:w-60 hover:bg-blue-400 transition-colors">
-      View More
-    </button>
-  </section>
-
-  <!-- My Skills Section -->
-  <section id="skills" class="flex-col flex mt-4 lg:mx-auto lg:max-w-custom-1200 my-10 px-4">
-    <div class="flex items-center justify-center flex-col gap-4">
-      <h1 class="text-4xl lg:text-5xl font-bold md:font-medium">My Skills</h1>
-      <p class="font-normal opacity-70 text-base text-center px-4">
-        Here are a bunch of design and productivity tools that help me design, stay organized and making my work smooth and collaborative.
-      </p>
-    </div>
-    <div class="grid grid-cols-2 grid-rows-4 gap-2 m-4 lg:grid lg:grid-cols-6 lg:grid-rows-2 lg:gap-6 lg:mx-auto lg:max-w-custom-1200">
-      {skills.map(skill => (
-        <SkillIcon
-          name={skill.name}
-          category={skill.category}
-          icon={skill.icon}
-        />
-      ))}
-    </div>
-  </section>
-
-  <!-- Areas of Expertise Section -->
-  <section id="expertise" class="lg:mx-auto lg:max-w-custom-1200 my-10 px-4">
-    <div class="flex items-center justify-center flex-col gap-4">
-      <h1 class="text-4xl lg:text-5xl font-bold md:font-medium">Areas of Expertise</h1>
-      <p class="font-normal opacity-70 text-base text-center"></p>
-    </div>
-    <div class="flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-2 m-4 gap-4">
-      {expertise.map(item => (
-        <ExpertiseCard
-          title={item.title}
-          icon={item.icon}
-          points={item.points}
-        />
-      ))}
-    </div>
-  </section>
-
-  <!-- Work Experience Section -->
-  <section id="experience" class="my-10 px-4">
-    <div class="flex items-center justify-center flex-col gap-4">
-      <h1 class="text-4xl lg:text-5xl font-bold md:font-medium">Work Experience</h1>
-      <p class="font-normal opacity-70 text-base text-center"></p>
-    </div>
-
-    <!-- Dialogs -->
-    {experience.map((exp, index) => (
-      <Dialog
-        id={`dialog-${index}`}
-        title={exp.company}
-        content={exp.details}
-      />
-    ))}
-
-    <div class="flex flex-col gap-4 m-4 lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:mx-auto lg:max-w-custom-1200">
-      {experience.map((exp, index) => (
-        <ExperienceItem
-          company={exp.company}
-          companyZh={exp.companyZh}
-          role={exp.role}
-          period={exp.period}
-          website={exp.website}
-          dialogId={`dialog-${index}`}
-        />
-      ))}
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="my-10 px-4">
-    <div class="flex items-center justify-center flex-col gap-4">
-      <h1 class="text-4xl lg:text-5xl font-bold md:font-medium">Project Experience</h1>
-      <p class="font-normal opacity-70 text-base text-center"></p>
-    </div>
-    <div class="flex flex-col gap-4 m-4 lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:mx-auto lg:max-w-custom-1200">
-      {experience.slice(0, 3).map(exp => (
-        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-lg border border-white/10 scroll-animation">
-          <img src="/resourses/sf-logo/skill-icons_wordpress.svg" alt="Project" class="w-12 h-12">
-          <div class="flex flex-col">
-            <h3 class="text-white">{exp.companyZh}</h3>
-            <p class="text-white text-opacity-50">{exp.period}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section id="blog" class="flex flex-col my-10 px-4">
-    <div class="flex items-center justify-center flex-col gap-4">
-      <h1 class="text-4xl lg:text-5xl font-bold md:font-medium">My Insights</h1>
-      <p class="font-normal opacity-70 text-base text-center px-4">
-        My blogs cover a wide range of topics that give you knowledge on everything,
-        from Research, Visual Designs, Product Management, Design Systems and Interview Tips & Tricks.
-      </p>
-    </div>
-    <div class="flex flex-col gap-2 m-4 lg:grid lg:grid-cols-3 lg:grid-rows-4 lg:gap-6 lg:mx-auto lg:max-w-custom-1200">
-      {blogs.map(blog => (
-        <BlogCard
-          title={blog.title}
-          tag={blog.tag}
-          date={blog.date}
-          image={blog.image}
-          excerpt={blog.excerpt}
-        />
-      ))}
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="flex flex-col gap-2 w-full flex-wrap mr-auto items-center opacity-45 py-8">
-    <span>Design + Code by tangxinxu & ChatGpt 🤖</span>
-    <span>All Rights Reserved © 2024 .</span>
-  </footer>
+		<!-- Footer -->
+		<footer class="mt-40 border-t border-black/5 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-black/40 text-sm">
+			<p>© 2026 DESIGNER PORTFOLIO</p>
+			<div class="flex gap-8">
+				<a href="#" class="hover:text-black transition-colors">Dribbble</a>
+				<a href="#" class="hover:text-black transition-colors">Behance</a>
+				<a href="#" class="hover:text-black transition-colors">Instagram</a>
+			</div>
+		</footer>
+	</main>
 </Layout>
-
-<style>
-  /* Custom max-width for container */
-  .lg\\:max-w-custom-1200 {
-    max-width: 1200px;
-  }
-</style>
