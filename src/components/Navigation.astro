@@ -1,15 +1,24 @@
 ---
+const { pathname } = Astro.url;
+const normalizedPathname = pathname.replace(/\/$/, "");
+
 const links = [
 	{ name: 'WORKS', href: '/' },
 	{ name: 'ARCHIVE', href: '/projects' },
 	{ name: 'INFO', href: '/about' },
 ];
+
+const isActive = (path: string) => {
+	if (path === '/' && (normalizedPathname === '' || normalizedPathname === '/')) return true;
+	if (path !== '/' && normalizedPathname.startsWith(path)) return true;
+	return false;
+};
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 p-6 md:p-10 pointer-events-none">
-	<div class="max-w-7xl mx-auto flex justify-between items-center w-full">
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-6 md:py-8">
+	<div class="max-w-7xl mx-auto flex justify-between items-center w-full px-6 md:px-10">
 		<!-- Logo Section with Status -->
-		<div class="flex items-center gap-4 pointer-events-auto group">
+		<div class="flex items-center gap-4 group">
 			<a href="/" class="text-lg font-mono font-medium tracking-tight hover:opacity-70 transition-opacity text-text-primary">
 				TANG_X_STUDIO <span class="text-text-secondary/20 font-light">/</span> 
 			</a>
@@ -24,30 +33,45 @@ const links = [
 		</div>
 		
 		<!-- Nav Links -->
-		<div class="flex items-center gap-1 bg-bg-primary/40 backdrop-blur-xl px-1 py-1 border border-text-primary/5 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] pointer-events-auto">
-			{links.map((link) => (
-				<a 
-					href={link.href} 
-					class="px-4 py-2 text-[10px] font-mono font-medium text-text-secondary hover:text-text-primary hover:bg-text-primary/5 transition-all relative group"
-				>
-					{link.name}
-					<span class="absolute bottom-0 left-0 w-full h-[1px] bg-text-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-				</a>
-			))}
+		<div class="flex items-center gap-1">
+			{links.map((link) => {
+				const active = isActive(link.href);
+				return (
+					<a 
+						href={link.href} 
+						class:list={[
+							"px-4 py-2 text-[10px] font-mono font-medium transition-all relative group",
+							active ? "text-text-primary" : "text-text-secondary hover:text-text-primary"
+						]}
+					>
+						{link.name}
+						<span class:list={[
+							"absolute bottom-0 left-0 w-full h-[1px] bg-text-primary transition-transform origin-left",
+							active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+						]}></span>
+					</a>
+				);
+			})}
+			
 			<!-- Theme Toggle Button -->
 			<button 
 				id="theme-toggle"
-				class="px-4 py-2 text-[10px] font-mono font-medium text-text-secondary hover:text-text-primary hover:bg-text-primary/5 transition-all relative group"
+				class="p-2 ml-2 text-text-secondary hover:text-text-primary transition-all relative group cursor-pointer flex items-center justify-center overflow-hidden"
 				aria-label="Toggle dark mode"
 			>
-				TOGGLE
+				<!-- Sun icon (visible in light mode) -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden transition-transform duration-500 rotate-0 group-hover:rotate-90"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+				<!-- Moon icon (visible in dark mode) -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block transition-transform duration-500 -rotate-12 group-hover:rotate-0"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+				
+				<span class="absolute bottom-0 left-0 w-full h-[1px] bg-text-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
 			</button>
 		</div>
 	</div>
 </nav>
 
 <script>
-	// 简单的实时时间更新，增加“活着”的感觉
+	// 简单的实时时间更新
 	const updateTime = () => {
 		const timeEl = document.getElementById('nav-time');
 		if (timeEl) {
@@ -58,30 +82,45 @@ const links = [
 	setInterval(updateTime, 1000);
 	updateTime();
 
+	// 滚动效果逻辑
+	const initScroll = () => {
+		const nav = document.getElementById('main-nav');
+		const handleScroll = () => {
+			if (window.scrollY > 10) {
+				nav?.classList.add('bg-bg-primary/70', 'backdrop-blur-md', 'border-border-primary', 'py-4');
+				nav?.classList.remove('border-transparent', 'py-6', 'md:py-8');
+			} else {
+				nav?.classList.remove('bg-bg-primary/70', 'backdrop-blur-md', 'border-border-primary', 'py-4');
+				nav?.classList.add('border-transparent', 'py-6', 'md:py-8');
+			}
+		};
+		window.addEventListener('scroll', handleScroll);
+		handleScroll();
+	};
+
 	// 主题切换逻辑
-	const handleToggleClick = () => {
-		const element = document.documentElement;
-		element.classList.toggle("dark");
+	const initTheme = () => {
+		const handleToggleClick = () => {
+			const element = document.documentElement;
+			element.classList.toggle("dark");
+			const isDark = element.classList.contains("dark");
+			localStorage.setItem("theme", isDark ? "dark" : "light");
+			updateThemeStatus();
+		};
 
-		const isDark = element.classList.contains("dark");
-		localStorage.setItem("theme", isDark ? "dark" : "light");
-		updateThemeStatus();
-	};
+		const updateThemeStatus = () => {
+			const statusEl = document.getElementById('theme-status');
+			if (statusEl) {
+				const isDark = document.documentElement.classList.contains("dark");
+				statusEl.innerText = `THEME: ${isDark ? 'DARK_MODE' : 'LIGHT_MODE'}`;
+			}
+		};
 
-	const updateThemeStatus = () => {
-		const statusEl = document.getElementById('theme-status');
-		if (statusEl) {
-			const isDark = document.documentElement.classList.contains("dark");
-			statusEl.innerText = `THEME: ${isDark ? 'DARK_MODE' : 'LIGHT_MODE'}`;
-		}
-	};
-
-	document.getElementById("theme-toggle")?.addEventListener("click", handleToggleClick);
-	updateThemeStatus();
-
-	// 监听 Astro 的页面导航事件以确保脚本在页面跳转后依然生效
-	document.addEventListener('astro:after-swap', () => {
 		document.getElementById("theme-toggle")?.addEventListener("click", handleToggleClick);
 		updateThemeStatus();
-	});
+	};
+
+	// 初始加载
+	initScroll();
+	initTheme();
 </script>
