@@ -50,15 +50,15 @@ const projects = [
 		<header class="mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
 			<div class="max-w-2xl">
 				<div class="tech-label mb-6 flex items-center gap-2">
-					<span class="w-2 h-2 bg-black"></span>
+					<span class="w-2 h-2 bg-text-primary"></span>
 					DIR: /ROOT/PROJECTS/ALL
 				</div>
-				<h1 class="text-5xl md:text-7xl font-bold leading-tight">
-					项目<span class="font-serif italic text-black/40">存档</span>
+				<h1 class="text-5xl md:text-7xl font-bold leading-tight text-text-primary">
+					项目<span class="font-serif italic text-text-secondary/40">存档</span>
 				</h1>
 			</div>
 			
-			<div class="text-[10px] font-mono text-black/30 text-right leading-relaxed">
+			<div class="text-[10px] font-mono text-text-secondary/50 text-right leading-relaxed">
 				<p>TOTAL_ITEMS: {projects.length}</p>
 				<p>LAST_REFRESH: {new Date().toISOString().split('T')[0]}</p>
 				<p>QUERY_TIME: 0.042ms</p>
@@ -66,10 +66,10 @@ const projects = [
 		</header>
 
 		<!-- Archive Table -->
-		<div class="border-t border-black/10 overflow-x-auto">
+		<div class="border-t border-border-primary overflow-x-auto">
 			<table class="w-full text-left border-collapse min-w-[800px]">
 				<thead>
-					<tr class="font-mono text-[10px] text-black/40 uppercase tracking-widest border-b border-black/5">
+					<tr class="font-mono text-[10px] text-text-secondary/50 uppercase tracking-widest border-b border-border-primary/50">
 						<th class="py-6 font-medium">ID</th>
 						<th class="py-6 font-medium">PROJECT_TITLE</th>
 						<th class="py-6 font-medium">CATEGORY_DOMAIN</th>
@@ -78,32 +78,32 @@ const projects = [
 						<th class="py-6 font-medium text-right">STATUS</th>
 					</tr>
 				</thead>
-				<tbody class="divide-y divide-black/5">
+				<tbody class="divide-y divide-border-primary/50">
 					{projects.map(project => (
-						<tr class="group hover:bg-black/5 transition-colors cursor-pointer" onclick={`window.location.href='${project.href}'`}>
-							<td class="py-8 font-mono text-[11px] text-black/30">{project.id}</td>
+						<tr class="group hover:bg-text-primary/5 transition-colors cursor-pointer" onclick={`window.location.href='${project.href}'`}>
+							<td class="py-8 font-mono text-[11px] text-text-secondary/40">{project.id}</td>
 							<td class="py-8">
-								<a href={project.href} class="text-xl font-bold group-hover:pl-4 transition-all duration-300 block">
+								<a href={project.href} class="text-xl font-bold group-hover:pl-4 transition-all duration-300 block text-text-primary">
 									{project.title}
 								</a>
 							</td>
 							<td class="py-8">
-								<span class="text-sm text-black/60 font-medium italic font-serif">{project.category}</span>
+								<span class="text-sm text-text-secondary font-medium italic font-serif">{project.category}</span>
 							</td>
 							<td class="py-8">
 								<div class="flex gap-2 flex-wrap">
 									{project.tech.map(t => (
-										<span class="px-2 py-0.5 border border-black/5 rounded bg-white text-[9px] font-mono text-black/40 group-hover:border-black/20 group-hover:text-black/60 transition-colors">
+										<span class="px-2 py-0.5 border border-border-primary rounded bg-bg-primary text-[9px] font-mono text-text-secondary/50 group-hover:border-text-primary/20 group-hover:text-text-secondary transition-colors">
 											{t}
 										</span>
 									))}
 								</div>
 							</td>
-							<td class="py-8 font-mono text-xs text-black/40">{project.year}</td>
+							<td class="py-8 font-mono text-xs text-text-secondary/50">{project.year}</td>
 							<td class="py-8 text-right">
-								<div class="inline-flex items-center gap-2 px-3 py-1 bg-black/5 rounded-full">
-									<span class={`w-1 h-1 rounded-full ${project.status === 'DEPLOYED' ? 'bg-green-500' : project.status === 'MAINTENANCE' ? 'bg-blue-400' : 'bg-black/20'}`}></span>
-									<span class="text-[9px] font-mono font-bold tracking-widest">{project.status}</span>
+								<div class="inline-flex items-center gap-2 px-3 py-1 bg-text-primary/5 rounded-full">
+									<span class={`w-1 h-1 rounded-full ${project.status === 'DEPLOYED' ? 'bg-green-500' : project.status === 'MAINTENANCE' ? 'bg-blue-400' : 'bg-text-primary/20'}`}></span>
+									<span class="text-[9px] font-mono font-bold tracking-widest text-text-primary">{project.status}</span>
 								</div>
 							</td>
 						</tr>
@@ -113,12 +113,12 @@ const projects = [
 		</div>
 
 		<!-- Bottom Status Line -->
-		<div class="mt-24 p-8 border border-dashed border-black/10 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6">
-			<div class="flex items-center gap-4 text-xs font-mono text-black/40">
+		<div class="mt-24 p-8 border border-dashed border-border-primary rounded-2xl flex flex-col md:flex-row justify-between items-center gap-6">
+			<div class="flex items-center gap-4 text-xs font-mono text-text-secondary/50">
 				<span class="animate-pulse">_</span>
 				<p>准备好深入了解了吗？点击上方列表查看各个项目的详细设计案例研究。</p>
 			</div>
-			<a href="/" class="px-6 py-2 bg-black text-white text-[10px] font-mono tracking-widest hover:bg-black/80 transition-colors">
+			<a href="/" class="px-6 py-2 bg-text-primary text-bg-primary text-[10px] font-mono tracking-widest hover:opacity-80 transition-colors">
 				GOTO: HOME
 			</a>
 		</div>

@@ -4,15 +4,45 @@
   --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-primary: var(--border-primary);
+}
+
+:root {
+  --bg-primary: #fafafa;
+  --text-primary: rgba(0, 0, 0, 0.9);
+  --text-secondary: rgba(0, 0, 0, 0.4);
+  --border-primary: rgba(0, 0, 0, 0.05);
+  --selection-bg: #000000;
+  --selection-text: #ffffff;
+  --grid-color: #000000;
+}
+
+.dark {
+  --bg-primary: #121212;
+  --text-primary: rgba(255, 255, 255, 0.9);
+  --text-secondary: rgba(255, 255, 255, 0.4);
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --selection-bg: #ffffff;
+  --selection-text: #000000;
+  --grid-color: #ffffff;
 }
 
 @layer base {
   html {
-    @apply scroll-smooth selection:bg-black selection:text-white;
+    @apply scroll-smooth;
+  }
+  
+  html ::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
   }
 
   body {
-    @apply font-sans bg-[#fafafa] text-black/90 antialiased relative overflow-x-hidden;
+    @apply font-sans bg-bg-primary text-text-primary antialiased relative overflow-x-hidden transition-colors duration-300;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
@@ -26,9 +56,9 @@
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(circle, #000 0.5px, transparent 0.5px),
-      linear-gradient(to right, #000 0.5px, transparent 0.5px),
-      linear-gradient(to bottom, #000 0.5px, transparent 0.5px);
+      radial-gradient(circle, var(--grid-color) 0.5px, transparent 0.5px),
+      linear-gradient(to right, var(--grid-color) 0.5px, transparent 0.5px),
+      linear-gradient(to bottom, var(--grid-color) 0.5px, transparent 0.5px);
     background-size: 40px 40px; /* 点阵间距 */
     mask-image: linear-gradient(to bottom, white, transparent);
     opacity: 0.03; /* 极低透明度，若隐若现 */
@@ -37,7 +67,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold tracking-tight text-black text-balance;
+    @apply font-serif font-bold tracking-tight text-text-primary text-balance;
   }
 
   p {
@@ -52,6 +82,6 @@
   
   /* 技术感的标签样式 */
   .tech-label {
-    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-black/40;
+    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-text-secondary;
   }
 }

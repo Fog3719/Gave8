@@ -36,25 +36,25 @@ const experience = [
 	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
 		<section>
 			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-16 md:mb-24">
-				探索<span class="text-black/40 italic font-serif">设计</span>的深度
+				探索<span class="text-text-secondary italic font-serif">设计</span>的深度
 			</h1>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
 				<!-- Photo Column -->
 				<div class="relative group">
-					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-gray-100">
+					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-border-primary">
 						<img 
 							src="/images/profile.jpg" 
 							alt="唐新旭 - 资深产品设计师" 
 							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
 						/>
 					</div>
-					<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-black/5 rounded-full -z-10 blur-2xl opacity-50"></div>
+					<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-text-primary/5 rounded-full -z-10 blur-2xl opacity-50"></div>
 				</div>
 
 				<!-- Text Column -->
 				<div class="max-w-xl">
-					<div class="space-y-8 text-xl text-black/60 leading-relaxed">
+					<div class="space-y-8 text-xl text-text-secondary leading-relaxed">
 						<p>
 							你好，我是唐新旭。作为资深产品设计师，我在多个项目中积累了丰富的产品设计和用户体验优化经验，专注于 Web 和移动端产品的全周期开发。
 						</p>
@@ -62,13 +62,13 @@ const experience = [
 							我能够高效输出产品文档和交互原型，确保团队按时完成交付。凭借参与数据分析、竞品研究和用户调研的经历，我不断优化产品功能，提升用户体验和满意度。
 						</p>
 						<p>
-							在管理方面，我曾领导设计团队，成功推动产品的改版升级和团队效率提升。具备扎实的产品思维和良好的沟通能力，始终关注设计趋势与用户需求。
+							在管理方面，我曾领导设计团队，成功推动产品的改版升级 and 团队效率提升。具备扎实的产品思维和良好的沟通能力，始终关注设计趋势与用户需求。
 						</p>
 					</div>
 
-					<div class="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-12 pt-12 border-t border-black/5">
+					<div class="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-12 pt-12 border-t border-border-primary">
 						<div>
-							<h2 class="text-xs uppercase tracking-widest font-bold mb-6 text-black/30">核心技能</h2>
+							<h2 class="text-xs uppercase tracking-widest font-bold mb-6 text-text-secondary">核心技能</h2>
 							<ul class="space-y-3 font-medium text-lg">
 								<li>产品管理 (Jira, Trello)</li>
 								<li>原型设计 (Axure, Figma)</li>
@@ -78,7 +78,7 @@ const experience = [
 							</ul>
 						</div>
 						<div>
-							<h2 class="text-xs uppercase tracking-widest font-bold mb-6 text-black/30">工具与系统</h2>
+							<h2 class="text-xs uppercase tracking-widest font-bold mb-6 text-text-secondary">工具与系统</h2>
 							<ul class="space-y-3 font-medium text-lg">
 								<li>Figma / Axure</li>
 								<li>Storybook</li>
@@ -90,16 +90,16 @@ const experience = [
 				</div>
 			</div>
 
-			<div class="mt-40 border-t border-black/5 pt-24 max-w-5xl">
-				<h2 class="text-xs uppercase tracking-widest font-bold mb-16 text-black/30">工作经历</h2>
+			<div class="mt-40 border-t border-border-primary pt-24 max-w-5xl">
+				<h2 class="text-xs uppercase tracking-widest font-bold mb-16 text-text-secondary">工作经历</h2>
 				<div class="space-y-16">
 					{experience.map(job => (
 						<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
-							<div class="text-black/40 font-medium">{job.period}</div>
+							<div class="text-text-secondary font-medium">{job.period}</div>
 							<div class="md:col-span-2">
 								<h3 class="text-2xl font-bold mb-2">{job.company}</h3>
-								<div class="text-black/60 font-medium mb-4">{job.role}</div>
-								<p class="text-black/50 leading-relaxed">{job.description}</p>
+								<div class="text-text-secondary font-medium mb-4">{job.role}</div>
+								<p class="text-text-secondary leading-relaxed">{job.description}</p>
 							</div>
 						</div>
 					))}
@@ -108,12 +108,12 @@ const experience = [
 		</section>
 
 		<!-- Footer -->
-		<footer class="mt-40 border-t border-black/5 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-black/40 text-sm">
+		<footer class="mt-40 border-t border-border-primary pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-sm">
 			<p>© 2026 TANG XINXU</p>
 			<div class="flex gap-8">
-				<a href="#" class="hover:text-black transition-colors">Dribbble</a>
-				<a href="#" class="hover:text-black transition-colors">Behance</a>
-				<a href="#" class="hover:text-black transition-colors">Instagram</a>
+				<a href="#" class="hover:text-text-primary transition-colors">Dribbble</a>
+				<a href="#" class="hover:text-text-primary transition-colors">Behance</a>
+				<a href="#" class="hover:text-text-primary transition-colors">Instagram</a>
 			</div>
 		</footer>
 	</main>
