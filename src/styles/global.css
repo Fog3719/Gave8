@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", "Source Han Serif SC", "STSong", "SimSun", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans bg-[#fafafa] text-black/90 antialiased;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold tracking-tight text-black;
+  }
+
+  /* 标点符号微调，防止中英文混排时的视觉突兀 */
+  p {
+    @apply break-words;
+    text-wrap: pretty;
+  }
+
+  /* 极简风的选中效果 */
+  ::selection {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
