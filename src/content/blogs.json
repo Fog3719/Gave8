@@ -1,0 +1,26 @@
+[
+  {
+    "id": "blog1",
+    "title": "在 figma 中实现多语言UI设计稿一键切换",
+    "tag": "Figma",
+    "date": "2023-09-04",
+    "image": "/resourses/cad2.png",
+    "excerpt": "可以将Google sheet中的数据按照命名规则自动同步填充到对应的文本图层中。在一些需要填充数据的场景中（例如表格、卡片），能大幅提升工作效率。"
+  },
+  {
+    "id": "blog2",
+    "title": "Stable Diffusion 与 Midjourney",
+    "tag": "AIGC",
+    "date": "2023-09-04",
+    "image": "https://photo.237484.xyz/2024/md_102313123.png",
+    "excerpt": "首先，让我们来谈一下 Midjourney。总的来说，V5 版本的效果还是不错的。但是，我不是很喜欢在 Discord 上使用它。总感觉它就像一个玩具，用来做生产力工具还是有些麻烦。"
+  },
+  {
+    "id": "blog3",
+    "title": "超好用的 Midjourney 提示词",
+    "tag": "AIGC",
+    "date": "2023-09-04",
+    "image": "https://photo.237484.xyz/2024/md_102313123.png",
+    "excerpt": "首先，让我们来谈一下 Midjourney。总的来说，V5 版本的效果还是不错的。但是，我不是很喜欢在 Discord 上使用它。总感觉它就像一个玩具，用来做生产力工具还是有些麻烦。"
+  }
+]

@@ -1,0 +1,110 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  content: string;
+}
+
+const { id, title, content } = Astro.props;
+---
+
+<div
+  id={id}
+  class="dialog-overlay fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm hidden z-50"
+  data-dialog-id={id}
+>
+  <div class="dialog-content bg-black bg-opacity-70 p-6 rounded-lg shadow-lg lg:w-1/2 w-full mx-4 max-h-[80vh] overflow-y-auto">
+    <h2 class="text-xl font-bold mb-4">{title}</h2>
+    <div class="dialog-body mb-4 text-white text-opacity-70 whitespace-pre-line">
+      {content}
+    </div>
+    <button
+      class="dialog-close bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+    >
+      关闭
+    </button>
+  </div>
+</div>
+
+<script>
+  // Dialog functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const dialogs = document.querySelectorAll('.dialog-overlay');
+    const body = document.body;
+
+    dialogs.forEach((dialog) => {
+      const dialogId = dialog.getAttribute('data-dialog-id');
+      const closeButton = dialog.querySelector('.dialog-close');
+      const dialogContent = dialog.querySelector('.dialog-content');
+
+      // Close button click
+      closeButton?.addEventListener('click', () => {
+        dialog.classList.add('hidden');
+        body.style.overflow = '';
+      });
+
+      // Click outside to close
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) {
+          dialog.classList.add('hidden');
+          body.style.overflow = '';
+        }
+      });
+
+      // Prevent closing when clicking content
+      dialogContent?.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+    });
+
+    // Open dialog buttons (global handler)
+    const openButtons = document.querySelectorAll('[data-dialog]');
+    openButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetDialogId = button.getAttribute('data-dialog');
+        const targetDialog = document.getElementById(targetDialogId);
+        if (targetDialog) {
+          targetDialog.classList.remove('hidden');
+          body.style.overflow = 'hidden';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .dialog-overlay {
+    transition: opacity 0.3s ease;
+  }
+
+  .dialog-overlay:not(.hidden) {
+    opacity: 1;
+  }
+
+  .dialog-content {
+    animation: dialogSlideIn 0.3s ease;
+  }
+
+  @keyframes dialogSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .backdrop-filter {
+    backdrop-filter: blur(4px);
+  }
+
+  .dialog-body {
+    line-height: 1.6;
+  }
+
+  .dialog-body br {
+    margin-bottom: 0.5rem;
+  }
+</style>

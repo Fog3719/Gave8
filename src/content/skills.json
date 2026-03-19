@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Blender",
+    "category": "3D modeling",
+    "icon": "/resourses/sf-logo/logos_blender.svg"
+  },
+  {
+    "name": "Sketch",
+    "category": "Design tool",
+    "icon": "/resourses/sf-logo/devicon_sketch.svg"
+  },
+  {
+    "name": "Figma",
+    "category": "Design tool",
+    "icon": "/resourses/sf-logo/logos_figma.svg"
+  },
+  {
+    "name": "Midjourney",
+    "category": "AI tool",
+    "icon": "/resourses/sf-logo/logos_midjourney.svg"
+  },
+  {
+    "name": "Rive",
+    "category": "Animation tool",
+    "icon": "/resourses/sf-logo/simple-icons_rive.svg"
+  },
+  {
+    "name": "Wordpress",
+    "category": "Web design",
+    "icon": "/resourses/sf-logo/skill-icons_wordpress.svg"
+  },
+  {
+    "name": "Illustrator",
+    "category": "Float design",
+    "icon": "/resourses/sf-logo/vscode-icons_file-type-ai.svg"
+  },
+  {
+    "name": "Photoshop",
+    "category": "Float design",
+    "icon": "/resourses/sf-logo/vscode-icons_file-type-photoshop.svg"
+  }
+]

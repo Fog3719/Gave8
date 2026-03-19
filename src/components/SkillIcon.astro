@@ -1,0 +1,72 @@
+---
+export interface Props {
+  name: string;
+  category: string;
+  icon: string;
+}
+
+const { name, category, icon } = Astro.props;
+---
+
+<div class="software-list-item scroll-animation group">
+  <img
+    src={icon}
+    alt={name}
+    class="sw-logo-resize transition-transform duration-300 group-hover:scale-110"
+  />
+  <div class="flex flex-col lg:hidden">
+    <h3 class="text-white font-medium">{name}</h3>
+    <p class="text-white text-opacity-50 text-sm">{category}</p>
+  </div>
+</div>
+
+<style>
+  .software-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .software-list-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .sw-logo-resize {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+  }
+
+  @media (min-width: 1024px) {
+    .software-list-item {
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .sw-logo-resize {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .scroll-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .scroll-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
