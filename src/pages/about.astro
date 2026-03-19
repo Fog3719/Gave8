@@ -36,18 +36,21 @@ const experience = [
 	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
 		<section>
 			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-16 md:mb-24">
-				探索<span class="text-text-secondary italic font-serif">设计</span>的深度
+				探索<span class="text-text-secondary font-serif">设计</span>的深度
 			</h1>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
 				<!-- Photo Column -->
 				<div class="relative group">
-					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-border-primary">
+					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-border-primary relative">
 						<img 
 							src="/images/profile.jpg" 
 							alt="唐新旭 - 资深产品设计师" 
 							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+							style="filter: var(--img-filter);"
 						/>
+						<!-- Dark Mode Layer Filter Overlay -->
+						<div class="absolute inset-0 pointer-events-none transition-colors duration-700" style="background-color: var(--img-overlay);"></div>
 					</div>
 					<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-text-primary/5 rounded-full -z-10 blur-2xl opacity-50"></div>
 				</div>
