@@ -42,35 +42,35 @@ const screenshots = [
 
 <Layout title={`${project.title} | 作品集`}>
 	<Navigation />
-	
+
 	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
 		<!-- Project Header -->
 		<header class="max-w-3xl mb-24">
-			<div class="tech-label mb-6">{project.category}</div>
-			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8">
+			<div class="tech-label mb-6 scroll-animate" data-animate>{project.category}</div>
+			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8 scroll-animate" data-animate style="transition-delay: 50ms">
 				{project.title}
 			</h1>
-			<p class="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium">
+			<p class="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium scroll-animate" data-animate style="transition-delay: 100ms">
 				{project.description}
 			</p>
 		</header>
 
 		<!-- Hero Image (Banner) -->
-		<section class="mb-32 overflow-hidden rounded-3xl bg-text-primary/5 border border-border-primary">
+		<section class="mb-32 overflow-hidden rounded-3xl bg-text-primary/5 border border-border-primary scroll-animate" data-animate style="transition-delay: 150ms">
 			<img src={designPages[0]} alt="EDA Project Hero" class="w-full h-auto object-cover" />
 		</section>
 
 		<!-- Project Meta -->
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 border-y border-border-primary mb-32">
-			<div>
+			<div class="scroll-animate" data-animate>
 				<h3 class="tech-label mb-4">我的角色</h3>
 				<p class="font-medium text-lg">{project.role}</p>
 			</div>
-			<div>
+			<div class="scroll-animate" data-animate style="transition-delay: 50ms">
 				<h3 class="tech-label mb-4">项目周期</h3>
 				<p class="font-medium text-lg">{project.period}</p>
 			</div>
-			<div>
+			<div class="scroll-animate" data-animate style="transition-delay: 100ms">
 				<h3 class="tech-label mb-4">核心成就</h3>
 				<ul class="space-y-2 font-medium text-text-secondary">
 					{project.highlights.map(item => <li>• {item}</li>)}
@@ -83,7 +83,7 @@ const screenshots = [
 			<!-- Section: Background & Context -->
 			<section>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-					<div>
+					<div class="scroll-animate" data-animate>
 						<h2 class="text-3xl font-bold mb-8 text-text-primary">项目背景与挑战</h2>
 						<div class="text-xl text-text-secondary leading-relaxed space-y-6">
 							<p>
@@ -94,22 +94,22 @@ const screenshots = [
 							</p>
 						</div>
 					</div>
-					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-2xl">
-						<img src={designPages[1]} alt="Context" class="w-full h-auto" />
+					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-2xl scroll-animate group" data-animate style="transition-delay: 100ms">
+						<img src={designPages[1]} alt="Context" class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.02]" />
 					</div>
 				</div>
 			</section>
 
 			<!-- Section: Full Process Gallery (The Document) -->
 			<section class="space-y-12">
-				<div class="flex justify-between items-end">
+				<div class="flex justify-between items-end scroll-animate" data-animate>
 					<h2 class="text-3xl font-bold text-text-primary">完整设计推导过程</h2>
 					<span class="tech-label opacity-50">DESIGN_PROCESS_DOCUMENTATION</span>
 				</div>
 				<div class="grid grid-cols-1 gap-8">
 					{designPages.slice(2).map((page, index) => (
-						<div class="rounded-2xl overflow-hidden border border-border-primary bg-text-primary/5 group">
-							<img src={page} alt={`Design Page ${index + 2}`} class="w-full h-auto transition-transform duration-700 group-hover:scale-[1.01]" />
+						<div class="rounded-2xl overflow-hidden border border-border-primary bg-text-primary/5 group scroll-animate" data-animate style={`transition-delay: ${(index % 3) * 50}ms`}>
+							<img src={page} alt={`Design Page ${index + 2}`} class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.01]" />
 						</div>
 					))}
 				</div>
@@ -117,118 +117,118 @@ const screenshots = [
 
 			<!-- Section: Solutions & Feature Showcases -->
 			<section class="space-y-32">
-				<div class="text-center max-w-2xl mx-auto">
+				<div class="text-center max-w-2xl mx-auto scroll-animate" data-animate>
 					<h2 class="text-3xl font-bold mb-6 text-text-primary">核心设计方案</h2>
 					<p class="text-text-secondary font-medium">针对复杂工业软件场景，构建的高效交互系统与视觉基建。</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-					<div>
+					<div class="scroll-animate" data-animate>
 						<h3 class="text-2xl font-bold mb-6 text-text-primary">智能网络识别与同步</h3>
 						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
-							无论在原理图还是网表中进行修改，系统都能智能识别并匹配对应的网络结构，自动完成另一侧的更新。
-						</p>
-						<div class="space-y-4">
-							<div class="flex gap-3">
-								<span class="text-accent font-mono text-sm">[01]</span>
-								<p class="text-sm text-text-secondary">实时数据热链接，消除同步延迟。</p>
+								无论在原理图还是网表中进行修改，系统都能智能识别并匹配对应的网络结构，自动完成另一侧的更新。
+							</p>
+							<div class="space-y-4">
+								<div class="flex gap-3">
+									<span class="text-accent font-mono text-sm">[01]</span>
+									<p class="text-sm text-text-secondary">实时数据热链接，消除同步延迟。</p>
+								</div>
+								<div class="flex gap-3">
+									<span class="text-accent font-mono text-sm">[02]</span>
+									<p class="text-sm text-text-secondary">可视化冲突解决机制。</p>
+								</div>
 							</div>
-							<div class="flex gap-3">
-								<span class="text-accent font-mono text-sm">[02]</span>
-								<p class="text-sm text-text-secondary">可视化冲突解决机制。</p>
+						</div>
+						<div class="rounded-2xl overflow-hidden border border-border-primary shadow-xl scroll-animate group" data-animate style="transition-delay: 100ms">
+							<img src={screenshots[0]} alt="Sync Feature" class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.02]" />
+						</div>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+						<div class="md:order-2 scroll-animate" data-animate>
+							<h3 class="text-2xl font-bold mb-6 text-text-primary">3D 布局与交互系统</h3>
+							<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+								引入基于 Chiplet 技术的 3D 封装布局方案，支持多层级 3D 布局数据导入。
+							</p>
+							<div class="bg-text-primary/5 p-6 rounded-xl border-l-4 border-accent transition-colors duration-300 hover:bg-text-primary/10">
+								<p class="text-sm italic text-text-secondary">"通过空间维度的扩展，我们为原本拥挤的平面布局提供了全新的组织方式。"</p>
+							</div>
+						</div>
+						<div class="md:order-1 rounded-2xl overflow-hidden border border-border-primary shadow-xl scroll-animate group" data-animate style="transition-delay: 100ms">
+							<img src={screenshots[1]} alt="3D Layout" class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.02]" />
+						</div>
+					</div>
+			</section>
+
+				<!-- Section: Interface Details (Masonry-like) -->
+				<section class="space-y-12">
+					<h2 class="text-3xl font-bold text-text-primary scroll-animate" data-animate>交互细节与界面表现</h2>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						{screenshots.slice(2).map((img, index) => (
+							<div class="rounded-xl overflow-hidden border border-border-primary bg-text-primary/5 scroll-animate group" data-animate style={`transition-delay: ${(index % 2) * 100}ms`}>
+								<img src={img} alt={`Screenshot ${index + 3}`} class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.02]" />
+							</div>
+						))}
+					</div>
+				</section>
+
+				<!-- Section: Results -->
+				<section class="bg-text-primary text-bg-primary p-12 md:p-24 rounded-[3rem] relative overflow-hidden scroll-animate" data-animate>
+					<!-- 背景装饰 -->
+					<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+						<div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+					</div>
+
+					<div class="relative z-10">
+						<h2 class="text-3xl font-bold mb-16 text-center text-inherit">项目交付成效</h2>
+						<div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+							<div class="space-y-4 scroll-animate" data-animate>
+								<div class="text-6xl font-bold tracking-tighter text-inherit">4 <span class="text-xl opacity-50 font-mono">FILES</span></div>
+								<div class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-inherit">技术专利预研交底</div>
+							</div>
+							<div class="space-y-4 scroll-animate" data-animate style="transition-delay: 50ms">
+								<div class="text-6xl font-bold tracking-tighter text-inherit">100%</div>
+								<div class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-inherit">数据映射一致性</div>
+							</div>
+							<div class="space-y-4 scroll-animate" data-animate style="transition-delay: 100ms">
+								<div class="text-6xl font-bold tracking-tighter text-inherit">60%</div>
+								<div class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-inherit">工程操作效率提升</div>
 							</div>
 						</div>
 					</div>
-					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-xl">
-						<img src={screenshots[0]} alt="Sync Feature" class="w-full h-auto" />
-					</div>
-				</div>
+				</section>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-					<div class="md:order-2">
-						<h3 class="text-2xl font-bold mb-6 text-text-primary">3D 布局与交互系统</h3>
-						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
-							引入基于 Chiplet 技术的 3D 封装布局方案，支持多层级 3D 布局数据导入。
-						</p>
-						<div class="bg-text-primary/5 p-6 rounded-xl border-l-4 border-accent">
-							<p class="text-sm italic text-text-secondary">“通过空间维度的扩展，我们为原本拥挤的平面布局提供了全新的组织方式。”</p>
+				<!-- Section: Reflection -->
+				<section class="pb-24 border-b border-border-primary scroll-animate" data-animate>
+					<h2 class="tech-label mb-8">RETROSPECTIVE</h2>
+					<div class="max-w-2xl">
+						<div class="text-2xl font-serif text-text-primary leading-snug mb-8 italic">
+							"在 To B 领域，复杂的功能并不意味着复杂的设计，关键在于如何将复杂性转化为易用性。"
+						</div>
+						<div class="text-lg text-text-secondary leading-relaxed font-medium space-y-6">
+							<p>
+								在 To B 领域，理解用户核心工作流程和背后的技术逻辑至关重要。通过与技术团队的深度协作，我学会了如何在有限的技术约束下找到最优的设计平衡点。
+							</p>
 						</div>
 					</div>
-					<div class="md:order-1 rounded-2xl overflow-hidden border border-border-primary shadow-xl">
-						<img src={screenshots[1]} alt="3D Layout" class="w-full h-auto" />
-					</div>
-				</div>
-			</section>
-
-			<!-- Section: Interface Details (Masonry-like) -->
-			<section class="space-y-12">
-				<h2 class="text-3xl font-bold text-text-primary">交互细节与界面表现</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					{screenshots.slice(2).map((img, index) => (
-						<div class="rounded-xl overflow-hidden border border-border-primary bg-text-primary/5">
-							<img src={img} alt={`Screenshot ${index + 3}`} class="w-full h-auto" />
-						</div>
-					))}
-				</div>
-			</section>
-
-			<!-- Section: Results -->
-			<section class="bg-text-primary text-bg-primary p-12 md:p-24 rounded-[3rem] relative overflow-hidden">
-				<!-- 背景装饰 -->
-				<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-					<div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
-				</div>
-
-				<div class="relative z-10">
-					<h2 class="text-3xl font-bold mb-16 text-center text-inherit">项目交付成效</h2>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-						<div class="space-y-4">
-							<div class="text-6xl font-bold tracking-tighter text-inherit">4 <span class="text-xl opacity-50 font-mono">FILES</span></div>
-							<div class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-inherit">技术专利预研交底</div>
-						</div>
-						<div class="space-y-4">
-							<div class="text-6xl font-bold tracking-tighter text-inherit">100%</div>
-							<div class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-inherit">数据映射一致性</div>
-						</div>
-						<div class="space-y-4">
-							<div class="text-6xl font-bold tracking-tighter text-inherit">60%</div>
-							<div class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-inherit">工程操作效率提升</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Section: Reflection -->
-			<section class="pb-24 border-b border-border-primary">
-				<h2 class="tech-label mb-8">RETROSPECTIVE</h2>
-				<div class="max-w-2xl">
-					<div class="text-2xl font-serif text-text-primary leading-snug mb-8 italic">
-						“在 To B 领域，复杂的功能并不意味着复杂的设计，关键在于如何将复杂性转化为易用性。”
-					</div>
-					<div class="text-lg text-text-secondary leading-relaxed font-medium space-y-6">
-						<p>
-							在 To B 领域，理解用户核心工作流程和背后的技术逻辑至关重要。通过与技术团队的深度协作，我学会了如何在有限的技术约束下找到最优的设计平衡点。
-						</p>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<!-- Next Project Prompt -->
-		<div class="py-24 flex justify-center">
-			<a href="/projects" class="group flex items-center gap-4 text-text-primary hover:opacity-70 transition-opacity">
-				<span class="tech-label">EXPLORE_MORE_PROJECTS</span>
-				<div class="w-12 h-[1px] bg-text-primary group-hover:w-20 transition-all duration-500"></div>
-			</a>
-		</div>
-
-		<!-- Footer -->
-		<footer class="mt-24 border-t border-border-primary pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-[10px] font-mono">
-			<p>© 2026 TANG XINXU. BUILT_FOR_PRECISION.</p>
-			<div class="flex gap-8">
-				<a href="/" class="hover:text-text-primary transition-colors">HOME</a>
-				<a href="/about" class="hover:text-text-primary transition-colors">ABOUT</a>
+				</section>
 			</div>
-		</footer>
-	</main>
-</Layout>
+
+			<!-- Next Project Prompt -->
+			<div class="py-24 flex justify-center scroll-animate" data-animate>
+				<a href="/projects" class="group flex items-center gap-4 text-text-primary hover:opacity-70 transition-opacity duration-200">
+					<span class="tech-label">EXPLORE_MORE_PROJECTS</span>
+					<div class="w-12 h-[1px] bg-text-primary transition-all duration-500 ease-out-expo group-hover:w-20"></div>
+				</a>
+			</div>
+
+			<!-- Footer -->
+			<footer class="mt-24 border-t border-border-primary pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-[10px] font-mono scroll-animate" data-animate>
+				<p>© 2026 TANG XINXU. BUILT_FOR_PRECISION.</p>
+				<div class="flex gap-8">
+					<a href="/" class="hover:text-text-primary transition-colors duration-200">HOME</a>
+					<a href="/about" class="hover:text-text-primary transition-colors duration-200">ABOUT</a>
+				</div>
+			</footer>
+		</main>
+	</Layout>
