@@ -5,103 +5,116 @@ import ProjectCard from '../components/ProjectCard.astro';
 
 const projects = [
 	{
+		title: "Planning UI Redesign",
+		category: "EPM 平台 / Design System / UI 重构",
+		image: "/images/projects/planning-redesign/banner_planningUI.png",
+		href: "/projects/planning-redesign"
+	},
+	{
+		title: "Si bridge - 3D 布局与凹槽设计",
+		category: "3D 布局 / 芯片设计 / 工业软件",
+		image: "/images/projects/sibridge/Generated 3D Image.png",
+		href: "/projects/sibridge"
+	},
+	{
 		title: "EDA 设计平台",
 		category: "3D 布局 / 交互系统 / 半导体",
-		image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
+		image: "/images/projects/eda/page_11-1.png",
 		href: "/projects/eda"
 	},
 	{
-		title: "FONE_Planning",
-		category: "多维预算 / Design System",
-		image: "https://images.unsplash.com/photo-1561070791-26c11d204a3d?q=80&w=1000&auto=format&fit=crop",
-		href: "#"
+		title: "汽车营销返利系统访谈洞察",
+		category: "User Research / B2B Logic / Automotive",
+		image: "/images/projects/marketing-research-cover.jpg",
+		href: "/projects/marketing-research"
 	},
 	{
-		title: "Tel-UI 组件库",
-		category: "前端规范 / 框架整合",
-		image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop",
-		href: "#"
+		title: "Planning-DataStream 体验优化",
+		category: "数据集成 / 画布交互 / ETL 优化",
+		image: "/images/projects/datastream/cover.png",
+		href: "/projects/planning-datastream"
 	},
 	{
-		title: "智慧通物联网平台",
-		category: "小程序 / 后台系统",
-		image: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=1000&auto=format&fit=crop",
-		href: "#"
-	}
+		title: "数据钻取与自助分析平台",
+		category: "企业 BI / 自助分析 / 数据平台",
+		image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+		href: "/projects/data-drilling"
+	},
 ];
 ---
 
 <Layout title="TANG XINXU | 设计与逻辑的构建者">
 	<Navigation />
-	
+
 	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
 		<!-- Hero Section -->
 		<section class="max-w-4xl mb-32 md:mb-56 relative">
 			<!-- 装饰性的技术标注 -->
-			<div class="absolute -top-12 left-0 tech-label opacity-40 flex items-center gap-2">
-				<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-				CURR_ENV: PORTFOLIO_V2.0.26
+			<div class="absolute -top-12 left-0 tech-label opacity-40 flex items-center gap-2 scroll-animate" data-animate>
+				<span class="w-2 h-2 rounded-full bg-green-500 animate-breathe"></span>
+				STATUS: OPEN_FOR_THOUGHTS
 			</div>
-			
-			<h1 class="text-6xl md:text-[5.5rem] font-bold leading-[0.95] tracking-tight mb-12">
-				构建<span class="text-black/30 italic font-serif relative">极度精密<span class="absolute -top-4 -right-2 text-[10px] font-mono not-italic opacity-40">[01]</span></span>的<br/>数字<span class="text-black inline-block transform -skew-x-6">操作系统</span>
+
+			<h1 class="text-6xl md:text-[5.5rem] font-bold leading-[0.95] tracking-tight mb-12 text-text-primary scroll-animate" data-animate style="transition-delay: 50ms">
+				在<span class="text-accent/60 font-serif relative">精密<span class="absolute -top-4 -right-2 text-[10px] font-mono not-italic opacity-40">[01]</span></span>中<br/>构建<span class="text-text-primary inline-block transform -skew-x-6">直觉</span>的秩序
 			</h1>
-			
+
+
 			<div class="flex flex-col md:flex-row gap-12 md:items-end">
-				<p class="text-xl md:text-2xl text-black/60 leading-relaxed max-w-xl font-medium">
-					我是唐新旭，专注于 EDA 软件与复杂 SaaS 系统。我不仅设计界面，更在构建能够支撑复杂业务逻辑的<span class="text-black underline decoration-black/10 underline-offset-4">视觉基建</span>。
+				<p class="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-xl font-medium scroll-animate" data-animate style="transition-delay: 100ms">
+					你好，我是唐新旭。我专注于复杂 B 端与重型系统，擅长在极高密度的信息与庞杂的业务逻辑中重塑交互秩序。我不仅在设计界面，更在构建跨越平台限制的<span class="text-text-primary underline decoration-text-primary/10 underline-offset-4">体验基底</span>，让强大的技术工具成为人类直觉的延伸。
 				</p>
-				
+
 				<!-- 补充的小字块 -->
-				<div class="md:pb-1 text-[10px] font-mono text-black/30 space-y-1">
-					<p>// LOCATION: SHANGHAI, CN</p>
-					<p>// FOCUS: SYSTEM_ARCHITECTURE</p>
-					<p>// CURRENT: EDA_UX_LEAD</p>
+				<div class="md:pb-1 text-[10px] font-mono text-text-secondary space-y-1 scroll-animate" data-animate style="transition-delay: 150ms">
+					<p>// LIVING_IN: SHANGHAI, CN</p>
+					<p>// PASSION: B2B_COMPLEX_SYSTEMS</p>
+					<p>// ROLE: UX_ARCHITECT</p>
 				</div>
 			</div>
 		</section>
 
 		<!-- Projects Section Header -->
-		<div class="mb-12 flex justify-between items-end border-b border-black/5 pb-4">
-			<h2 class="tech-label">SELECTED_WORKS [04]</h2>
-			<div class="hidden md:block font-mono text-[9px] text-black/20">SCROLL_TO_EXPLORE_PROJECTS</div>
+		<div class="mb-12 flex justify-between items-end border-b border-border-primary pb-4 scroll-animate" data-animate>
+			<h2 class="tech-label">SELECTED_WORKS [06]</h2>
+			<div class="hidden md:block font-mono text-[9px] text-text-secondary/50">SCROLL_TO_EXPLORE_PROJECTS</div>
 		</div>
 
 		<!-- Projects Grid -->
 		<section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
-			{projects.map(project => (
+			{projects.map((project, index) => (
 				<ProjectCard {...project} />
 			))}
 		</section>
 
 		<!-- Footer -->
-		<footer class="mt-64 border-t border-black/5 pt-16 pb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+		<footer class="mt-64 border-t border-border-primary pt-16 pb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 scroll-animate" data-animate>
 			<div class="space-y-4">
 				<div class="text-lg font-mono font-medium">LET'S_COLLABORATE.</div>
-				<p class="text-black/40 max-w-sm text-sm">正在寻找能够挑战复杂性、追求极致精密的设计机会。</p>
+				<p class="text-text-secondary max-w-sm text-sm">我正在探索如何通过设计让复杂的技术变得更优雅。如果你也对这些挑战感兴趣，或者有有趣的想法，欢迎随时联系我。</p>
 			</div>
-			
+
 			<div class="flex flex-wrap gap-x-12 gap-y-6">
 				<div class="space-y-3">
 					<span class="tech-label">CONTACT</span>
 					<div class="flex gap-6 text-sm font-medium">
-						<a href="mailto:hello@tangxinxu.me" class="hover:text-black/50 transition-colors underline underline-offset-4">Email</a>
-						<a href="#" class="hover:text-black/50 transition-colors underline underline-offset-4">WeChat</a>
+						<a href="mailto:hello@tangxinxu.me" class="hover:text-text-secondary transition-colors duration-200 underline underline-offset-4">Email</a>
+						<a href="#" class="hover:text-text-secondary transition-colors duration-200 underline underline-offset-4">WeChat</a>
 					</div>
 				</div>
 				<div class="space-y-3">
 					<span class="tech-label">SOCIAL</span>
-					<div class="flex gap-6 text-sm font-medium text-black/40">
-						<a href="#" class="hover:text-black transition-colors">Dribbble</a>
-						<a href="#" class="hover:text-black transition-colors">Behance</a>
-						<a href="#" class="hover:text-black transition-colors">Readme</a>
+					<div class="flex gap-6 text-sm font-medium text-text-secondary">
+						<a href="#" class="hover:text-text-primary transition-colors duration-200">Dribbble</a>
+						<a href="#" class="hover:text-text-primary transition-colors duration-200">Behance</a>
+						<a href="#" class="hover:text-text-primary transition-colors duration-200">Readme</a>
 					</div>
 				</div>
 			</div>
 		</footer>
-		
+
 		<!-- 底部备案/版权 -->
-		<div class="mt-24 font-mono text-[9px] text-black/20 flex justify-between">
+		<div class="mt-24 font-mono text-[9px] text-text-secondary/50 flex justify-between scroll-animate" data-animate>
 			<span>© 2026 TANG XINXU. ALL RIGHTS RESERVED.</span>
 			<span>BUILT_WITH_ASTRO_AND_LOGIC</span>
 		</div>

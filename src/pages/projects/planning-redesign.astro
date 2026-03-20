@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+const project = {
+  title: "Planning 5.5 UI Redesign",
+  category: "EPM 平台 / Design System / UI 重构",
+  description: "作为国内领先的业财一体规划分析平台，Planning 在 5.5 版本进行了全面的 UI 重构。旨在通过建立完善的 Design System，提升产品一致性与开发效率。",
+  role: "Lead UI/UX Designer",
+  period: "2024.10 - 2024.11",
+  highlights: [
+    "构建了覆盖全业务线的 Design System，统一了视觉语言",
+    "重塑了图标与素材库，建立了标准化的绘制规范",
+    "抽象并沉淀了 6 大类业务组件，大幅提升了交付效率"
+  ]
+};
+
+const images = {
+  hero: "/images/projects/planning-redesign/banner_planningUI.png",
+  cover: "/images/projects/planning-redesign/planning_cover.png",
+  ds: [
+    { src: "/images/projects/planning-redesign/design-system01.png", title: "基础色板", desc: "包含品牌主色、辅助色及中性色系统" },
+    { src: "/images/projects/planning-redesign/design-system02.png", title: "功能色板", desc: "用于状态反馈与复杂图表标记" },
+    { src: "/images/projects/planning-redesign/design-system03.png", title: "风格样式", desc: "定义的阴影、模糊及层级规范" }
+  ],
+  icons: [
+    "/images/projects/planning-redesign/icon-gride01.png",
+    "/images/projects/planning-redesign/icon-gride02.png",
+    "/images/projects/planning-redesign/icon-gride03.png",
+    "/images/projects/planning-redesign/icon-gride04.png",
+    "/images/projects/planning-redesign/icon-gride05.png",
+    "/images/projects/planning-redesign/icon-gride06.png",
+    "/images/projects/planning-redesign/icon-gride07.png",
+    "/images/projects/planning-redesign/icon-gride08.png",
+    "/images/projects/planning-redesign/icon-gride09.png"
+  ],
+  components: [
+    { src: "/images/projects/planning-redesign/image 16.png", title: "绘制规范", desc: "设定基础图标的线宽、圆角与尺寸比例" },
+    { src: "/images/projects/planning-redesign/image 17.png", title: "界面元素", desc: "在不改变用户心智的前提下优化交互元素" }
+  ],
+  showcase: [
+    "/images/projects/planning-redesign/f1A01.png",
+    "/images/projects/planning-redesign/f1A02.png",
+    "/images/projects/planning-redesign/f1A03.png",
+    "/images/projects/planning-redesign/f1A04.png",
+    "/images/projects/planning-redesign/f1A05.png",
+    "/images/projects/planning-redesign/f1A06.png",
+    "/images/projects/planning-redesign/f1A07.png",
+    "/images/projects/planning-redesign/f1A08.png",
+    "/images/projects/planning-redesign/f1A09.png"
+  ]
+};
+---
+
+<Layout title={`${project.title} | 作品集`}>
+	<Navigation />
+
+	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
+		<!-- Project Header -->
+		<header class="max-w-3xl mb-24">
+			<div class="tech-label mb-6 scroll-animate" data-animate>{project.category}</div>
+			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8 scroll-animate" data-animate style="transition-delay: 50ms">
+				{project.title}
+			</h1>
+			<p class="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium scroll-animate" data-animate style="transition-delay: 100ms">
+				{project.description}
+			</p>
+		</header>
+
+		<!-- Hero Image -->
+		<section class="mb-32 overflow-hidden rounded-3xl bg-text-primary/5 border border-border-primary scroll-animate" data-animate style="transition-delay: 150ms">
+			<img src={images.hero} alt="Planning Redesign Hero" class="w-full h-auto object-cover" />
+		</section>
+
+		<!-- Project Meta -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 border-y border-border-primary mb-32">
+			<div class="scroll-animate" data-animate>
+				<h3 class="tech-label mb-4">我的角色</h3>
+				<p class="font-medium text-lg">{project.role}</p>
+			</div>
+			<div class="scroll-animate" data-animate style="transition-delay: 50ms">
+				<h3 class="tech-label mb-4">项目周期</h3>
+				<p class="font-medium text-lg">{project.period}</p>
+			</div>
+			<div class="scroll-animate" data-animate style="transition-delay: 100ms">
+				<h3 class="tech-label mb-4">核心成就</h3>
+				<ul class="space-y-2 font-medium text-text-secondary">
+					{project.highlights.map(item => <li>• {item}</li>)}
+				</ul>
+			</div>
+		</div>
+
+		<div class="max-w-5xl mx-auto space-y-48">
+			<!-- Section: Background -->
+			<section>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+					<div class="scroll-animate" data-animate>
+						<h2 class="text-3xl font-bold mb-8 text-text-primary">项目背景</h2>
+						<div class="text-xl text-text-secondary leading-relaxed space-y-6">
+							<p>
+								随着业务的快速扩张，原有的 UI 系统逐渐难以承载复杂的功能迭代。在 5.5 版本中，我们决定进行系统性的重构，以更好地展现产品能力的升级。
+							</p>
+							<p>
+								<strong class="text-text-primary">重构目标：</strong> 提升技术架构，提高开发效率，优化用户体验，确保产品一致性和灵活性。
+							</p>
+						</div>
+					</div>
+					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-2xl scroll-animate group" data-animate style="transition-delay: 100ms">
+						<img src={images.cover} alt="Planning Project Cover" class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.02]" />
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Design System -->
+			<section class="space-y-16">
+				<div class="scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold mb-8 text-text-primary">Design System 建设</h2>
+					<p class="text-xl text-text-secondary leading-relaxed font-medium max-w-2xl">
+						我们统一了各条业务线的设计规范，建立了一套覆盖全面的组件库与样式系统。
+					</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					{images.ds.map((item, index) => (
+						<div class="group scroll-animate" data-animate style={`transition-delay: ${index * 100}ms`}>
+							<div class="rounded-xl overflow-hidden border border-border-primary mb-6 aspect-video bg-text-primary/5">
+								<img src={item.src} alt={item.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+							</div>
+							<h3 class="text-lg font-bold mb-2">{item.title}</h3>
+							<p class="text-sm text-text-secondary">{item.desc}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Section: Icon Library -->
+			<section class="space-y-16">
+				<div class="scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold mb-6 text-text-primary">素材库与图标规范</h2>
+					<p class="text-lg text-text-secondary leading-relaxed font-medium max-w-2xl">
+						设定基础的图标绘制规范，包括线宽、圆角与网格系统，确保所有视觉元素的高度统一。
+					</p>
+				</div>
+				
+				<!-- Icon Grid System -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{images.icons.map((icon, index) => (
+						<div class="group scroll-animate" data-animate style={`transition-delay: ${(index % 3) * 100}ms`}>
+							<div class="rounded-2xl overflow-hidden border border-border-primary bg-text-primary/5 aspect-[4/3] flex items-center justify-center p-6">
+								<img src={icon} alt={`Icon Specification ${index + 1}`} class="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105" />
+							</div>
+							<div class="mt-4 flex justify-between items-center px-2">
+								<span class="text-[10px] font-mono text-text-secondary">SPEC_SHEET_{String(index + 1).padStart(2, '0')}</span>
+								<div class="w-1.5 h-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Icon Redesign Comparison -->
+				<div class="mt-32 p-12 rounded-[2rem] bg-zinc-950 border border-border-primary scroll-animate" data-animate>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+						<div class="space-y-8">
+							<h3 class="text-2xl font-bold text-text-primary">优化现有素材</h3>
+							<p class="text-text-secondary leading-relaxed font-medium">
+								在不改变用户心智的前提下，对现有界面元素进行了系统性的风格微调，通过统一的线宽与转角处理，使视觉感官更加现代与一致。
+							</p>
+							<div class="flex gap-4">
+								<div class="px-3 py-1 rounded-full border border-border-primary text-[9px] font-mono text-text-secondary">LINE_WEIGHT: 1.5PX</div>
+								<div class="px-3 py-1 rounded-full border border-border-primary text-[9px] font-mono text-text-secondary">RADIUS: 2PX</div>
+							</div>
+						</div>
+						<div class="rounded-xl overflow-hidden border border-border-primary bg-white/5">
+							<img src="/images/projects/planning-redesign/modification_icon.png" alt="Icon Modification Comparison" class="w-full h-auto" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Business Components -->
+			<section class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+				<div class="scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold mb-8 text-text-primary">沉淀业务组件库</h2>
+					<p class="text-xl text-text-secondary leading-relaxed font-medium mb-8">
+						针对模型、数据流、报表等 6 大业务场景，抽象出高复用的业务组件，极大缩短了从设计到开发的链路。
+					</p>
+					<div class="space-y-4">
+						{images.components.map(comp => (
+							<div class="p-6 rounded-xl border border-border-primary bg-text-primary/5">
+								<h4 class="font-bold mb-1">{comp.title}</h4>
+								<p class="text-sm text-text-secondary">{comp.desc}</p>
+							</div>
+						))}
+					</div>
+				</div>
+				<div class="space-y-8">
+					{images.components.map((comp, index) => (
+						<div class="rounded-xl overflow-hidden border border-border-primary shadow-lg scroll-animate" data-animate style={`transition-delay: ${index * 100}ms`}>
+							<img src={comp.src} alt={comp.title} class="w-full h-auto" />
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Section: Showcase -->
+			<section class="space-y-16">
+				<div class="flex justify-between items-end scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold text-text-primary">示例页面</h2>
+					<span class="tech-label opacity-50">INTERFACE_SHOWCASE</span>
+				</div>
+				<div class="grid grid-cols-1 gap-12">
+					{images.showcase.map((img, index) => (
+						<div class="rounded-2xl overflow-hidden border border-border-primary bg-text-primary/5 group scroll-animate" data-animate style={`transition-delay: ${(index % 3) * 50}ms`}>
+							<img src={img} alt={`Showcase ${index + 1}`} class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.01]" />
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Section: Summary -->
+			<section class="pb-24 border-b border-border-primary scroll-animate" data-animate>
+				<h2 class="tech-label mb-8">RETROSPECTIVE</h2>
+				<div class="max-w-2xl">
+					<div class="text-2xl font-serif text-text-primary leading-snug mb-8 italic">
+						"好的重构不只是视觉的刷新，更是对系统架构的一次深度审视。"
+					</div>
+					<div class="text-lg text-text-secondary leading-relaxed font-medium space-y-6">
+						<p>
+							在 Planning 5.5 的重构过程中，我们不仅解决了设计债务，更通过 Design System 为未来的快速迭代奠定了基础。这次重构证明了设计规范在复杂 SaaS 产品中的巨大价值。
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Next Project Prompt -->
+		<div class="py-24 flex justify-center scroll-animate" data-animate>
+			<a href="/projects" class="group flex items-center gap-4 text-text-primary hover:opacity-70 transition-opacity duration-200">
+				<span class="tech-label">EXPLORE_MORE_PROJECTS</span>
+				<div class="w-12 h-[1px] bg-text-primary transition-all duration-500 ease-out-expo group-hover:w-20"></div>
+			</a>
+		</div>
+
+		<!-- Footer -->
+		<footer class="mt-24 border-t border-border-primary pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-[10px] font-mono scroll-animate" data-animate>
+			<p>© 2026 TANG XINXU. BUILT_FOR_PRECISION.</p>
+			<div class="flex gap-8">
+				<a href="/" class="hover:text-text-primary transition-colors duration-200">HOME</a>
+				<a href="/about" class="hover:text-text-primary transition-colors duration-200">ABOUT</a>
+			</div>
+		</footer>
+	</main>
+</Layout>

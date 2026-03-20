@@ -5,27 +5,77 @@ import Navigation from '../components/Navigation.astro';
 const experience = [
 	{
 		company: "上海奇普乐芯片科技有限公司",
-		role: "交互设计师",
-		period: "2024.08 - 至今",
-		description: "担任 UX 用户体验设计师，负责 EDA 软件产品的整体交互/产品设计。主导并设计多个关键产品模块，涵盖 3D 布局、2D 布线、原理图和网表等。主导并完成产品 design system 的建立与维护。"
+		role: "资深交互设计师",
+		period: "2023.05 - 至今",
+		description: "负责 EDA 软件产品的整体交互/UI设计。主导设计 3D 布局、2D 布线、原理图和网表等关键模块。负责 Design System 的建立与维护，并与专利团队协作撰写 4 份技术交底书。完成 EDA 产品信息架构设计，确定以 3D 封装布局为核心的交互方案。"
 	},
 	{
 		company: "上海绎维软件系统有限公司",
 		role: "高级交互设计师",
-		period: "2023.05 - 2024.07",
-		description: "在多维预算产品 FONE_Planning、合并报表等产品的设计与用户体验方面担任管理角色。建立公司内统一的产品设计系统，采用原子化设计方法和 Figma + Storybook 工具。"
+		period: "2019.01 - 2023.02",
+		description: "管理多维预算 FONE_Planning、合并报表、大数据平台等产品线的设计与用户体验。建立公司统一的原子化设计系统（Figma + Storybook）。引入结对设计流程，主导 2 个大版本迭代。2019 年获得公司最佳新员工奖项。"
 	},
 	{
 		company: "上海展湾信息科技有限公司",
 		role: "交互设计师",
 		period: "2018.05 - 2019.01",
-		description: "负责官网改版、小程序「智慧通 smart」产品设计以及物联网「智慧通」后台系统交互设计。更新制定平台项目设计规范。"
+		description: "独立负责 Web 端和移动端产品设计。完成 www.zhan-wan.com 官网改版、小程序「智慧通 smart」及物联网后台系统交互设计。更新并制定平台项目设计规范，推动 To B 产品用户体验提升。"
 	},
 	{
 		company: "北京一起嗨网络科技有限公司",
 		role: "UI 设计 / 交互设计师",
 		period: "2017.02 - 2018.03",
-		description: "负责公司各项目产品的 Web 端和移动端 UI 设计、用户体验、交互设计等工作。构建公司各个项目的 UI 设计规范。"
+		description: "负责公司各项目产品的 UI 与交互设计。独立完成从需求调研、逻辑结构到原型与视觉界面的全流程设计，并构建 UI 设计规范以保持品牌一致性。"
+	},
+	{
+		company: "河南广播电视网络股份有限公司",
+		role: "GUI 设计师",
+		period: "2014.09 - 2016.12",
+		description: "负责电视机顶盒 GUI 界面设计，包括内容模块、导航布局及图标制作。规划产品 UI 整体风格，维护 UI 资源库，并与后台开发协作确保设计方案落地。"
+	}
+];
+
+const skills = [
+	{ name: "Figma", desc: "Design tool", icon: "/images/tools/figma.svg" },
+	{ name: "Sketch", desc: "Design tool", icon: "/images/tools/sketch.svg" },
+	{ name: "Blender", desc: "3D modeling", icon: "/images/tools/blender.svg" },
+	{ name: "Midjourney", desc: "AI tool", icon: "/images/tools/midjourney.svg" },
+	{ name: "Rive", desc: "Animation tool", icon: "/images/tools/rive.svg" },
+	{ name: "Wordpress", desc: "Web design", icon: "/images/tools/wordpress.svg" },
+	{ name: "Illustrator", desc: "Vector design", icon: "/images/tools/illustrator.svg" },
+	{ name: "Photoshop", desc: "Photo editing", icon: "/images/tools/photoshop.svg" }
+];
+
+const expertise = [
+	{
+		title: "User Research",
+		desc: "熟悉定性与定量研究方法，如用户访谈、问卷调查和可用性测试。能够分析用户需求与行为，从中提取设计洞察。",
+		points: ["定性/定量分析", "可用性测试", "用户访谈"]
+	},
+	{
+		title: "Information Architecture",
+		desc: "设计清晰的导航结构，确保信息的逻辑组织和可访问性。具备创建站点地图和用户流程图的能力。",
+		points: ["站点地图", "用户路径", "逻辑组织"]
+	},
+	{
+		title: "Interaction Design (UI)",
+		desc: "理解用户与产品的交互方式，设计直观的界面。深入理解设计模式与交互原则。",
+		points: ["直观界面", "设计模式", "交互原则"]
+	},
+	{
+		title: "Prototyping",
+		desc: "能够创建低保真和高保真原型，用于快速迭代和测试。熟练使用 Figma 和 Axure 等原型工具。",
+		points: ["快速迭代", "高保真原型", "Figma/Axure"]
+	},
+	{
+		title: "Cross-Team Collaboration",
+		desc: "与产品经理、开发和营销团队紧密合作，确保设计的可行性。具备清晰表达设计理念和决策的沟通能力。",
+		points: ["跨职能协作", "设计可行性", "高效沟通"]
+	},
+	{
+		title: "Design Thinking",
+		desc: "以用户为中心，通过创新设计解决问题。理解设计思维全流程：同理心、定义问题、构思、原型及测试。",
+		points: ["创新解决", "同理心驱动", "全流程管理"]
 	}
 ];
 ---
@@ -33,87 +83,121 @@ const experience = [
 <Layout title="关于我 | 资深产品设计师">
 	<Navigation />
 	
-	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
-		<section>
-			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-16 md:mb-24">
-				探索<span class="text-black/40 italic font-serif">设计</span>的深度
+	<main class="max-w-6xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
+		<!-- Hero Section: Info + Photo integrated -->
+		<section class="mb-32">
+			<h1 class="text-6xl md:text-8xl font-bold leading-[1] tracking-tighter mb-16 md:mb-24">
+				探索<span class="text-text-secondary font-serif italic">设计</span>的深度
 			</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
-				<!-- Photo Column -->
-				<div class="relative group">
-					<div class="aspect-[4/5] overflow-hidden rounded-2xl bg-gray-100">
-						<img 
-							src="/images/profile.jpg" 
-							alt="唐新旭 - 资深产品设计师" 
-							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-						/>
-					</div>
-					<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-black/5 rounded-full -z-10 blur-2xl opacity-50"></div>
+			<div class="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
+				<div class="flex-1 space-y-8 text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl">
+					<p class="text-text-primary font-medium">
+						你好，我是唐新旭。
+					</p>
+					<p>
+						拥有 12 年跨领域产品设计经验，我始终深耕于复杂 B 端系统与重型应用的信息架构重组。我相信，再庞杂的业务逻辑，也应当被赋予直觉且优雅的交互秩序。
+					</p>
+					<p>
+						作为具有工程思维的设计师，我熟练运用 Agent 与 Vibe Coding 范式，跨越静态原型的局限，直接输出具备真实交互逻辑的代码级高保真原型，从而大幅缩短产研的验证与交付周期。此外，我具备从 0 到 1 搭建全量原子化组件库（Figma + Storybook）的实战经验，曾主导统一 13 个业务系统的前端框架，极限压降了多线产品的研发与维护成本。
+					</p>
+					<p>
+						在团队管理与效能提升方面，我积极引入敏捷模式与“结对设计”。我习惯于利用数据分析与深度用研反哺产品迭代，致力于实现体验指标与团队人效的双向增长。
+					</p>
 				</div>
-
-				<!-- Text Column -->
-				<div class="max-w-xl">
-					<div class="space-y-8 text-xl text-black/60 leading-relaxed">
-						<p>
-							你好，我是唐新旭。作为资深产品设计师，我在多个项目中积累了丰富的产品设计和用户体验优化经验，专注于 Web 和移动端产品的全周期开发。
-						</p>
-						<p>
-							我能够高效输出产品文档和交互原型，确保团队按时完成交付。凭借参与数据分析、竞品研究和用户调研的经历，我不断优化产品功能，提升用户体验和满意度。
-						</p>
-						<p>
-							在管理方面，我曾领导设计团队，成功推动产品的改版升级和团队效率提升。具备扎实的产品思维和良好的沟通能力，始终关注设计趋势与用户需求。
-						</p>
-					</div>
-
-					<div class="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-12 pt-12 border-t border-black/5">
-						<div>
-							<h2 class="text-xs uppercase tracking-widest font-bold mb-6 text-black/30">核心技能</h2>
-							<ul class="space-y-3 font-medium text-lg">
-								<li>产品管理 (Jira, Trello)</li>
-								<li>原型设计 (Axure, Figma)</li>
-								<li>数据分析与需求调研</li>
-								<li>用户体验设计 (UX)</li>
-								<li>竞品分析与用户调研</li>
-							</ul>
+				
+				<div class="w-full md:w-72 shrink-0 group">
+					<div class="relative">
+						<div class="aspect-[3/4] overflow-hidden rounded-2xl bg-border-primary relative shadow-xl">
+							<img 
+								src="/images/profile.jpg" 
+								alt="唐新旭" 
+								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+								style="filter: var(--img-filter);"
+							/>
+							<div class="absolute inset-0 pointer-events-none transition-colors duration-700" style="background-color: var(--img-overlay);"></div>
 						</div>
-						<div>
-							<h2 class="text-xs uppercase tracking-widest font-bold mb-6 text-black/30">工具与系统</h2>
-							<ul class="space-y-3 font-medium text-lg">
-								<li>Figma / Axure</li>
-								<li>Storybook</li>
-								<li>Jira / Trello</li>
-								<li>Design System 建立</li>
-							</ul>
+						<div class="absolute -bottom-4 -left-4 bg-black border border-border-primary p-3 rounded-lg shadow-xl group-hover:-translate-y-1 transition-transform">
+							<p class="text-[10px] uppercase tracking-widest font-bold text-text-secondary">Based in</p>
+							<p class="text-xs font-bold text-text-primary">Shanghai, China</p>
 						</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="mt-40 border-t border-black/5 pt-24 max-w-5xl">
-				<h2 class="text-xs uppercase tracking-widest font-bold mb-16 text-black/30">工作经历</h2>
-				<div class="space-y-16">
-					{experience.map(job => (
-						<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12">
-							<div class="text-black/40 font-medium">{job.period}</div>
-							<div class="md:col-span-2">
-								<h3 class="text-2xl font-bold mb-2">{job.company}</h3>
-								<div class="text-black/60 font-medium mb-4">{job.role}</div>
-								<p class="text-black/50 leading-relaxed">{job.description}</p>
-							</div>
-						</div>
-					))}
+					<div class="mt-8 flex gap-4 text-sm font-medium text-text-secondary">
+						<a href="mailto:work@midmonkey.win" class="hover:text-text-primary transition-colors">work@midmonkey.win</a>
+					</div>
 				</div>
 			</div>
 		</section>
 
+		<!-- Software & Skills Grid (Full Width) -->
+		<section class="py-24 border-t border-border-primary">
+			<h2 class="text-xs uppercase tracking-widest font-bold mb-12 text-text-secondary flex items-center gap-2 opacity-60">
+				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+				专业工具 / Software & Tools
+			</h2>
+			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+				{skills.map(skill => (
+					<div class="group flex flex-col items-center text-center gap-3">
+						<div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-text-primary/5 border border-border-primary group-hover:bg-text-primary/10 group-hover:border-text-primary/20 transition-all duration-300">
+							<img src={skill.icon} alt={skill.name} class="w-8 h-8 object-contain transition-transform group-hover:scale-110" />
+						</div>
+						<span class="text-xs font-medium text-text-secondary group-hover:text-text-primary transition-colors">{skill.name}</span>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Areas of Expertise (Grid Layout) -->
+		<section class="py-24 border-t border-border-primary">
+			<h2 class="text-xs uppercase tracking-widest font-bold mb-16 text-text-secondary flex items-center gap-2 opacity-60">
+				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.1 6.34a2 2 0 0 0 0 3.66l9.07 4.16a2 2 0 0 0 1.66 0l9.07-4.16a2 2 0 0 0 0-3.66z"/><path d="m2.1 14.74 9.07 4.16a2 2 0 0 0 1.66 0l9.07-4.16"/><path d="m2.1 19.16 9.07 4.16a2 2 0 0 0 1.66 0l9.07-4.16"/></svg>
+				专业领域 / Areas of Expertise
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+				{expertise.map(item => (
+					<div class="space-y-6">
+						<h3 class="text-xl font-bold text-text-primary italic font-serif underline decoration-border-primary decoration-2 underline-offset-8">
+							{item.title}
+						</h3>
+						<p class="text-text-secondary leading-relaxed text-base">
+							{item.desc}
+						</p>
+						<div class="flex flex-wrap gap-2">
+							{item.points.map(p => (
+								<span class="text-[10px] uppercase tracking-tighter px-2 py-1 rounded bg-text-primary/5 text-text-secondary font-bold">
+									{p}
+								</span>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Work Experience (Timeline-ish) -->
+		<section class="py-24 border-t border-border-primary">
+			<h2 class="text-xs uppercase tracking-widest font-bold mb-16 text-text-secondary">工作经历 / Work Experience</h2>
+			<div class="space-y-20">
+				{experience.map(job => (
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+						<div class="md:col-span-3 text-text-secondary font-medium md:pt-1">{job.period}</div>
+						<div class="md:col-span-9 space-y-4">
+							<div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
+								<h3 class="text-2xl font-bold">{job.company}</h3>
+								<span class="text-text-secondary font-medium">{job.role}</span>
+							</div>
+							<p class="text-text-secondary leading-relaxed max-w-3xl">{job.description}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
 		<!-- Footer -->
-		<footer class="mt-40 border-t border-black/5 pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-black/40 text-sm">
+		<footer class="mt-40 border-t border-border-primary pt-12 pb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-sm">
 			<p>© 2026 TANG XINXU</p>
 			<div class="flex gap-8">
-				<a href="#" class="hover:text-black transition-colors">Dribbble</a>
-				<a href="#" class="hover:text-black transition-colors">Behance</a>
-				<a href="#" class="hover:text-black transition-colors">Instagram</a>
+				<a href="mailto:work@midmonkey.win" class="hover:text-text-primary transition-colors">work@midmonkey.win</a>
 			</div>
 		</footer>
 	</main>

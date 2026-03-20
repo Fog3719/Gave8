@@ -1,0 +1,272 @@
+@import "tw-animate-css";
+
+/* ========================================
+   微妙动画系统 - Subtle Animation System
+   ======================================== */
+
+@theme {
+  /* 自定义缓动函数 - 更自然的运动 */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-appear: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* 动画持续时间 */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 350ms;
+  --duration-entrance: 600ms;
+}
+
+@layer utilities {
+  /* ----------------------------------------
+     入场动画 - Entrance Animations
+     ---------------------------------------- */
+
+  /* 淡入上浮 - 最常用 */
+  .animate-fade-up {
+    animation: fadeUp var(--duration-entrance) var(--ease-out-expo) forwards;
+    animation-delay: var(--stagger, 0ms);
+  }
+
+  /* 单纯淡入 */
+  .animate-fade-in {
+    animation: fadeIn var(--duration-slow) var(--ease-out-quart) forwards;
+    animation-delay: var(--stagger, 0ms);
+  }
+
+  /* 从下滑入 */
+  .animate-slide-up {
+    animation: slideUp var(--duration-entrance) var(--ease-out-expo) forwards;
+    animation-delay: var(--stagger, 0ms);
+  }
+
+  /* 缩放入场 */
+  .animate-scale-in {
+    animation: scaleIn var(--duration-entrance) var(--ease-spring) forwards;
+    animation-delay: var(--stagger, 0ms);
+  }
+
+  /* 模糊淡入 */
+  .animate-blur-in {
+    animation: blurIn var(--duration-entrance) var(--ease-out-quart) forwards;
+    animation-delay: var(--stagger, 0ms);
+  }
+
+  /* ----------------------------------------
+     滚动触发动画 - Scroll Animations
+     ---------------------------------------- */
+
+  /* 初始隐藏状态 */
+  .scroll-animate {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+  }
+
+  .scroll-animate.is-visible {
+    opacity: 1;
+  }
+
+  /* 交错延迟工具类 */
+  .stagger-1 { --stagger: 50ms; }
+  .stagger-2 { --stagger: 100ms; }
+  .stagger-3 { --stagger: 150ms; }
+  .stagger-4 { --stagger: 200ms; }
+  .stagger-5 { --stagger: 250ms; }
+  .stagger-6 { --stagger: 300ms; }
+
+  /* ----------------------------------------
+     悬停效果 - Hover Effects
+     ---------------------------------------- */
+
+  /* 微妙的位移 */
+  .hover-lift {
+    transition: transform var(--duration-normal) var(--ease-out-quart);
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* 微妙的缩放 */
+  .hover-scale {
+    transition: transform var(--duration-normal) var(--ease-out-quart);
+  }
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* 下划线动画 - 从左到右 */
+  .hover-underline {
+    position: relative;
+  }
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+  }
+  .hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* 反向下划线 */
+  .hover-underline-reverse::after {
+    transform-origin: left;
+  }
+  .hover-underline-reverse:hover::after {
+    transform-origin: right;
+  }
+
+  /* ----------------------------------------
+     微交互 - Micro Interactions
+     ---------------------------------------- */
+
+  /* 按钮点击反馈 */
+  .active-scale {
+    transition: transform var(--duration-fast) var(--ease-out-quart);
+  }
+  .active-scale:active {
+    transform: scale(0.98);
+  }
+
+  /* 焦点环动画 */
+  .focus-ring {
+    transition: box-shadow var(--duration-fast) var(--ease-out-quart);
+  }
+  .focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-accent), 0 0 0 4px var(--color-bg-primary);
+  }
+
+  /* ----------------------------------------
+     特殊效果 - Special Effects
+     ---------------------------------------- */
+
+  /* 呼吸光晕 - 非常微妙的脉冲 */
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  /* 渐变文字闪烁 */
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--text-secondary) 0%,
+      var(--text-primary) 50%,
+      var(--text-secondary) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  /* 光标闪烁 */
+  .animate-cursor {
+    animation: cursor 1s step-end infinite;
+  }
+}
+
+@layer base {
+  /* 减少动画偏好支持 */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ========================================
+   关键帧定义 - Keyframes
+   ======================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(24px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes cursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

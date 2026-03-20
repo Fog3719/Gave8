@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+const project = {
+  title: "Planning-DataStream 体验优化",
+  category: "数据集成 / 画布交互 / ETL 优化",
+  description: "针对复杂数据集成场景下的 ETL 画布杂乱与性能瓶颈，通过轻量化交互手段提升画布的整洁度与运维效率。",
+  role: "UX 设计师",
+  period: "2023.03 - 2023.04",
+  highlights: [
+    "深入调研识别 ETL 文件结构混乱导致的内存溢出与运维焦虑",
+    "权衡功能聚合与学习成本，探索多维度的交互优化方案",
+    "主导并上线 Note 标注组件，实现复杂画布的区域化管理与快速定位"
+  ]
+};
+
+// 预留图片占位符，您可以根据实际路径替换
+const placeholders = {
+  banner: "/images/projects/datastream/page_23.png",
+  research: "/images/projects/datastream/image_54.png",
+  option1: "/images/projects/datastream/page_25.png",
+  option2: "/images/projects/datastream/page_26.png",
+  finalSolution: "/images/projects/datastream/page_27.png",
+  reflection: "/images/projects/datastream/reflection.png"
+};
+---
+
+<Layout title={`${project.title} | 作品集`}>
+	<Navigation />
+	
+	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
+		<!-- Project Header -->
+		<header class="max-w-3xl mb-24">
+			<div class="tech-label mb-6">{project.category}</div>
+			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8">
+				{project.title}
+			</h1>
+			<p class="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium">
+				{project.description}
+			</p>
+		</header>
+
+		<!-- Hero Image (Banner) -->
+		<section class="mb-32 overflow-hidden rounded-3xl bg-text-primary/5 border border-border-primary">
+			<div class="aspect-[21/9] flex items-center justify-center">
+				<img 
+					src={placeholders.banner} 
+					alt="Project Banner" 
+					class="w-full h-full object-cover" 
+					onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+				/>
+				<div class="hidden items-center justify-center w-full h-full text-text-secondary opacity-20 bg-gradient-to-br from-text-primary/10 to-transparent">
+					<span class="tech-label">PROJECT_BANNER_PLACEHOLDER</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Project Meta -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 border-y border-border-primary mb-32">
+			<div>
+				<h3 class="tech-label mb-4">我的角色</h3>
+				<p class="font-medium text-lg">{project.role}</p>
+			</div>
+			<div>
+				<h3 class="tech-label mb-4">项目周期</h3>
+				<p class="font-medium text-lg">{project.period}</p>
+			</div>
+			<div>
+				<h3 class="tech-label mb-4">核心挑战</h3>
+				<ul class="space-y-2 font-medium text-text-secondary">
+					{project.highlights.map(item => <li>• {item}</li>)}
+				</ul>
+			</div>
+		</div>
+
+		<!-- Project Content -->
+		<div class="max-w-5xl mx-auto space-y-48">
+			<!-- Section: Background & Problem -->
+			<section>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+					<div>
+						<h2 class="text-3xl font-bold mb-8 text-text-primary">需求背景：不仅是乱，更是慢</h2>
+						<div class="text-xl text-text-secondary leading-relaxed space-y-6">
+							<p>
+								随着业务逻辑的复杂化，数据流模块中的组件数量呈爆炸式增长。杂乱无章的画布不仅增加了后期维护的难度，更导致了严重的系统性能问题。
+							</p>
+							<p>
+								<strong class="text-text-primary font-bold">核心痛点：</strong> 用户并行运行多个数据流，导致内存爆满。通过日志分析发现，底层 ETL 文件结构冗余严重，用户“不敢动”旧文件，只能不断堆砌新组件。
+							</p>
+						</div>
+					</div>
+					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-2xl bg-text-primary/5 aspect-video flex items-center justify-center">
+						<!-- [此处补充需求背景/现状截图] -->
+						<img src={placeholders.research} alt="Problem Statement" class="w-full h-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+						<span class="hidden opacity-30">RESEARCH_&_ANALYSIS_VISUAL</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: User Research -->
+			<section class="space-y-12">
+				<div class="flex justify-between items-end">
+					<h2 class="text-3xl font-bold text-text-primary">用户访谈与洞察</h2>
+					<span class="tech-label opacity-50">USER_INSIGHTS</span>
+				</div>
+				<div class="bg-text-primary/5 p-12 rounded-[2rem] border border-border-primary">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+						<div class="space-y-6">
+							<h3 class="text-xl font-bold">运维用户的“修改恐惧”</h3>
+							<p class="text-text-secondary leading-relaxed">
+								“这个文件太大了，我根本不知道改了这里会影响哪里，只能在旁边再接一段逻辑。”
+							</p>
+							<div class="pt-4 border-t border-border-primary/50">
+								<p class="text-sm font-bold text-text-primary mb-2">发现：</p>
+								<p class="text-sm text-text-secondary">系统缺乏足够灵活的数据处理功能，导致用户被迫采用“拆分”或“强行合并”的极端手段，工作流极度碎片化。</p>
+							</div>
+						</div>
+						<div class="space-y-6">
+							<h3 class="text-xl font-bold">工作习惯的差异性</h3>
+							<p class="text-text-secondary leading-relaxed">
+								不同实施用户有完全不同的方法论。有些人倾向于保持文件精简，有些人则习惯将所有逻辑堆在一个画布里。
+							</p>
+							<div class="pt-4 border-t border-border-primary/50">
+								<p class="text-sm font-bold text-text-primary mb-2">策略建议：</p>
+								<p class="text-sm text-text-secondary">增加多功能组件减少数量，并提供更清晰的画布界面以兼容不同的工作模式。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Design Exploration (The Iterative Process) -->
+			<section class="space-y-32">
+				<div class="text-center max-w-2xl mx-auto">
+					<h2 class="text-3xl font-bold mb-6 text-text-primary">设计方案演进</h2>
+					<p class="text-text-secondary font-medium">从“减少组件”到“管理组件”的思路转变。</p>
+				</div>
+
+				<!-- Option 1 -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+					<div>
+						<div class="tech-label mb-4 opacity-50">OPTION_01 (REJECTED)</div>
+						<h3 class="text-2xl font-bold mb-6 text-text-primary">方案一：增强单个组件功能</h3>
+						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+							尝试通过“多合一”组件减少总数。
+						</p>
+						<div class="bg-red-500/5 p-6 rounded-xl border-l-4 border-red-500/50">
+							<p class="text-sm text-text-secondary"><strong class="text-red-500">放弃原因：</strong> 违背了“功能单一”的设计原则，大幅增加了新手用户的学习门槛和出错风险。</p>
+						</div>
+					</div>
+					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-xl bg-text-primary/5 aspect-video flex items-center justify-center">
+						<!-- [此处补充方案一示意图] -->
+						<img src={placeholders.option1} alt="Option 1" class="w-full h-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+						<span class="hidden opacity-30">OPTION_1_VISUAL</span>
+					</div>
+				</div>
+
+				<!-- Option 2 -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+					<div class="md:order-2">
+						<div class="tech-label mb-4 opacity-50">OPTION_02 (REJECTED)</div>
+						<h3 class="text-2xl font-bold mb-6 text-text-primary">方案二：增加 Item Group 功能</h3>
+						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+							引入类似于白板的分组机制，允许框选组件并折叠。
+						</p>
+						<div class="bg-red-500/5 p-6 rounded-xl border-l-4 border-red-500/50">
+							<p class="text-sm text-text-secondary"><strong class="text-red-500">放弃原因：</strong> 交互路径过深，实现成本高，且容易造成“逻辑黑盒”，导致画布更难理解。</p>
+						</div>
+					</div>
+					<div class="md:order-1 rounded-2xl overflow-hidden border border-border-primary shadow-xl bg-text-primary/5 aspect-video flex items-center justify-center">
+						<!-- [此处补充方案二 GIF] -->
+						<img src={placeholders.option2} alt="Option 2" class="w-full h-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+						<span class="hidden opacity-30">OPTION_2_GIF</span>
+					</div>
+				</div>
+
+				<!-- Final Solution -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+					<div>
+						<div class="tech-label mb-4 text-accent">FINAL_SOLUTION</div>
+						<h3 class="text-2xl font-bold mb-6 text-text-primary">方案三：Note 备注组件</h3>
+						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+							不再强行合并组件，而是提供一种“视觉分区”和“语义关联”的能力。
+						</p>
+						<ul class="space-y-4">
+							<li class="flex gap-3">
+								<span class="text-accent font-mono text-sm">[√]</span>
+								<p class="text-sm text-text-secondary">鼠标移入 Note，关联组件同步高亮，实现快速定位。</p>
+							</li>
+							<li class="flex gap-3">
+								<span class="text-accent font-mono text-sm">[√]</span>
+								<p class="text-sm text-text-secondary">支持自定义文本样式与背景色，提升视觉层级。</p>
+							</li>
+							<li class="flex gap-3">
+								<span class="text-accent font-mono text-sm">[√]</span>
+								<p class="text-sm text-text-secondary">轻量级实现，零学习成本。</p>
+							</li>
+						</ul>
+					</div>
+					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-xl bg-text-primary/5 aspect-video flex items-center justify-center">
+						<!-- [此处补充最终方案 GIF] -->
+						<img src={placeholders.finalSolution} alt="Final Solution" class="w-full h-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+						<span class="hidden opacity-30">FINAL_SOLUTION_GIF</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Results & Reflection -->
+			<section class="bg-text-primary text-bg-primary p-12 md:p-24 rounded-[3rem] relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+					<div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+				</div>
+
+				<div class="relative z-10">
+					<h2 class="text-3xl font-bold mb-16 text-center text-inherit">反思与总结</h2>
+					<div class="max-w-3xl mx-auto space-y-8">
+						<div class="text-2xl font-serif leading-relaxed italic border-b border-bg-primary/20 pb-8">
+							“作为一个工具软件，不仅要提供功能设计，还要提供一套最佳实践，引导用户形成良好的工作流程。”
+						</div>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm leading-relaxed opacity-90">
+							<p>
+								需求上线后，Note 功能极大地缓解了运维压力，用户反馈良好。但我也意识到，组件数量多的根本矛盾仍未完全消除。
+							</p>
+							<p>
+								在后续的迭代中，我们开始主动引导用户进行文件拆分，并将“最佳实践”文档直接嵌入产品中。这让我明白，设计有时需要跳出界面，去思考更深层的工作方案。
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Next Project Prompt -->
+		<div class="py-24 flex justify-center">
+			<a href="/projects" class="group flex items-center gap-4 text-text-primary hover:opacity-70 transition-opacity">
+				<span class="tech-label">EXPLORE_MORE_PROJECTS</span>
+				<div class="w-12 h-[1px] bg-text-primary group-hover:w-20 transition-all duration-500"></div>
+			</a>
+		</div>
+
+		<!-- Footer -->
+		<footer class="mt-24 border-t border-border-primary pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-[10px] font-mono">
+			<p>© 2026 TANG XINXU. DESIGNED_FOR_CLARITY.</p>
+			<div class="flex gap-8">
+				<a href="/" class="hover:text-text-primary transition-colors">HOME</a>
+				<a href="/about" class="hover:text-text-primary transition-colors">ABOUT</a>
+			</div>
+		</footer>
+	</main>
+</Layout>
