@@ -17,11 +17,11 @@ const project = {
 
 // 预留图片占位符，您可以根据实际路径替换
 const placeholders = {
-  banner: "/images/projects/datastream/banner.png",
-  research: "/images/projects/datastream/research.png",
-  option1: "/images/projects/datastream/option1.png",
-  option2: "/images/projects/datastream/option2.gif",
-  finalSolution: "/images/projects/datastream/final-solution.gif",
+  banner: "/images/projects/datastream/page_23.png",
+  research: "/images/projects/datastream/image_54.png",
+  option1: "/images/projects/datastream/page_25.png",
+  option2: "/images/projects/datastream/page_26.png",
+  finalSolution: "/images/projects/datastream/page_27.png",
   reflection: "/images/projects/datastream/reflection.png"
 };
 ---
@@ -43,10 +43,16 @@ const placeholders = {
 
 		<!-- Hero Image (Banner) -->
 		<section class="mb-32 overflow-hidden rounded-3xl bg-text-primary/5 border border-border-primary">
-			<!-- [此处补充 Banner 图片] -->
-			<div class="aspect-[21/9] flex items-center justify-center text-text-secondary opacity-20 bg-gradient-to-br from-text-primary/10 to-transparent">
-				<img src={placeholders.banner} alt="Project Banner" class="w-full h-auto object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-				<span class="hidden items-center">PROJECT_BANNER_PLACEHOLDER</span>
+			<div class="aspect-[21/9] flex items-center justify-center">
+				<img 
+					src={placeholders.banner} 
+					alt="Project Banner" 
+					class="w-full h-full object-cover" 
+					onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+				/>
+				<div class="hidden items-center justify-center w-full h-full text-text-secondary opacity-20 bg-gradient-to-br from-text-primary/10 to-transparent">
+					<span class="tech-label">PROJECT_BANNER_PLACEHOLDER</span>
+				</div>
 			</div>
 		</section>
 
