@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./animations.css";
 
 @theme {
   --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;

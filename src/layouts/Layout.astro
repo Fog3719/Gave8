@@ -30,7 +30,7 @@ import '../styles/global.css';
 				}
 				return 'light';
 			})();
-		
+
 			if (theme === 'light') {
 				document.documentElement.classList.remove('dark');
 			} else {
@@ -38,6 +38,7 @@ import '../styles/global.css';
 			}
 			window.localStorage.setItem('theme', theme);
 		</script>
+		<script src="/src/scripts/animations.ts" type="module"></script>
 	</head>
 	<body class="bg-bg-primary text-text-primary font-sans antialiased">
 		<slot />
