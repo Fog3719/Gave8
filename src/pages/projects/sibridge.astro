@@ -1,0 +1,199 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+const project = {
+  title: "Si bridge - 3D 布局与凹槽设计",
+  category: "3D 布局 / 芯片设计 / 工业软件",
+  description: "在 3D 布局中实现 Si bridge 的嵌入式设计，通过智能凹槽生成与恢复机制，优化 Substrate 内部的层间连接与信号流动。",
+  role: "UX Designer",
+  period: "2024.09 - 2024.10",
+  highlights: [
+    "实现了 Si bridge 在 Substrate 中的凹形布局自动化生成",
+    "设计了分层自动吸附机制，确保下嵌深度的精确控制",
+    "构建了完整的凹槽恢复工作流，提升了设计修改的灵活性"
+  ]
+};
+
+const images = {
+  hero: "/images/projects/sibridge/Generated 3D Image.png",
+  context: "/images/projects/sibridge/Frame 9.png",
+  target: "/images/projects/sibridge/Group 28.png",
+  depth_si: "/images/projects/sibridge/Generated 3D Image_si.png",
+  depth_ui: "/images/projects/sibridge/Group 15.png",
+  snap: "/images/projects/sibridge/Group 30.png",
+  recover_list: "/images/projects/sibridge/show-wacao.png",
+  ui_main: "/images/projects/sibridge/page-UI01.png",
+  ux_build: "/images/projects/sibridge/ux-02_wacao.png",
+  ux_recover: "/images/projects/sibridge/ux_waco.png",
+  recover_confirm: "/images/projects/sibridge/recover_wa.png"
+};
+---
+
+<Layout title={`${project.title} | 作品集`}>
+	<Navigation />
+
+	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
+		<!-- Project Header -->
+		<header class="max-w-3xl mb-24">
+			<div class="tech-label mb-6 scroll-animate" data-animate>{project.category}</div>
+			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8 scroll-animate" data-animate style="transition-delay: 50ms">
+				{project.title}
+			</h1>
+			<p class="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium scroll-animate" data-animate style="transition-delay: 100ms">
+				{project.description}
+			</p>
+		</header>
+
+		<!-- Hero Image -->
+		<section class="mb-32 overflow-hidden rounded-3xl bg-text-primary/5 border border-border-primary scroll-animate" data-animate style="transition-delay: 150ms">
+			<img src={images.hero} alt="Si bridge 3D Layout Hero" class="w-full h-auto object-cover" />
+		</section>
+
+		<!-- Project Meta -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 border-y border-border-primary mb-32">
+			<div class="scroll-animate" data-animate>
+				<h3 class="tech-label mb-4">我的角色</h3>
+				<p class="font-medium text-lg">{project.role}</p>
+			</div>
+			<div class="scroll-animate" data-animate style="transition-delay: 50ms">
+				<h3 class="tech-label mb-4">项目周期</h3>
+				<p class="font-medium text-lg">{project.period}</p>
+			</div>
+			<div class="scroll-animate" data-animate style="transition-delay: 100ms">
+				<h3 class="tech-label mb-4">核心成就</h3>
+				<ul class="space-y-2 font-medium text-text-secondary">
+					{project.highlights.map(item => <li>• {item}</li>)}
+				</ul>
+			</div>
+		</div>
+
+		<div class="max-w-5xl mx-auto space-y-48">
+			<!-- Section: Concept -->
+			<section>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+					<div class="scroll-animate" data-animate>
+						<h2 class="text-3xl font-bold mb-8 text-text-primary">什么是 Si bridge？</h2>
+						<div class="text-xl text-text-secondary leading-relaxed space-y-6">
+							<p>
+								想象一下一座桥，它连接着两岸。在芯片的世界里，Si bridge 就相当于一座微小的“桥”，它连接着芯片内部的不同层，让电子信号能够在这些层之间自由流动。
+							</p>
+							<p>
+								目前在 3D 布局中，下嵌的器件与 Substrate 只是简单的重叠，移开后在基板上并没有实际产生凹槽，且布线设计中无法体现产生的阴影。
+							</p>
+						</div>
+					</div>
+					<div class="rounded-2xl overflow-hidden border border-border-primary shadow-2xl scroll-animate group" data-animate style="transition-delay: 100ms">
+						<img src={images.context} alt="Si bridge Context" class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.02]" />
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Design Goal -->
+			<section class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+				<div class="md:order-2 scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold mb-8 text-text-primary">设计目标</h2>
+					<p class="text-xl text-text-secondary leading-relaxed font-medium">
+						用户在 3D 布局中可以使用任意器件在 Substrate 的交集区域内便捷地生成或恢复凹槽 Si bridge，确保生成的凹槽能够实时影响系统中各个模块。
+					</p>
+				</div>
+				<div class="md:order-1 rounded-2xl overflow-hidden border border-border-primary shadow-xl scroll-animate group" data-animate style="transition-delay: 100ms">
+					<img src={images.target} alt="Design Goal" class="w-full h-auto transition-transform duration-700 ease-out-quart group-hover:scale-[1.02]" />
+				</div>
+			</section>
+
+			<!-- Section: Challenges & Solutions -->
+			<section class="space-y-32">
+				<div class="text-center max-w-2xl mx-auto scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold mb-6 text-text-primary">问题与解决方案</h2>
+					<p class="text-text-secondary font-medium">精确控制下嵌深度与灵活恢复机制是核心挑战。</p>
+				</div>
+
+				<!-- Challenge 1 -->
+				<div class="space-y-12">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+						<div class="scroll-animate" data-animate>
+							<h3 class="text-2xl font-bold mb-6 text-text-primary">如何有效控制下嵌深度？</h3>
+							<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+								下嵌深度不仅影响 Si bridge 功能，还影响芯片性能。我们引入了实时深度显示与分层自动吸附机制。
+							</p>
+						</div>
+						<div class="rounded-xl overflow-hidden border border-border-primary scroll-animate" data-animate>
+							<img src={images.depth_ui} alt="Depth Control UI" class="w-full h-auto" />
+						</div>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<img src={images.depth_si} alt="Depth Visualization" class="rounded-xl border border-border-primary scroll-animate" data-animate />
+						<img src={images.snap} alt="Snap Mechanism" class="rounded-xl border border-border-primary scroll-animate" data-animate style="transition-delay: 50ms" />
+					</div>
+				</div>
+
+				<!-- Challenge 2 -->
+				<div class="space-y-12">
+					<div class="scroll-animate" data-animate>
+						<h3 class="text-2xl font-bold mb-6 text-text-primary">灵活的恢复机制</h3>
+						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+							用户需要能够随时撤销凹槽生成。我们设计了二级属性面板，支持多选恢复已有凹槽。
+						</p>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<img src={images.recover_list} alt="Recover List" class="rounded-xl border border-border-primary scroll-animate" data-animate />
+						<div class="flex flex-col gap-8">
+							<img src={images.ux_recover} alt="Recover UX" class="rounded-xl border border-border-primary scroll-animate" data-animate style="transition-delay: 50ms" />
+							<img src={images.recover_confirm} alt="Recover Confirm" class="rounded-xl border border-border-primary scroll-animate" data-animate style="transition-delay: 100ms" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Workflow -->
+			<section class="space-y-12">
+				<h2 class="text-3xl font-bold text-text-primary scroll-animate" data-animate>交互工作流</h2>
+				<div class="rounded-2xl overflow-hidden border border-border-primary bg-text-primary/5 scroll-animate" data-animate>
+					<img src={images.ui_main} alt="Main UI Workflow" class="w-full h-auto" />
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+					<div class="scroll-animate" data-animate>
+						<h3 class="text-2xl font-bold mb-6 text-text-primary">Build Si bridge</h3>
+						<p class="text-lg text-text-secondary leading-relaxed font-medium">
+							手动移动器件至 Substrate 下方，点击下嵌挖空。系统根据叠层高度自动吸附，生成不可恢复的物理凹槽，即使移走器件凹槽依然保留。
+						</p>
+					</div>
+					<img src={images.ux_build} alt="Build Workflow" class="rounded-xl border border-border-primary scroll-animate" data-animate style="transition-delay: 100ms" />
+				</div>
+			</section>
+
+			<!-- Section: Summary -->
+			<section class="pb-24 border-b border-border-primary scroll-animate" data-animate>
+				<h2 class="tech-label mb-8">RETROSPECTIVE</h2>
+				<div class="max-w-2xl">
+					<div class="text-2xl font-serif text-text-primary leading-snug mb-8 italic">
+						"在 3D 工业软件中，交互不仅是视觉的反馈，更是物理逻辑的体现。"
+					</div>
+					<div class="text-lg text-text-secondary leading-relaxed font-medium space-y-6">
+						<p>
+							通过对 Si bridge 下嵌流程的设计，我们确保了用户在复杂 3D 空间操作中的便捷性与准确性。自动吸附与可视化凹槽列表的设计，极大地降低了用户的操作心智负担。
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Next Project Prompt -->
+		<div class="py-24 flex justify-center scroll-animate" data-animate>
+			<a href="/projects" class="group flex items-center gap-4 text-text-primary hover:opacity-70 transition-opacity duration-200">
+				<span class="tech-label">EXPLORE_MORE_PROJECTS</span>
+				<div class="w-12 h-[1px] bg-text-primary transition-all duration-500 ease-out-expo group-hover:w-20"></div>
+			</a>
+		</div>
+
+		<!-- Footer -->
+		<footer class="mt-24 border-t border-border-primary pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-[10px] font-mono scroll-animate" data-animate>
+			<p>© 2026 TANG XINXU. BUILT_FOR_PRECISION.</p>
+			<div class="flex gap-8">
+				<a href="/" class="hover:text-text-primary transition-colors duration-200">HOME</a>
+				<a href="/about" class="hover:text-text-primary transition-colors duration-200">ABOUT</a>
+			</div>
+		</footer>
+	</main>
+</Layout>

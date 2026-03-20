@@ -1,0 +1,213 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+const project = {
+  title: "诺亚项目：数据钻取与自助分析平台",
+  category: "金融 BI / 数字化转型 / 企业级软件",
+  description: "为大型金融投资公司打造的财务数据平台，通过“零代码”数据钻取技术，替代传统需编写脚本的复杂流程，提升业务用户的自助分析效率。",
+  role: "高级产品设计师 / UX 设计师",
+  period: "2021.12 - 2022.06",
+  highlights: [
+    "将原本仅有 1% 高级用户掌握的脚本钻取功能，转化为 100% 用户可用的图形化配置",
+    "平衡了“前端便捷性”与“后端维护性”，设计了基于数据关联的全局钻取方案",
+    "在国产化替代背景下，实现了系统性能与易用性的双重优化"
+  ]
+};
+
+// 预留图片路径，您可以随后替换
+const images = {
+  hero: "", // 主视觉图
+  painPoint: "", // 痛点对比图
+  process: "", // 方案演进图
+  feature1: "", // 核心功能截图 1
+  feature2: "", // 核心功能截图 2
+  results: ""  // 成效展示图
+};
+---
+
+<Layout title={`${project.title} | 作品集`}>
+	<Navigation />
+
+	<main class="max-w-7xl mx-auto px-6 pt-32 pb-24 md:px-12 md:pt-48">
+		<!-- Project Header -->
+		<header class="max-w-3xl mb-24">
+			<div class="tech-label mb-6 scroll-animate" data-animate>{project.category}</div>
+			<h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8 scroll-animate" data-animate style="transition-delay: 50ms">
+				{project.title}
+			</h1>
+			<p class="text-xl md:text-2xl text-text-secondary leading-relaxed font-medium scroll-animate" data-animate style="transition-delay: 100ms">
+				{project.description}
+			</p>
+		</header>
+
+		<!-- Hero Image Placeholder -->
+		<section class="mb-32 overflow-hidden rounded-3xl bg-text-primary/5 border border-border-primary aspect-[16/9] flex items-center justify-center scroll-animate" data-animate style="transition-delay: 150ms">
+			<div class="text-text-secondary/30 font-mono text-sm">[ PROJECT_HERO_IMAGE_PLACEHOLDER ]</div>
+		</section>
+
+		<!-- Project Meta -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-12 border-y border-border-primary mb-32">
+			<div class="scroll-animate" data-animate>
+				<h3 class="tech-label mb-4">我的角色</h3>
+				<p class="font-medium text-lg">{project.role}</p>
+			</div>
+			<div class="scroll-animate" data-animate style="transition-delay: 50ms">
+				<h3 class="tech-label mb-4">项目周期</h3>
+				<p class="font-medium text-lg">{project.period}</p>
+			</div>
+			<div class="scroll-animate" data-animate style="transition-delay: 100ms">
+				<h3 class="tech-label mb-4">核心价值</h3>
+				<ul class="space-y-2 font-medium text-text-secondary">
+					{project.highlights.map(item => <li>• {item}</li>)}
+				</ul>
+			</div>
+		</div>
+
+		<!-- Project Content -->
+		<div class="max-w-5xl mx-auto space-y-48">
+			
+			<!-- Section: Background & Challenges -->
+			<section>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+					<div class="scroll-animate" data-animate>
+						<h2 class="text-3xl font-bold mb-8 text-text-primary">从“脚本依赖”到“自助分析”</h2>
+						<div class="text-xl text-text-secondary leading-relaxed space-y-6">
+							<p>
+								客户作为一家金融投资机构，长期依赖 Jedox 系统处理海量财务数据。然而，核心功能——<strong class="text-text-primary">凭证钻取（Data Drilling）</strong>由于需要编写复杂脚本，导致只有极少数高级用户能够使用。
+							</p>
+							<p>
+								随着数据量增大，原系统不仅<strong class="text-text-primary">性能变慢</strong>，且无法满足业务部门日益增长的自助化分析需求。我们的目标是构建一个更稳定、更易用且支持国产化替代的新一代财务系统。
+							</p>
+						</div>
+					</div>
+					<div class="rounded-2xl aspect-square bg-text-primary/5 border border-border-primary flex items-center justify-center scroll-animate" data-animate style="transition-delay: 100ms">
+						<span class="text-text-secondary/30 font-mono text-xs">[ PAIN_POINT_VISUAL ]</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: User Research -->
+			<section class="space-y-12">
+				<div class="flex justify-between items-end scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold text-text-primary">深度用户洞察</h2>
+					<span class="tech-label opacity-50">USER_RESEARCH_INSIGHTS</span>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="p-8 rounded-2xl border border-border-primary bg-text-primary/5 space-y-4">
+						<h4 class="font-bold text-xl">高级业务用户</h4>
+						<p class="text-text-secondary text-sm">熟练掌握多维模型与分析技能，对自助分析功能的灵活性要求极高，极度厌恶重复性沟通。</p>
+					</div>
+					<div class="p-8 rounded-2xl border border-border-primary bg-text-primary/5 space-y-4">
+						<h4 class="font-bold text-xl">财务职能部门</h4>
+						<p class="text-text-secondary text-sm">关注系统的稳定性与数据安全，承受着来自其他业务部门的巨大压力，需要“开箱即用”的可靠性。</p>
+					</div>
+					<div class="p-8 rounded-2xl border border-border-primary bg-text-primary/5 space-y-4">
+						<h4 class="font-bold text-xl">项目实施人员</h4>
+						<p class="text-text-secondary text-sm">负责数百张报表的上线，关注配置效率与维护成本，希望设计方案具有高可扩展性。</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Design Evolution -->
+			<section class="space-y-16">
+				<div class="text-center max-w-2xl mx-auto scroll-animate" data-animate>
+					<h2 class="text-3xl font-bold mb-6 text-text-primary">方案演进：平衡便捷与安全</h2>
+					<p class="text-text-secondary font-medium">通过两轮方案迭代，最终找到了满足多方利益相关者的平衡点。</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+					<div class="scroll-animate" data-animate>
+						<h3 class="text-2xl font-bold mb-6 text-text-primary">方案 V1：报表关联法</h3>
+						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+							最初设想在每个报表页面直接关联凭证表，这对于单一用户来说最直观。
+						</p>
+						<div class="p-4 bg-red-500/10 rounded-xl border-l-4 border-red-500">
+							<p class="text-sm text-red-700 font-bold">局限性：</p>
+							<p class="text-sm text-red-600">难以适应数百张报表，实施成本高且不利于后期统一维护。</p>
+						</div>
+					</div>
+					<div class="rounded-2xl aspect-video bg-text-primary/5 border border-border-primary flex items-center justify-center" data-animate>
+						<span class="text-text-secondary/30 font-mono text-xs">[ V1_PROCESS_DIAGRAM ]</span>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+					<div class="md:order-2 scroll-animate" data-animate>
+						<h3 class="text-2xl font-bold mb-6 text-text-primary">方案 V2：数据底层关联（最终采纳）</h3>
+						<p class="text-lg text-text-secondary leading-relaxed font-medium mb-8">
+							将数据与凭证直接在底层模型关联，一次配置，全局覆盖。
+						</p>
+						<div class="p-4 bg-green-500/10 rounded-xl border-l-4 border-green-500">
+							<p class="text-sm text-green-700 font-bold">核心优势：</p>
+							<p class="text-sm text-green-600">覆盖全量报表，权限控制更精准，极大降低了 IT 运维的复杂性。</p>
+						</div>
+					</div>
+					<div class="md:order-1 rounded-2xl aspect-video bg-text-primary/5 border border-border-primary flex items-center justify-center" data-animate>
+						<span class="text-text-secondary/30 font-mono text-xs">[ V2_PROCESS_DIAGRAM ]</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Core Features -->
+			<section class="space-y-12">
+				<h2 class="text-3xl font-bold text-text-primary scroll-animate" data-animate>核心设计实现</h2>
+				<div class="grid grid-cols-1 gap-12">
+					<div class="rounded-3xl bg-text-primary/5 border border-border-primary overflow-hidden group scroll-animate" data-animate>
+						<div class="aspect-[21/9] flex items-center justify-center border-b border-border-primary">
+							<span class="text-text-secondary/30 font-mono text-xs">[ FEATURE_SCREENSHOT_01: 图形化钻取配置 ]</span>
+						</div>
+						<div class="p-8">
+							<h4 class="text-xl font-bold mb-2">图形化钻取配置界面</h4>
+							<p class="text-text-secondary text-sm">告别脚本编写，通过简单的拖拽和属性勾选，即可定义复杂的明细数据穿透逻辑。</p>
+						</div>
+					</div>
+					<div class="rounded-3xl bg-text-primary/5 border border-border-primary overflow-hidden group scroll-animate" data-animate style="transition-delay: 50ms">
+						<div class="aspect-[21/9] flex items-center justify-center border-b border-border-primary">
+							<span class="text-text-secondary/30 font-mono text-xs">[ FEATURE_SCREENSHOT_02: 全局权限管控 ]</span>
+						</div>
+						<div class="p-8">
+							<h4 class="text-xl font-bold mb-2">精细化权限与范围控制</h4>
+							<p class="text-text-secondary text-sm">支持基于角色的行级、列级数据权限控制，确保金融敏感数据的安全性。</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section: Reflection -->
+			<section class="pb-24 border-b border-border-primary scroll-animate" data-animate>
+				<h2 class="tech-label mb-8">RETROSPECTIVE</h2>
+				<div class="max-w-3xl">
+					<div class="text-2xl font-serif text-text-primary leading-snug mb-8 italic">
+						"在 To B 的产品设计中，我们不仅要满足最终用户的体验，更要考虑实施人员和系统扩展的长期生命力。"
+					</div>
+					<div class="text-lg text-text-secondary leading-relaxed font-medium space-y-6">
+						<p>
+							在本项目中，我深刻体会到“可见性”与“效率”的权衡。原本隐藏在脚本背后的复杂逻辑，通过可视化的 UI 暴露给用户，不仅降低了学习成本，更让系统变得透明可控。
+						</p>
+						<p>
+							同时，针对实施团队反馈的“开箱即用”需求，我也在后续优化中加入了一键生成模板功能，真正做到了从设计到落地的全链路闭环。
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Next Project Prompt -->
+		<div class="py-24 flex justify-center scroll-animate" data-animate>
+			<a href="/projects" class="group flex items-center gap-4 text-text-primary hover:opacity-70 transition-opacity duration-200">
+				<span class="tech-label">EXPLORE_MORE_PROJECTS</span>
+				<div class="w-12 h-[1px] bg-text-primary transition-all duration-500 ease-out-expo group-hover:w-20"></div>
+			</a>
+		</div>
+
+		<!-- Footer -->
+		<footer class="mt-24 border-t border-border-primary pt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-text-secondary text-[10px] font-mono scroll-animate" data-animate>
+			<p>© 2026 TANG XINXU. BUILT_FOR_PRECISION.</p>
+			<div class="flex gap-8">
+				<a href="/" class="hover:text-text-primary transition-colors duration-200">HOME</a>
+				<a href="/about" class="hover:text-text-primary transition-colors duration-200">ABOUT</a>
+			</div>
+		</footer>
+	</main>
+</Layout>
